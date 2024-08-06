@@ -1,0 +1,31 @@
+.animated-line {
+  position: relative;
+  transition: all 0.4s ease;
+}
+.inner-line {
+  color: black;
+}
+.animated-line:hover,
+.inner-line:hover {
+  background-color: gray;
+  color: white;
+}
+.animated-line::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 2px;
+  right: 0;
+  /* bottom: 0; */
+  background-color: #fff;
+  width: 97.5%;
+  height: 3px;
+  transform: scale(0);
+  border-radius: 25px 25px 0 0;
+  transition: transform 0.5s ease-in;
+}
+
+.animated-line:hover::before {
+  transform: scale(1);
+}

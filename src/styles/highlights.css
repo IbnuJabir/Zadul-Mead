@@ -1,0 +1,28 @@
+.highlight_cards {
+  position: relative;
+  height: 100%;
+}
+.highlight_cards .card {
+  transition: all 0.5s ease;
+}
+.card_img2 {
+  position: absolute;
+  left: 2%;
+  top: 30%;
+}
+.card_img1 {
+  position: absolute;
+  right: 2%;
+  top: 5%;
+}
+.card_img3 {
+  position: absolute;
+  right: 2%;
+  bottom: 10%;
+}
+.card_img1:hover,
+.card_img2:hover,
+.card_img3:hover {
+  transform: scale(1.1, 1.3);
+  z-index: 1;
+}

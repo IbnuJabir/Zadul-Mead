@@ -3,7 +3,7 @@
 function About() {
   return (
     <div className=" text-center bg-about-bkg w-full h-screen bg-cover bg-no-repeat bg-center text-black">
-      <h3 className="text-2xl font-semibold mb-4">ABOUT ZADULMEAD</h3>
+      <h3 className="text-2xl font-semibold pb-4">ABOUT ZADULMEAD</h3>
       <h2 className="text-2xl font-semibold mb-6">OUR JOURNEY, OUR VISION</h2>
       <div className="font-montserrat px-4 flex flex-col gap-2">
         <p className="text-xl font-semibold mt-4 mb-2">Who We Are</p>

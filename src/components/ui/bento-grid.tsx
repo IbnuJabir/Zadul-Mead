@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-
+import '@/styles/line.css';
 export const BentoGrid = ({
   className,
   children,
@@ -10,7 +10,7 @@ export const BentoGrid = ({
   return (
     <div
       className={cn(
-        "grid md:auto-rows-[18rem] grid-cols-1 md:grid-cols-3 gap-4 max-w-7xl mx-auto ",
+        "animated-line grid  gap-4 max-w-7xl mx-auto md:w-[80%] md:h-[100%] ",
         className
       )}
     >
@@ -35,17 +35,17 @@ export const BentoGridItem = ({
   return (
     <div
       className={cn(
-        "row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-5000 shadow-input dark:shadow-none dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between items-center flex flex-col space-y-4",
+        "inner-line h-full w-full row-span-1 rounded-xl group/bento hover:shadow-xl shadow-input dark:shadow-none dark:bg-black text-center dark:border-white/[0.2] bg-white border border-transparent justify-between items-center flex flex-col space-y-4",
         className
       )}
     >
       {header}
-      <div className="group-hover/bento:translate-x-2 transition duration-400">
+      <div className="w-full group-hover/bento:translate-x-2 transition-all duration-700">
         {icon}
-        <div className="font-sans font-bold text-neutral-600 dark:text-neutral-200 mb-2 mt-2">
+        <div className="font-sans font-bold dark:text-neutral-200 mb-2 mt-2">
           {title}
         </div>
-        <div className="font-sans font-normal text-neutral-600 text-xs dark:text-neutral-300">
+        <div className="font-sans font-normal text-xs dark:text-neutral-300">
           {description}
         </div>
       </div>

@@ -2,9 +2,9 @@
 
 function Announcements() {
   return (
-    <div className="w-full h-full bg-announcement-bkg flex items-center justify-center  flex-col">
+    <div className="w-full h-full bg-announcement-bkg bg-no-repeat bg-cover bg-top flex items-center justify-center  flex-col">
       <h1 className="text-2xl font-bold mb-10">ANNOUNCEMENTS</h1>
-      <div className="flex items-center justify-center flex-col">
+      <div className="flex items-center justify-center flex-col md:flex-row">
         <img src='/assets/kitab.png' alt="kitab" className="w-4/5 " />
         <div className="flex flex-col gap-6">
           <div className="w-full font-montserrat px-4 flex items-top justify-center gap-4">

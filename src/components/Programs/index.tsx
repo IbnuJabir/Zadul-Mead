@@ -6,7 +6,7 @@ import Link from "next/link";
 
 function Programs() {
   return (
-    <div className="w-full h-full bg-programs-bkg bg-center p-6 flex flex-col gap-16">
+    <div className="w-full h-full bg-programs-bkg bg-no-repeat bg-cover bg-center p-6 flex flex-col gap-16">
       <div className="flex flex-col gap-2">
         <h1 className="text-white text-2xl text-left ">
           Programs <br />
@@ -31,7 +31,7 @@ function Programs() {
           <p className="">to start Tafsir</p>
         </div>
       </div>
-      <div className="w-full grid grid-cols-2 gap-y-8">
+      <div className="w-full grid grid-cols-2 gap-y-8 md:grid-cols-3">
         <BentoGrid className="w-[173px] h-[78px] bg-white rounded-lg mt-6">
           <BentoGridItem title={"Qur'an Tafsir"} description={"sat, sun"} />
         </BentoGrid>
@@ -51,7 +51,7 @@ function Programs() {
           <BentoGridItem title={"Qur'an Tafsir"} description={"sat, sun"} />
         </BentoGrid>
       </div>
-      <Link href="/programs" className="text-right text-white mr-5 mt-10 flex items-center justify-end gap-2 cursor-pointertext-whit">
+      <Link href="/programs" className="text-right text-white mr-5 mt-10 flex items-center justify-end gap-1 cursor-pointertext-whit">
           MORE{" "}
           <svg
             xmlns="http://www.w3.org/2000/svg"
