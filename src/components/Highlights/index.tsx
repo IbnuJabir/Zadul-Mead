@@ -16,25 +16,25 @@ function Highlights() {
         <img src="/assets/highlight3.png" alt="#" className="card card_img3" /> */}
         <DirectionAwareHover
         imageUrl="/assets/highlight1.jpeg"
-        children="Zadul Mead Medrasa"
+        // children="Zadul Mead Medrasa"
         imageClassName="card_img"
         childrenClassName="highlight_cards"
         className="w-1/2 absolute top-[2%] right-[5%] h-[40%]  hover:z-20"
-         />
+         >Zadul Mead Medrasa</DirectionAwareHover>
         <DirectionAwareHover
         imageUrl="/assets/highlight2.png"
-        children="Zadul Mead - Dormitory"
+        // children="Zadul Mead - Dormitory"
         imageClassName="card_img"
         childrenClassName="highlight_cards"
         className="w-1/2 absolute top-[35%] left-[5%] h-[40%]  hover:z-20"
-         />
+         >Zadul Mead - Dormitory</DirectionAwareHover>
         <DirectionAwareHover
         imageUrl="/assets/highlight3.png"
-        children="Zadul Mead - Library"
+        // children="Zadul Mead - Library"
         imageClassName="card_img"
         childrenClassName="highlight_cards"
         className="w-1/2 absolute bottom-[2%] right-[5%] h-[40%]  hover:z-20"
-         />
+         >Zadul Mead - Library</DirectionAwareHover>
       </div>
     </div>
   );
