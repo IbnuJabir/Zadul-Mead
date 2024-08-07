@@ -6,7 +6,7 @@ import { AiFillYoutube } from "react-icons/ai";
 function Footer() {
   return (
     <div className="w-full h-24 bg-slate-900 flex items-center justify-around">
-      <p className="text-white font-montserrat">Zadul Mead Islamic Center</p>
+      <p className="text-white font-montserrat">Zadul Mead</p>
       <div className="flex gap-4 text-white">
         <BsTelegram className="size-[20px]" />
         <FaFacebook className="size-[20px]" />
