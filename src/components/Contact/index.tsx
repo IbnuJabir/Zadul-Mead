@@ -2,7 +2,7 @@ import React from "react";
 
 function Contact() {
   return (
-    <div className="w-full min-h-screen bg-contact-bkg bg-no-repeat bg-cover bg-center bg-slate-700 py-4">
+    <div className="w-full h-full bg-contact-bkg bg-no-repeat bg-cover bg-center bg-slate-700 py-4">
       <h1 className="text-white font bold text-3xl m-4">Contact Us</h1>
       <div className="w-[ful] flex flex-col gap-4 md:flex-row md:justify-around font-montserrat mt-10">
         <div className="w-[90%] md:w-[45%] h-96 bg-transparent m-auto bg-slate-300 bg-opacity-30 flex flex-col gap-4 p-4 rounded-lg">
