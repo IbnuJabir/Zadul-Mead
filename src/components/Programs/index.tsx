@@ -6,7 +6,7 @@ import Link from "next/link";
 
 function Programs() {
   return (
-    <div className="w-full h-full bg-programs-bkg bg-no-repeat bg-cover bg-center p-6 flex flex-col gap-16">
+    <div className="w-full min-h-screen bg-programs-bkg bg-no-repeat bg-cover bg-center p-6 flex flex-col gap-16">
       <div className="flex flex-col gap-2">
         <h1 className="text-white text-2xl text-left ">
           Programs <br />

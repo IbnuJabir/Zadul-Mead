@@ -3,7 +3,7 @@ import React from "react";
 import { DirectionAwareHover } from "../ui/direction-aware-hover";
 function Highlights() {
   return (
-    <div className="w-full h-full bg-about-bkg bg-no-repeat bg-cover font-cinzel flex flex-col justify-center pt-20">
+    <div className="w-full min-h-screen bg-about-bkg bg-no-repeat bg-cover font-cinzel flex flex-col justify-center pt-20">
       <div className="text-2xl font-medium ml-5">
         <h1>HIGHLIGHTS OF </h1>
         <h1>
