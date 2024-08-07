@@ -16,7 +16,7 @@ function Programs() {
           Learning for All Ages and Levels
         </p>
       </div>
-      <div className="w-2/3 h-16 mx-auto overflow-hidden bg-white rounded-lg flex items-center justify-start font-montserrat">
+      <div className="w-[70%] h-16 mx-auto overflow-hidden bg-white rounded-lg flex items-center justify-start font-montserrat">
         <div className="w-15 h-full flex ">
           <Lottie animationData={greenLive} loop={true} />
         </div>
@@ -32,24 +32,25 @@ function Programs() {
         </div>
       </div>
       <div className="w-full grid grid-cols-2 gap-y-8 md:grid-cols-3">
-        <BentoGrid className="w-[173px] h-[78px] bg-white rounded-lg mt-6">
+        <BentoGrid className="w-[160px] h-[73px] bg-white rounded-lg mt-6">
           <BentoGridItem title={"Qur'an Tafsir"} description={"sat, sun"} />
         </BentoGrid>
-        <BentoGrid className="w-[173px] h-[78px] bg-white rounded-lg mt-6">
+        <BentoGrid className="w-[160px] h-[73px] bg-white rounded-lg mt-6">
           <BentoGridItem title={"Qur'an Tafsir"} description={"sat, sun"} />
         </BentoGrid>
-        <BentoGrid className="w-[173px] h-[78px] bg-white rounded-lg mt-6">
+        <BentoGrid className="w-[160px] h-[73px] bg-white rounded-lg mt-6">
           <BentoGridItem title={"Qur'an Tafsir"} description={"sat, sun"} />
         </BentoGrid>
-        <BentoGrid className="w-[173px] h-[78px] bg-white rounded-lg mt-6">
+        <BentoGrid className="w-[160px] h-[73px] bg-white rounded-lg mt-6">
           <BentoGridItem title={"Qur'an Tafsir"} description={"sat, sun"} />
         </BentoGrid>
-        <BentoGrid className="w-[173px] h-[78px] bg-white rounded-lg mt-6">
+        <BentoGrid className="w-[160px] h-[73px] bg-white rounded-lg mt-6">
           <BentoGridItem title={"Qur'an Tafsir"} description={"sat, sun"} />
         </BentoGrid>
-        <BentoGrid className="w-[173px] h-[78px] bg-white rounded-lg mt-6">
+        <BentoGrid className="w-[160px] h-[73px] bg-white rounded-lg mt-6">
           <BentoGridItem title={"Qur'an Tafsir"} description={"sat, sun"} />
         </BentoGrid>
+        
       </div>
       <Link href="/programs" className="text-right text-white mr-5 mt-10 flex items-center justify-end gap-1 cursor-pointertext-whit">
           MORE{" "}
