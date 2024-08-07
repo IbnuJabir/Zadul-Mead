@@ -5,7 +5,7 @@ import { IoLibrary } from "react-icons/io5";
 import PulsatingButton from "../ui/pulsating-button";
 function Offers() {
   return (
-    <div className=" h-full pt-10">
+    <div className="pt-10">
       <div className="h-fit w-[90%] bg-[#202020] font-light grid grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-4 text-white  m-auto rounded-3xl p-4">
         <div className="h-fit flex flex-col gap-4 items-center justify-start">
           <IoLibrary className="size-8" />

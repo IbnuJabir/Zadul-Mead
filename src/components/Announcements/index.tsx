@@ -2,7 +2,7 @@
 
 function Announcements() {
   return (
-    <div className="w-full min-h-screen bg-announcement-bkg bg-no-repeat bg-cover bg-top flex items-center justify-center  flex-col">
+    <div className="w-full bg-announcement-bkg bg-no-repeat bg-cover bg-top flex items-center justify-center  flex-col py-4">
       <h1 className="text-2xl font-bold mb-10">ANNOUNCEMENTS</h1>
       <div className="flex items-center justify-center flex-col md:flex-row">
         <img src='/assets/kitab.png' alt="kitab" className="w-4/5 " />
@@ -12,7 +12,7 @@ function Announcements() {
               1
             </p>
             <div className="flex flex-col items-start gap-2">
-              <h3 className="text-xl font-bold normal-case">Kitab Name</h3>
+              <h3 className="text-xl font-bold normal-case">Riyad As-Sualihin</h3>
               <p className="text-left text-base">
                 With lots of unique blocks, you can easily build a page without
                 coding.{" "}
@@ -24,7 +24,7 @@ function Announcements() {
               2
             </p>
             <div className="flex flex-col items-start gap-2">
-              <h3 className="text-xl font-bold normal-case">Scheduled Time</h3>
+              <h3 className="text-xl font-bold normal-case">Sat, Sun, Mon</h3>
               <p className="text-left text-base">
                 With lots of unique blocks, you can easily build a page without
                 coding.{" "}
@@ -36,7 +36,7 @@ function Announcements() {
               3
             </p>
             <div className="flex flex-col items-start gap-2">
-              <h3 className="text-xl font-bold normal-case">Starting Day</h3>
+              <h3 className="text-xl font-bold normal-case">fri, Aug 2024</h3>
               <p className="text-left text-base">
                 With lots of unique blocks, you can easily build a page without
                 coding.{" "}
