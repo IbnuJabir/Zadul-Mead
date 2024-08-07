@@ -32,7 +32,7 @@ function Navbar() {
             alt="menubar" 
             width={60}
             height={100}
-            className="w-15 h-9 fixed top-2 right-3 bg-gray-800 p-2 rounded-full bg-opacity-55 px-4"
+            className="w-12 h-8 fixed top-2 right-3 bg-gray-800 p-2 rounded-full bg-opacity-55 px-4"
           />
         </div>
       </div>

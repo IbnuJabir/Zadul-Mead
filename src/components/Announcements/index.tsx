@@ -6,8 +6,8 @@ function Announcements() {
       <h1 className="text-2xl font-bold mb-10">ANNOUNCEMENTS</h1>
       <div className="flex items-center justify-center flex-col md:flex-row">
         <img src='/assets/kitab.png' alt="kitab" className="w-4/5 " />
-        <div className="flex flex-col gap-6">
-          <div className="w-full font-montserrat px-4 flex items-top justify-center gap-4">
+        <div className="flex flex-col gap-6 items-start">
+          <div className="w-full font-montserrat px-4 flex items-top justify-left gap-4">
             <p className="w-8 h-6 text-black p-4 bg-slate-200 rounded-full flex items-center justify-center">
               1
             </p>
@@ -19,7 +19,7 @@ function Announcements() {
               </p>
             </div>
           </div>
-          <div className="w-full font-montserrat px-4 flex items-top justify-center gap-4">
+          <div className="w-full font-montserrat px-4 flex items-top justify-left gap-4">
             <p className="w-8 h-6 text-black p-4 bg-slate-200 rounded-full flex items-center justify-center">
               2
             </p>
@@ -30,7 +30,7 @@ function Announcements() {
               </p>
             </div>
           </div>
-          <div className="w-full font-montserrat px-4 flex items-top justify-center gap-4">
+          <div className="w-full font-montserrat px-4 flex items-top justify-left gap-4">
             <p className="w-8 h-6 text-black p-4 bg-slate-200 rounded-full flex items-center justify-center">
               3
             </p>
