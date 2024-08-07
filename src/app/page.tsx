@@ -14,7 +14,7 @@ import Footer from "@/components/Footer";
 const Home: React.FC = () => {
   return (
     <>
-      <div className="w-full min-h-[100svh] bg-[#f5f5f5] bg-home-bkg md:bg-home-bkg-desktop bg-no-repeat bg-center bg-cover font-cinzel">
+      <div className="w-full h-[100svh] bg-[#f5f5f5] bg-home-bkg md:bg-home-bkg-desktop bg-no-repeat bg-center bg-cover font-cinzel">
       <Navbar />
         <div className="w-full h-full flex flex-col items-center md:items-start justify-center gap-6 lg:pl-16 md:pl-12">
           <h1 className="text-white text-[23.2px] font-normal tracking-tight text-center md:text-left lg:text-[45px]">
