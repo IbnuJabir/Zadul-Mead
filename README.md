@@ -1,2 +1,0 @@
-# Zadul-Mead
-Zadul-Mead 
