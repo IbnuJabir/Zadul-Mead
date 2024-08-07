@@ -32,42 +32,44 @@ function Programs() {
         </div>
       </div>
       <div className="w-full grid grid-cols-2 gap-y-8 md:grid-cols-3">
-        <BentoGrid className="w-[160px] h-[73px] bg-white rounded-lg mt-6">
+        <BentoGrid className="w-[120px] h-[70px] bg-white rounded-lg mt-6">
+          <BentoGridItem title={"Qur'an Tafsir"} description={"sat, sun"} />
+        </BentoGrid>{" "}
+        <BentoGrid className="w-[120px] h-[70px] bg-white rounded-lg mt-6">
+          <BentoGridItem title={"Qur'an Tafsir"} description={"sat, sun"} />
+        </BentoGrid>{" "}
+        <BentoGrid className="w-[120px] h-[70px] bg-white rounded-lg mt-6">
+          <BentoGridItem title={"Qur'an Tafsir"} description={"sat, sun"} />
+        </BentoGrid>{" "}
+        <BentoGrid className="w-[120px] h-[70px] bg-white rounded-lg mt-6">
+          <BentoGridItem title={"Qur'an Tafsir"} description={"sat, sun"} />
+        </BentoGrid>{" "}
+        <BentoGrid className="w-[120px] h-[70px] bg-white rounded-lg mt-6">
+          <BentoGridItem title={"Qur'an Tafsir"} description={"sat, sun"} />
+        </BentoGrid>{" "}
+        <BentoGrid className="w-[120px] h-[70px] bg-white rounded-lg mt-6">
           <BentoGridItem title={"Qur'an Tafsir"} description={"sat, sun"} />
         </BentoGrid>
-        <BentoGrid className="w-[160px] h-[73px] bg-white rounded-lg mt-6">
-          <BentoGridItem title={"Qur'an Tafsir"} description={"sat, sun"} />
-        </BentoGrid>
-        <BentoGrid className="w-[160px] h-[73px] bg-white rounded-lg mt-6">
-          <BentoGridItem title={"Qur'an Tafsir"} description={"sat, sun"} />
-        </BentoGrid>
-        <BentoGrid className="w-[160px] h-[73px] bg-white rounded-lg mt-6">
-          <BentoGridItem title={"Qur'an Tafsir"} description={"sat, sun"} />
-        </BentoGrid>
-        <BentoGrid className="w-[160px] h-[73px] bg-white rounded-lg mt-6">
-          <BentoGridItem title={"Qur'an Tafsir"} description={"sat, sun"} />
-        </BentoGrid>
-        <BentoGrid className="w-[160px] h-[73px] bg-white rounded-lg mt-6">
-          <BentoGridItem title={"Qur'an Tafsir"} description={"sat, sun"} />
-        </BentoGrid>
-        
       </div>
-      <Link href="/programs" className="text-right text-white mr-5 mt-10 flex items-center justify-end gap-1 cursor-pointertext-whit">
-          MORE{" "}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="size-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
-            />
-          </svg>
+      <Link
+        href="/programs"
+        className="text-right text-white mr-5 mt-10 flex items-center justify-end gap-1 cursor-pointertext-whit"
+      >
+        MORE{" "}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="currentColor"
+          className="size-6"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
+          />
+        </svg>
       </Link>
     </div>
   );
