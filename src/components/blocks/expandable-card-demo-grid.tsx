@@ -131,13 +131,14 @@ export default function ExpandableCardDemo() {
       <ul className="max-w-2xl mx-auto w-full h-full grid grid-cols-1 md:grid-cols-2 items-start gap-4 relative py-8">
         {cards.map((card, index) => (
           <motion.div
-          variants={{
-            offScreen: index % 2 === 0
-              ? { opacity: 0, x: "40%" }      // For even indices
-              : { opacity: 0, x: "-40%" },    // For odd indices
-            onScreen: { opacity: 1, x: 0 },
-          }}
-          
+            key={index}
+            variants={{
+              offScreen:
+                index % 2 === 0
+                  ? { opacity: 0, x: "40%" } // For even indices
+                  : { opacity: 0, x: "-40%" }, // For odd indices
+              onScreen: { opacity: 1, x: 0 },
+            }}
             initial="offScreen"
             whileInView="onScreen"
             viewport={{ once: true, amount: 0.8 }}
