@@ -227,7 +227,7 @@ const cards = [
   },
   {
     description: "Zadul Mead Medrasa",
-    title: "Dormitory - 1",
+    title: "Dormitory - 1 VIP",
     src: "/assets/dorm.jpeg",
     ctaText: "Visit",
     ctaLink: "https://ui.aceternity.com/templates",
