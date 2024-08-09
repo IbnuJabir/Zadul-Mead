@@ -39,7 +39,7 @@ const Home: React.FC = () => {
         <Programs />
         <Highlights />
         <Offers />
-        <ExpandableCardDemo />
+        {/* <ExpandableCardDemo /> */}
         <Contact  />
         <Footer />
       </div>
