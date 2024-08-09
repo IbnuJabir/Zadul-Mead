@@ -128,25 +128,25 @@ export default function ExpandableCardDemo() {
           </div>
         ) : null}
       </AnimatePresence>
-      <ul className="max-w-2xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 items-start gap-4">
+      <ul className="max-w-2xl mx-auto w-full h-full grid grid-cols-1 md:grid-cols-2 items-start gap-4 relative py-8">
         {cards.map((card, index) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`}
             key={card.title}
             onClick={() => setActive(card)}
-            className="p-4 flex flex-col  hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer"
+            className="flex flex-col bg-red-500  hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer"
           >
-            <div className="flex gap-4 flex-col  w-full">
+            {/* <div className="flex gap-4 flex-col  w-full"> */}
               <motion.div layoutId={`image-${card.title}-${id}`}>
                 <Image
                   width={100}
                   height={100}
                   src={card.src}
                   alt={card.title}
-                  className="h-60 w-full  rounded-lg object-cover object-center"
+                  className={`h-[20rem] w-[50%] absolute rounded-lg object-cover object-center ${index % 2 === 0 ? 'right-[4%]' : 'left-[4%]'}`}
                 />
               </motion.div>
-              <div className="flex justify-center items-center flex-col">
+              {/* <div className="flex justify-center items-center flex-col">
                 <motion.h3
                   layoutId={`title-${card.title}-${id}`}
                   className="font-medium text-neutral-800 dark:text-neutral-200 text-center md:text-left text-base"
@@ -159,8 +159,8 @@ export default function ExpandableCardDemo() {
                 >
                   {card.description}
                 </motion.p>
-              </div>
-            </div>
+              </div> */}
+            {/* </div> */}
           </motion.div>
         ))}
       </ul>
@@ -227,7 +227,7 @@ const cards = [
   },
   {
     description: "Zadul Mead Medrasa",
-    title: "Dormitory - 1 VIP",
+    title: "Dormitory - 1",
     src: "/assets/dorm.jpeg",
     ctaText: "Visit",
     ctaLink: "https://ui.aceternity.com/templates",
@@ -270,26 +270,26 @@ const cards = [
       );
     },
   },
-  {
-    description: "Zadul Mead Mesjid",
-    title: "Badr Mesjid",
-    src: "/assets/programs_background.png",
-    ctaText: "Visit",
-    ctaLink: "https://ui.aceternity.com/templates",
-    content: () => {
-      return (
-        <p>
-          Himesh Reshammiya, a renowned Indian music composer, singer, and
-          actor, is celebrated for his distinctive voice and innovative
-          compositions. Born in Mumbai, India, he has become a prominent figure
-          in the Bollywood music industry. <br /> <br /> His songs often feature
-          a blend of contemporary and traditional Indian music, capturing the
-          essence of modern Bollywood soundtracks. With a career spanning over
-          two decades, Himesh Reshammiya has released numerous hit albums and
-          singles that have garnered him a massive fan following both in India
-          and abroad.
-        </p>
-      );
-    },
-  },
+  // {
+  //   description: "Zadul Mead Mesjid",
+  //   title: "Badr Mesjid",
+  //   src: "/assets/programs_background.png",
+  //   ctaText: "Visit",
+  //   ctaLink: "https://ui.aceternity.com/templates",
+  //   content: () => {
+  //     return (
+  //       <p>
+  //         Himesh Reshammiya, a renowned Indian music composer, singer, and
+  //         actor, is celebrated for his distinctive voice and innovative
+  //         compositions. Born in Mumbai, India, he has become a prominent figure
+  //         in the Bollywood music industry. <br /> <br /> His songs often feature
+  //         a blend of contemporary and traditional Indian music, capturing the
+  //         essence of modern Bollywood soundtracks. With a career spanning over
+  //         two decades, Himesh Reshammiya has released numerous hit albums and
+  //         singles that have garnered him a massive fan following both in India
+  //         and abroad.
+  //       </p>
+  //     );
+  //   },
+  // },
 ];

@@ -1,6 +1,7 @@
 import React from "react";
 // import "@/styles/highlights.css";
 import { DirectionAwareHover } from "../ui/direction-aware-hover";
+import ExpandableCardDemo from "../blocks/expandable-card-demo-grid";
 function Highlights() {
   return (
     <div className="w-full h-screen bg-about-bkg bg-no-repeat bg-cover font-cinzel flex flex-col justify-center pt-20">
@@ -10,11 +11,11 @@ function Highlights() {
           ZADUL MEAD <span className="font-extrabold">MEDRASA</span>
         </h1>
       </div>
-      <div className="highlight_cards w-full relative h-full">
+      {/* <div className="highlight_cards w-full relative h-full"> */}
         {/* <img src="/assets/highlight2.png" alt="#" className="card card_img1" />
         <img src="/assets/highlight1.jpeg" alt="#" className="card card_img2" />
         <img src="/assets/highlight3.png" alt="#" className="card card_img3" /> */}
-        <DirectionAwareHover
+        {/* <DirectionAwareHover
         imageUrl="/assets/highlight1.jpeg"
         // children="Zadul Mead Medrasa"
         imageClassName="card_img"
@@ -35,7 +36,8 @@ function Highlights() {
         childrenClassName="highlight_cards"
         className="w-1/2 absolute bottom-[2%] right-[5%] h-[40%]  hover:z-20"
          >Zadul Mead - Library</DirectionAwareHover>
-      </div>
+      </div> */}
+      <ExpandableCardDemo />
     </div>
   );
 }
