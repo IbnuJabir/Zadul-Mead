@@ -143,7 +143,7 @@ export default function ExpandableCardDemo() {
                   height={100}
                   src={card.src}
                   alt={card.title}
-                  className={`h-[20rem] w-[50%] absolute rounded-lg object-cover object-center ${index % 2 === 0 ? 'right-[4%]' : 'left-[4%]'}`}
+                  className={`h-[16rem] w-[50%] absolute rounded-lg object-cover object-center ${index % 2 === 0 ? 'right-[4%]' : 'left-[4%]'}`}
                 />
               </motion.div>
               {/* <div className="flex justify-center items-center flex-col">
