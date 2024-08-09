@@ -131,19 +131,39 @@ export default function ExpandableCardDemo() {
       <ul className="max-w-2xl mx-auto w-full h-full grid grid-cols-1 md:grid-cols-2 items-start gap-4 relative py-8">
         {cards.map((card, index) => (
           <motion.div
-            layoutId={`card-${card.title}-${id}`}
-            key={card.title}
-            onClick={() => setActive(card)}
-            className="flex flex-col bg-red-500  hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer"
+          variants={{
+            offScreen: index % 2 === 0
+              ? { opacity: 0, x: "40%" }      // For even indices
+              : { opacity: 0, x: "-40%" },    // For odd indices
+            onScreen: { opacity: 1, x: 0 },
+          }}
+          
+            initial="offScreen"
+            whileInView="onScreen"
+            viewport={{ once: true, amount: 0.8 }}
+            transition={{
+              type: "twin",
+              // delay: 1.5,
+              duration: 0.5,
+              // stiffness: 8,
+            }}
           >
-            {/* <div className="flex gap-4 flex-col  w-full"> */}
+            <motion.div
+              layoutId={`card-${card.title}-${id}`}
+              key={card.title}
+              onClick={() => setActive(card)}
+              className="flex flex-col bg-red-500  hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer"
+            >
+              {/* <div className="flex gap-4 flex-col  w-full"> */}
               <motion.div layoutId={`image-${card.title}-${id}`}>
                 <Image
                   width={100}
                   height={100}
                   src={card.src}
                   alt={card.title}
-                  className={`h-[16rem] w-[50%] absolute rounded-lg object-cover object-center ${index % 2 === 0 ? 'right-[4%]' : 'left-[4%]'}`}
+                  className={`h-[16rem] w-[50%] absolute rounded-lg object-cover object-center ${
+                    index % 2 === 0 ? "right-[4%]" : "left-[4%]"
+                  }`}
                 />
               </motion.div>
               {/* <div className="flex justify-center items-center flex-col">
@@ -160,7 +180,8 @@ export default function ExpandableCardDemo() {
                   {card.description}
                 </motion.p>
               </div> */}
-            {/* </div> */}
+              {/* </div> */}
+            </motion.div>
           </motion.div>
         ))}
       </ul>
