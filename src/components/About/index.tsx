@@ -1,17 +1,33 @@
 "use client";
+import { AnimatePresence, motion } from "framer-motion";
 
 function About() {
   return (
     <div className=" text-center bg-about-bkg w-full min-h-screen bg-cover bg-no-repeat bg-center text-black">
-      <h3 className="text-2xl font-semibold pb-4">ABOUT ZADULMEAD</h3>
-      <h2 className="text-2xl font-semibold mb-6">OUR JOURNEY, OUR VISION</h2>
+      <motion.div
+        variants={{
+          offScreen: { opacity: 0, y: "100%" },
+          onScreen: { opacity: 1, y: 0 },
+        }}
+        initial="offScreen"
+        whileInView="onScreen"
+        viewport={{ once: true, amount: 0.8 }}
+        transition={{
+          type: "twin",
+          // delay: 1.5,
+          duration: 1,
+          // stiffness: 8,
+        }}
+      >
+        <h3 className="text-2xl font-semibold pb-4">ABOUT ZADULMEAD</h3>
+        <h2 className="text-2xl font-semibold mb-6">OUR JOURNEY, OUR VISION</h2>
+      </motion.div>
       <div className="font-montserrat px-4 flex flex-col gap-2">
         <p className="text-xl font-semibold mt-4 mb-2">Who We Are</p>
         <p className="mb-6">
-          Established in [2000], Zadul-Mead is dedicated to
-          providing high-quality Islamic education. Our center is a welcoming
-          space for individuals seeking to enhance their knowledge and practice
-          of Islam.
+          Established in [2000], Zadul-Mead is dedicated to providing
+          high-quality Islamic education. Our center is a welcoming space for
+          individuals seeking to enhance their knowledge and practice of Islam.
         </p>
 
         <p className="text-xl font-semibold mt-4 mb-2">Our Vision</p>
