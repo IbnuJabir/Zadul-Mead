@@ -38,7 +38,7 @@ function Navbar() {
             alt="menubar"
             width={60}
             height={100}
-            className="w-12 h-8 fixed top-2 right-3 bg-opacity-20 bg-black p-2 rounded-full px-4"
+            className="w-12 h-8 fixed top-2 right-3 bg-opacity-20 bg-black p-2 rounded-full px-4 cursor-pointer"
             onClick={() => setMenuOpen(!menuOpen)}
           />
         </div>
@@ -50,7 +50,7 @@ function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: '110%' }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              className="fixed top-0 right-3   bg-white text-black shadow-lg z-30 py-8 px-4 rounded-2xl"
+              className="fixed top-2 right-3 bg-white text-black shadow-lg z-30 py-8 px-4 rounded-2xl"
             >
               <ul className="flex flex-col gap-10 font-montserrat">
                 <li>Home</li>
