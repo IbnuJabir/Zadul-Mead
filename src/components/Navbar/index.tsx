@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
-
+import languageIcon from "../../../public/assets/language.png";
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -11,24 +11,33 @@ function Navbar() {
     <div className="w-full">
       {/* Desktop Navbar */}
       <div className="hidden md:flex md:justify-between md:items-center md:px-8 md:py-4">
-        <div className="text-white text-xl">
+        <div className="text-white text-xl font-montserrat">
           <p>ZADUL MEAD</p>
         </div>
-        <ul className="flex md:space-x-6 lg:space-x-16 text-white">
+        <ul className="flex md:space-x-6 lg:space-x-10 text-white font-montserrat">
           <li>Home</li>
           <li>About</li>
           <li>Announcements</li>
+          <li>Register</li>
           <li>Contact</li>
         </ul>
-        <div className="text-white">
+        {/* <div className="text-white">
           <a href="#" className="border-b border-white">
             Register
           </a>
+        </div> */}
+        <div>
+          <Image
+            src={languageIcon}
+            alt="menubar"
+            className="w-8 h-8 cursor-pointer"
+            onClick={() => console.log("Language")}
+          />
         </div>
       </div>
 
       {/* Mobile Navbar */}
-      <div className="md:hidden flex justify-between items-center p-2.5 text-white bg-gray-900 bg-opacity-70 relative">
+      <div className="md:hidden flex justify-between items-center p-2.5 text-white bg-opacity-70 relative">
         <div className="text-white text-xl">
           <p>ZADUL MEAD</p>
         </div>
@@ -46,9 +55,9 @@ function Navbar() {
         <AnimatePresence>
           {menuOpen && (
             <motion.div
-              initial={{ x: '100%' }}
+              initial={{ x: "100%" }}
               animate={{ x: 0 }}
-              exit={{ x: '110%' }}
+              exit={{ x: "110%" }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
               className="fixed top-2 right-3 bg-white text-black shadow-lg z-30 py-8 px-4 rounded-2xl"
             >
@@ -67,7 +76,6 @@ function Navbar() {
 }
 
 export default Navbar;
-
 
 // 1, Solidity
 // 2, React

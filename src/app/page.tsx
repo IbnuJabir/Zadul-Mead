@@ -16,7 +16,7 @@ const Home: React.FC = () => {
     <>
       <div className="w-full h-[100svh] bg-[#f5f5f5] bg-home-bkg md:bg-home-bkg-desktop bg-no-repeat bg-center bg-cover font-cinzel">
       <Navbar />
-        <div className="w-full h-[93%] flex flex-col items-center md:items-start justify-center gap-6 lg:pl-16 md:pl-12">
+        <div className="w-full h-[89%] flex flex-col items-center md:items-start justify-center gap-6 lg:pl-16 md:pl-12">
           <h1 className="text-white text-[23.2px] font-normal tracking-tight text-center md:text-left lg:text-[45px]">
             WELCOME TO
             <span className="font-bold mr-1">
@@ -29,7 +29,7 @@ const Home: React.FC = () => {
             A Community of Faith, Learning, and Spiritual Growth
           </p>
           {/* <HoverBorderGradient children={"Join our Community"}/> */}
-          <button className="w-max px-4 py-2 font-semibold rounded-[26.24px] border-none flex text-center items-center bg-white mt-12 lg:px-3 ">
+          <button className="w-max px-4 py-2 font-montserrat rounded-[26.24px] border-none flex text-center items-center bg-white mt-12 lg:px-3 ">
             Join our Community
           </button>
           <ScrollDown />

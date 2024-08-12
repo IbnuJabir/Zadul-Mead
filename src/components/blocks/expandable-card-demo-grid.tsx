@@ -3,7 +3,9 @@ import Image from "next/image";
 import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "@/hooks/use-outside-click";
-
+import library from "../../../public/assets/library.jpeg";
+import ders from "../../../public/assets/highlight1.jpeg";
+import dorm from "../../../public/assets/dorm.jpeg";
 export default function ExpandableCardDemo() {
   const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(
     null
@@ -68,7 +70,7 @@ export default function ExpandableCardDemo() {
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className="w-full max-w-[500px]  h-full md:h-fit md:max-h-[90%]  flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden"
+              className="w-full max-w-[600px]  h-full md:h-fit md:max-h-[100%]  flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden"
             >
               <motion.div layoutId={`image-${active.title}-${id}`}>
                 <Image
@@ -128,60 +130,54 @@ export default function ExpandableCardDemo() {
           </div>
         ) : null}
       </AnimatePresence>
-      <ul className="max-w-2xl mx-auto w-full h-full grid grid-cols-1 md:grid-cols-2 items-start gap-4 relative py-8">
+      <ul className="mx-auto w-full md:w-[50%]  2xl:w-[25%] h-full grid grid-cols-1 md:grid-cols-2 items-start gap-4 relative py-8">
         {cards.map((card, index) => (
           <motion.div
             key={index}
             variants={{
               offScreen:
-                index % 2 === 0
-                  ? { opacity: 0, x: "40%" } // For even indices
-                  : { opacity: 0, x: "-40%" }, // For odd indices
+                index === 0
+                  ? { opacity: 0, x: "-40%" }
+                  : index === 1
+                  ? { opacity: 0, x: "40%" }
+                  : index === 2
+                  ? { opacity: 0, x: "-40%" }
+                  : { opacity: 0 },
               onScreen: { opacity: 1, x: 0 },
             }}
             initial="offScreen"
             whileInView="onScreen"
             viewport={{ once: true, amount: 0.8 }}
             transition={{
-              type: "twin",
-              // delay: 1.5,
+              type: "tween",
               duration: 0.5,
-              // stiffness: 8,
             }}
           >
             <motion.div
               layoutId={`card-${card.title}-${id}`}
               key={card.title}
               onClick={() => setActive(card)}
-              className="flex flex-col bg-red-500  hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer"
+              className="flex flex-col bg-red-500 hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer"
             >
-              {/* <div className="flex gap-4 flex-col  w-full"> */}
               <motion.div layoutId={`image-${card.title}-${id}`}>
                 <Image
-                  width={100}
-                  height={100}
+                  priority
+                  placeholder="blur"
+                  width={200}
+                  height={200}
                   src={card.src}
                   alt={card.title}
-                  className={`h-[16rem] w-[50%] absolute rounded-lg object-cover object-center ${
-                    index % 2 === 0 ? "right-[4%]" : "left-[4%]"
-                  }`}
+                  className={`h-[16rem] w-[50%] absolute rounded-lg object-cover border-white border-4 object-center md:h-[20rem] ${
+                    index === 0
+                      ? "md:top-[8%] md:left-2 left-[4%] md:w-[15rem] md:h-[20rem]"
+                      : index === 1
+                      ? "md:top-0 right-[4%] md:right-auto md:w-[13rem] md:h-[17rem]"
+                      : index === 2
+                      ? "md:top-[40%] lg:top-[35%] xl:top[20%]  md:left-[37%] left-[4%] md:w-[12rem] md:h-[18rem]"
+                      : ""
+                  } absolute`}
                 />
               </motion.div>
-              {/* <div className="flex justify-center items-center flex-col">
-                <motion.h3
-                  layoutId={`title-${card.title}-${id}`}
-                  className="font-medium text-neutral-800 dark:text-neutral-200 text-center md:text-left text-base"
-                >
-                  {card.title}
-                </motion.h3>
-                <motion.p
-                  layoutId={`description-${card.description}-${id}`}
-                  className="text-neutral-600 dark:text-neutral-400 text-center md:text-left text-base"
-                >
-                  {card.description}
-                </motion.p>
-              </div> */}
-              {/* </div> */}
             </motion.div>
           </motion.div>
         ))}
@@ -227,7 +223,7 @@ const cards = [
   {
     description: "Zadul Mead Medrasa",
     title: "Library",
-    src: "/assets/library.jpeg",
+    src: ders,
     ctaText: "Visit",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
@@ -250,7 +246,7 @@ const cards = [
   {
     description: "Zadul Mead Medrasa",
     title: "Dormitory - 1",
-    src: "/assets/dorm.jpeg",
+    src: library,
     ctaText: "Visit",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
@@ -272,8 +268,8 @@ const cards = [
 
   {
     description: "Zadul Mead Medrasa",
-    title: "Dormitory - 2",
-    src: "/assets/highlight2.png",
+    title: "Dormitory",
+    src: dorm,
     ctaText: "Visit",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {

@@ -18,6 +18,14 @@ const config = {
       },
     },
     extend: {
+      screens: {
+        xs: "480px",
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
+        "2xl": "1536px",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -60,7 +68,9 @@ const config = {
         "home-bkg": "url('/assets/home_background.png')",
         "home-bkg-desktop": "url('/assets/home_background1.png')",
         "about-bkg": "url('/assets/about_background.png')",
+        "about-desktop-bkg": "url('/assets/about_desktop.png')",
         "announcement-bkg": "url('/assets/announcement_background.png')",
+        "announcement-phone-bkg": "url('/assets/announcement_phone.png')",
         "programs-bkg": "url('/assets/programs_background.png')",
         "contact-bkg": "url('/assets/contact_background.png')",
       },

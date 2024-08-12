@@ -1,11 +1,21 @@
 'use client';
 
+import Image from "next/image";
+import annnouncement from "../../../public/assets/kitab.png";
 function Announcements() {
   return (
-    <div className="w-full bg-announcement-bkg bg-no-repeat bg-cover bg-left md:bg-center flex items-center justify-center  flex-col py-4">
-      <h1 className="text-2xl font-bold mb-10">ANNOUNCEMENTS</h1>
+    <div className="w-full bg-announcement-phone-bkg  md:bg-announcement-bkg bg-no-repeat bg-cover md:bg-top flex items-center justify-center  flex-col py-8">
+      <h1 className="text-3xl  mb-10 text-left md:w-[70%] ">ANNOUNCEMENTS</h1>
       <div className="flex items-center justify-center flex-col md:flex-row">
-        <img src='/assets/kitab.png' alt="kitab" className="w-4/5 " />
+        {/* <img src='/assets/kitab.png' alt="kitab" className="w-4/5 " /> */}
+        <Image
+           src={annnouncement}
+            alt="kitab"
+            className="w-[60%] md:w-[40%] h-80 cursor-pointer"
+            placeholder="blur"
+            priority
+            onClick={() => console.log("Language")}
+          />
         <div className="flex flex-col gap-6 items-start">
           <div className="w-full font-montserrat px-4 flex items-top justify-left gap-4">
             <p className="w-8 h-6 text-black p-4 bg-slate-200 rounded-full flex items-center justify-center">

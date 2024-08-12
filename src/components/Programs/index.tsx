@@ -7,7 +7,7 @@ import Link from "next/link";
 function Programs() {
   return (
     <div className="w-full bg-programs-bkg bg-no-repeat bg-cover bg-center p-6 flex flex-col gap-16">
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2 md:ml-10">
         <h1 className="text-white text-2xl text-left ">
           Programs <br />
           at <span className="font-bold">Badir Masjid</span>
@@ -16,7 +16,7 @@ function Programs() {
           Learning for All Ages and Levels
         </p>
       </div>
-      <div className="w-[70%] h-16 mx-auto overflow-hidden bg-white rounded-lg flex items-center justify-start font-montserrat">
+      <div className="w-[70%] xs:max-w-[48%] sm:max-w-[35%] md:max-w-[30%] lg:max-w-[22%] xl:max-w-[20%] 2xl:max-w-[18%]  h-16 mx-auto overflow-hidden bg-white rounded-lg flex items-center justify-start font-montserrat">
         <div className="w-15 h-full flex ">
           <Lottie animationData={greenLive} loop={true} />
         </div>
