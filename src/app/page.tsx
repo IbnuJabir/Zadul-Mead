@@ -14,7 +14,15 @@ import bkg from "../../public/assets/home_background1.png";
 const Home: React.FC = () => {
   return (
     <>
-      <div className="w-full h-[100svh] bg-[#f5f5f5] relative bg-no-repeat bg-center bg-cover font-cinzel">
+      <div className="w-full h-[100svh] bg-[#f5f5f5] relative bg-no-repeat bg-center bg-cover font-cinzel z-40">
+        <Image
+          src={bkg}
+          alt="Home-background"
+          fill
+          priority
+          placeholder="blur"
+          className="object-cover -z-10"
+        />
         <Navbar />
         <div className="w-full h-[89%] flex flex-col items-center md:items-start justify-center gap-6 lg:pl-16 md:pl-12">
           <h1 className="text-white text-[23.2px] font-normal tracking-tight text-center md:text-left lg:text-[45px]">
@@ -33,14 +41,6 @@ const Home: React.FC = () => {
             Join our Community
           </button>
           <ScrollDown />
-          <Image
-            src={bkg}
-            alt="scroll-down"
-            fill
-            priority
-            placeholder="blur"
-            className="object-cover -z-10"
-          />
         </div>
         <About />
         <Announcements />
