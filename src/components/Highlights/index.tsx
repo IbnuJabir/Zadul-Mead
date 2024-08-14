@@ -4,7 +4,7 @@ import { DirectionAwareHover } from "../ui/direction-aware-hover";
 import ExpandableCardDemo from "../blocks/expandable-card-demo-grid";
 function Highlights() {
   return (
-    <div className="w-full h-[100vh] bg-about-bkg md:bg-about-desktop-bkg bg-no-repeat bg-cover font-cinzel flex flex-col justify-center pt-8 pb-10 overflow-hidden">
+    <div className="w-full h-[120vh] bg-about-bkg md:bg-about-desktop-bkg bg-no-repeat bg-cover font-cinzel flex flex-col justify-center pt-8 pb-10 overflow-hidden">
       <div className="text-2xl font-medium ml-5 md:ml-52">
         <h1>HIGHLIGHTS OF </h1>
         <h1>
