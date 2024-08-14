@@ -3,15 +3,20 @@ import { BsTelegram } from "react-icons/bs";
 import { FaFacebook } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
 import { AiFillYoutube } from "react-icons/ai";
+import Link from "next/link";
 function Footer() {
   return (
     <>
       <div className="w-full h-24 bg-slate-900 md:hidden flex items-center justify-around font-montserrat">
         <p className="text-white font-montserrat">Zadul Mead</p>
         <div className="flex gap-4 text-white">
-          <BsTelegram className="size-[20px]" />
+          <Link href="https://t.me/ahmedadem">
+            <BsTelegram className="size-[20px]" />
+          </Link>
           <FaFacebook className="size-[20px]" />
-          <AiFillYoutube className="size-[20px]" />
+          <Link href="http://www.youtube.com/c/ZadulMaad">
+            <AiFillYoutube className="size-[20px]" />
+          </Link>
           <FaWhatsapp className="size-[20px]" />
         </div>
       </div>
@@ -33,7 +38,7 @@ function Footer() {
             <a className="text-[13px]">Contact</a>
           </div>
           <div className="flex flex-col gap-2">
-          <p className="text-gray-400 text-[12px]">Services</p>
+            <p className="text-gray-400 text-[12px]">Services</p>
             <a className="text-[13px]">Mesjid</a>
             <a className="text-[13px]">Madrasa</a>
           </div>

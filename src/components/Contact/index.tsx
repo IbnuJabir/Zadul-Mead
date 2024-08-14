@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { AiFillYoutube } from "react-icons/ai";
 import { BsTelegram } from "react-icons/bs";
@@ -45,9 +46,13 @@ function Contact() {
             </button>
           </div>
           <div className="hidden md:flex md:gap-4 md:justify-center text-white py-10">
-            <BsTelegram className="size-[35px] lg:size-[40px]" />
+            <Link href="https://t.me/ahmedadem">
+              <BsTelegram className="size-[35px] lg:size-[40px]" />
+            </Link>
             <FaFacebook className="size-[35px] lg:size-[40px]" />
-            <AiFillYoutube className="size-[35px] lg:size-[40px]" />
+            <Link href="http://www.youtube.com/c/ZadulMaad">
+              <AiFillYoutube className="size-[35px] lg:size-[40px]" />
+            </Link>
             <FaWhatsapp className="size-[35px] lg:size-[40px]" />
           </div>
         </div>

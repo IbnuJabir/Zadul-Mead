@@ -61,11 +61,11 @@ function Navbar() {
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
               className="fixed top-2 right-3 bg-white text-black shadow-lg z-30 py-8 px-4 rounded-2xl"
             >
-              <ul className="flex flex-col gap-10 font-montserrat">
-                <li>Home</li>
-                <li>About</li>
-                <li>Announcements</li>
-                <li>Contact</li>
+              <ul className="flex flex-col gap-6 font-montserrat w-22">
+                <li className="text-sm">Home</li>
+                <li className="text-sm">About</li>
+                <li className="text-sm">Announcements</li>
+                <li className="text-sm">Contact</li>
               </ul>
             </motion.div>
           )}
