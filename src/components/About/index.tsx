@@ -19,7 +19,7 @@ function About() {
           // stiffness: 8,
         }}
       >
-        <h3 className="text-2xl font-semibold pb-4">ABOUT ZADULMEAD</h3>
+        <h3 className="text-2xl font-semibold pb-4">ABOUT ZAD AL-MEAD</h3>
         <h2 className="text-2xl font-semibold mb-6">OUR JOURNEY, OUR VISION</h2>
       </motion.div>
       <div className="font-montserrat px-4 flex flex-col gap-2 md:w-[70%] lg:m-auto">

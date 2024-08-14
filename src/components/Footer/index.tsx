@@ -8,7 +8,7 @@ function Footer() {
   return (
     <>
       <div className="w-full h-24 bg-slate-900 md:hidden flex items-center justify-around font-montserrat">
-        <p className="text-white font-montserrat">Zadul Mead</p>
+        <p className="text-white font-montserrat">Zad Al-Mead</p>
         <div className="flex gap-4 text-white">
           <Link href="https://t.me/ahmedadem">
             <BsTelegram className="size-[20px]" />
@@ -22,7 +22,7 @@ function Footer() {
       </div>
       <div className="hidden w-full h-56 bg-slate-900 md:flex md:items-center md:justify-between font-montserrat px-20">
         <div className="flex flex-col w-[30%] font-montserrat">
-          <p className="text-white font-montserrat text-[28px]">Zadul Mead</p>
+          <p className="text-white font-montserrat text-[28px]">Zad Al-Mead</p>
           <p className="text-gray-400 text-[10px] ">
             With lots of unique blocks, you can easily build a page without
             coding. Build your next landing page.

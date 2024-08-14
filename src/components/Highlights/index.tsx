@@ -8,7 +8,7 @@ function Highlights() {
       <div className="text-2xl font-medium ml-5 md:ml-52">
         <h1>HIGHLIGHTS OF </h1>
         <h1>
-          ZADUL MEAD <span className="font-extrabold">MEDRASA</span>
+          ZAD AL-MEAD <span className="font-extrabold">MEDRASA</span>
         </h1>
         <p className="font-montserrat text-sm font-light">Learning for all ages and levels</p>
       </div>

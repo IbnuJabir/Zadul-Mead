@@ -12,7 +12,7 @@ function Navbar() {
       {/* Desktop Navbar */}
       <div className="hidden md:flex md:justify-between md:items-center md:px-8 md:py-4">
         <div className="text-white text-xl font-montserrat">
-          <p>ZADUL MEAD</p>
+          <p>ZAD AL-MEAD</p>
         </div>
         <ul className="flex md:space-x-6 lg:space-x-10 text-white font-montserrat">
           <li>Home</li>
