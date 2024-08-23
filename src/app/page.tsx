@@ -14,7 +14,7 @@ import bkg from "../../public/assets/home_background1.png";
 const Home: React.FC = () => {
   return (
     <>
-      <div className="w-full h-[100svh] bg-[#f5f5f5] relative bg-no-repeat bg-center bg-cover font-cinzel z-40">
+      <div className="w-full h-[100svh] bg-[#f5f5f5] relative bg-no-repeat bg-center bg-cover font-cinzel z-10">
         <Image
           src={bkg}
           alt="Home-background"

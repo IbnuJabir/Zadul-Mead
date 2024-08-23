@@ -2,7 +2,8 @@ import Link from "next/link";
 import React from "react";
 import { AiFillYoutube } from "react-icons/ai";
 import { BsTelegram } from "react-icons/bs";
-import { FaFacebook, FaWhatsapp } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaTwitter, FaWhatsapp } from "react-icons/fa";
+import { FaX, FaXTwitter } from "react-icons/fa6";
 
 function Contact() {
   return (
@@ -49,11 +50,21 @@ function Contact() {
             <Link href="https://t.me/ahmedadem">
               <BsTelegram className="size-[35px] lg:size-[40px]" />
             </Link>
-            <FaFacebook className="size-[35px] lg:size-[40px]" />
+            <Link href="https://www.facebook.com/yenegew">
+              <FaFacebook className="size-[35px] lg:size-[40px]" />
+            </Link>
             <Link href="http://www.youtube.com/c/ZadulMaad">
               <AiFillYoutube className="size-[35px] lg:size-[40px]" />
             </Link>
-            <FaWhatsapp className="size-[35px] lg:size-[40px]" />
+            <Link href="https://chat.whatsapp.com/FCEvA6AIC8kETehY2WhQPN">
+              <FaWhatsapp className="size-[35px] lg:size-[40px]" />
+            </Link>
+            <Link href="https://instagram.com/zad_al_mead">
+              <FaInstagram className="size-[35px] lg:size-[40px]" />
+            </Link>
+            <Link href="https://x.com/zadal_mead">
+              <FaXTwitter className="size-[35px] lg:size-[40px]" />
+            </Link>
           </div>
         </div>
         <div className="w-[90%] h-[28.5rem] md:w-[65%] mx-auto rounded-xl md:pr-14">
