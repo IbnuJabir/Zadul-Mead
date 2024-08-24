@@ -30,7 +30,7 @@ function About() {
           </p>
         </div>
       </div>
-      <div className=" w-full bg-about_page2 bg-no-repeat bg-center bg-cover bg-black bg-opacity-80  flex flex-col gap-20 -z-14 py-16">
+      <div className=" w-full bg-about_page2 bg-no-repeat bg-center bg-cover bg-black bg-opacity-90  flex flex-col gap-20 -z-14 py-16">
         <div className="w-[70%] ml-[10%]">
           {/* <div className=" flex flex-col gap-4"> */}
           <h1 className="font-bold text-2xl mb-4">From The beginning </h1>
