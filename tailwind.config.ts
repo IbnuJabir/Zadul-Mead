@@ -73,6 +73,9 @@ const config = {
         "announcement-phone-bkg": "url('/assets/announcement_phone.png')",
         "programs-bkg": "url('/assets/programs_background.png')",
         "contact-bkg": "url('/assets/contact_background.png')",
+        "about_page": "url('/assets/about_page.png')",
+        "about_page2": "url('/assets/about_page2.png')",
+        "old_mosque": "url('/assets/old_mosque.jpg')",
       },
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],
