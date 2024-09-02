@@ -36,10 +36,19 @@ const Home: React.FC = () => {
           <p className="font-montserrat w-9/12 text-white text-lg font-normal tracking-tight text-center md:text-left opacity-70 lg:text-[24px]">
             A Community of Faith, Learning, and Spiritual Growth
           </p>
-          {/* <HoverBorderGradient children={"Join our Community"}/> */}
-          <button className="w-max px-4 py-2 font-montserrat rounded-[26.24px] border-none flex text-center items-center bg-white mt-12 lg:px-3 ">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-10">
+            <HoverBorderGradient children={"Join our Community"} />
+
+            {/* <button className="w-max px-4 py-2 font-montserrat rounded-[26.24px] border-none flex text-center items-center bg-white mt-12 lg:px-3 ">
             Join our Community
-          </button>
+          </button> */}
+            <a
+              href="/register"
+              className="w-max px-4 py-2 font-montserrat rounded-[26.24px] border-none flex text-center items-center bg-white lg:px-3 "
+            >
+              Register Now
+            </a>
+          </div>
           <ScrollDown />
         </div>
         <About />
@@ -47,7 +56,6 @@ const Home: React.FC = () => {
         <Programs />
         <Highlights />
         <Offers />
-        {/* <ExpandableCardDemo /> */}
         <Contact />
         <Footer />
       </div>

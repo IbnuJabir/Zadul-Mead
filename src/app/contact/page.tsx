@@ -46,7 +46,7 @@ function Contact() {
           placeholder="blur"
           className="object-cover align-center -z-10"
         />
-        <div className="mt-12 ml-16 w-[90%]  md:w-1/2 flex flex-col gap-2">
+       <div className="mt-12 ml-8 md:ml-16 w-[90%] md:w-1/2 flex flex-col gap-2">
           <p className="text-4xl font-extralight">Contact Us</p>
           <h1 className="text-4xl">
             <span className="font-bold">ZAD AL-MEAD</span> Islamic Center

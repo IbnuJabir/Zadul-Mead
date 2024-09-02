@@ -9,7 +9,8 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "assets.aceternity.com",
+        hostname: "api.zadalmead.com",
+        // hostname: "assets.aceternity.com",
       },
     ],
   },

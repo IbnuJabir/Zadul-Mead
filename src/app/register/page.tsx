@@ -14,6 +14,7 @@ import {
 } from "@mantine/form";
 import { Button, Group, TextInput, NumberInput } from "@mantine/core";
 import Footer from "@/components/Footer";
+import { MultiStepFormDemo } from "@/components/Register";
 
 function Register() {
   const form = useForm({
@@ -53,7 +54,7 @@ function Register() {
           placeholder="blur"
           className="object-cover align-top -z-10"
         />
-        <div className="mt-12 ml-16 w-1/2 flex flex-col gap-2">
+        <div className="mt-12 ml-8 md:ml-16 w-[90%] md:w-1/2 flex flex-col gap-2">
           <p className="text-4xl font-extralight">Register For</p>
           <h1 className="text-4xl">
             <span className="font-bold">ZAD AL-MEAD</span> Islamic Center
@@ -76,7 +77,13 @@ function Register() {
             laboris nisi ut aliquip ex ea commodo consequat.
           </p>
         </div>
-        <form onSubmit={form.onSubmit(() => {})} className="flex flex-col gap-8">
+        <div className="text-black w-[60%] mx-auto bg-white rounded-lg">
+          <MultiStepFormDemo />
+        </div>
+        {/* <form
+          onSubmit={form.onSubmit(() => {})}
+          className="flex flex-col gap-8"
+        >
           <div className="w-full flex justify-evenly">
             <div className="flex gap-10 bg-white text-black py-10 px-4 rounded-md">
               <div>
@@ -220,9 +227,11 @@ function Register() {
             </div>
           </div>
           <Group mt="md">
-            <Button type="submit" className="m-auto w-1/2">Register</Button>
+            <Button type="submit" className="m-auto w-1/2">
+              Register
+            </Button>
           </Group>
-        </form>
+        </form> */}
       </div>
       <Footer />
     </div>

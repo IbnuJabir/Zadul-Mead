@@ -3,8 +3,29 @@ import Lottie from "lottie-react";
 import greenLive from "@/app/redliveicon.json";
 import { BentoGrid, BentoGridItem } from "../ui/bento-grid";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+type Program = {
+  name: string;
+  classType: string;
+  schedule: { day: string; time: string }[];
+  _id: string;
+};
 
 function Programs() {
+  const [programs, setPrograms] = useState(null);
+  const [isLoading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch(`${process.env.NEXT_PUBLIC_APP_BACKEND_API}/programs/getAllPrograms/all`)
+      .then((res) => res.json())
+      .then((data) => {
+        setPrograms(data);
+        // console.log("data", data);
+        setLoading(false);
+      });
+  }, []);
+  if (isLoading) return <p>Loading...</p>;
+  if (!programs) return <p>No profile data</p>;
   return (
     <div className="w-full bg-programs-bkg bg-no-repeat bg-cover bg-center p-6 flex flex-col gap-16">
       <div className="flex flex-col gap-2 md:ml-10">
@@ -32,9 +53,19 @@ function Programs() {
         </div>
       </div>
       <div className="w-full grid grid-cols-2 gap-y-8 md:grid-cols-3">
-        <BentoGrid className="w-[120px] h-[70px] bg-white rounded-lg mt-6">
-          <BentoGridItem title={"Qur'an Tafsir"} description={"sat, sun"} />
-        </BentoGrid>{" "}
+        {programs.map((program: Program) => (
+          <BentoGrid
+            key={program._id}
+            className="w-[120px] h-[70px] bg-white rounded-lg mt-6"
+          >
+            <BentoGridItem
+              title={program.name}
+              description={program.schedule
+                .map((val: any) => val.day)
+                .join(", ")}
+            />
+          </BentoGrid>
+        ))}
         <BentoGrid className="w-[120px] h-[70px] bg-white rounded-lg mt-6">
           <BentoGridItem title={"Qur'an Tafsir"} description={"sat, sun"} />
         </BentoGrid>{" "}
