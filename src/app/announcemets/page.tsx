@@ -2,13 +2,14 @@
 import Image from "next/image";
 import React from "react";
 import bkg from "../../../public/assets/announcements_banner.png";
+import kitab from "../../../public/assets/kitab.png";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 function Announcements() {
   return (
     <div className="w-full text-white ">
-      <div className="w-full h-[55vh] relative bg-black  bg-no-repeat bg-center bg-cover font-cinzel z-10 text-white">
+      <div className="w-full py-10 md:py-0 md:h-[55vh] relative bg-black  bg-no-repeat bg-center bg-cover font-cinzel z-10 text-white">
         <Navbar />
         <Image
           src={bkg}
@@ -43,9 +44,9 @@ function Announcements() {
             <div className="flex items-center justify-center flex-col md:flex-row md:justify-around">
               {/* <img src='/assets/kitab.png' alt="kitab" className="w-4/5 " /> */}
               <Image
-                src={bkg}
+                src={kitab}
                 alt="kitab"
-                className="w-[60%] md:w-[321px] h-[219px] cursor-pointer border-4 border-white rounded-md my-5"
+                className="w-[90%] md:w-[321px] h-[350px] md:h-[219px] cursor-pointer md:border-4 md:border-white rounded-lg my-5"
                 placeholder="blur"
                 priority
                 onClick={() => console.log("Language")}
@@ -104,9 +105,9 @@ function Announcements() {
             <div className="flex items-center justify-center flex-col md:flex-row md:justify-around">
               {/* <img src='/assets/kitab.png' alt="kitab" className="w-4/5 " /> */}
               <Image
-                src={bkg}
+                src={kitab}
                 alt="kitab"
-                className="w-[60%] md:w-[321px] h-[219px] cursor-pointer border-4 border-white rounded-md my-2"
+                className="w-[90%] md:w-[321px] h-[350px] md:h-[219px] cursor-pointer md:border-4 md:border-white rounded-md my-2"
                 placeholder="blur"
                 priority
                 onClick={() => console.log("Language")}
@@ -165,9 +166,9 @@ function Announcements() {
             <div className="flex items-center justify-center flex-col md:flex-row md:justify-around">
               {/* <img src='/assets/kitab.png' alt="kitab" className="w-4/5 " /> */}
               <Image
-                src={bkg}
+                src={kitab}
                 alt="kitab"
-                className="w-[60%] md:w-[321px] h-[219px] cursor-pointer border-4 border-white rounded-md my-2"
+                className="w-[90%] md:w-[321px] h-[350px] md:h-[219px] cursor-pointer md:border-4 md:border-white rounded-md my-2"
                 placeholder="blur"
                 priority
                 onClick={() => console.log("Language")}

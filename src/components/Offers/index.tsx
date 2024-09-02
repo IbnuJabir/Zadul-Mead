@@ -40,11 +40,10 @@ function Offers() {
         </div>
         <div
           data-aos-once="true"
-          data-aos="zoom-out"
+         data-aos="zoom-out"
          data-duration="100"
 
-          className="h-fit flex flex-col gap-4 items-start justify-start"
-        >
+          className="h-fit flex flex-col gap-4 items-start justify-start">
           <IoLibrary className="size-8" />
           <div className="flex flex-col gap-2 w-full">
             <h2 className="text-left">Modern Library</h2>
@@ -72,9 +71,11 @@ function Offers() {
           </div>
         </div>
         <div
-          data-aos="zoom-out"
-          className="h-fit flex flex-col gap-4 items-start justify-start"
-        >
+          data-aos-once="true"
+         data-aos="zoom-out"
+         data-duration="100"
+
+          className="h-fit flex flex-col gap-4 items-start justify-start">
           <IoLibrary className="size-8" />
           <div className="flex flex-col gap-2 w-full">
             <h2 className="text-left">Modern Library</h2>
@@ -85,10 +86,11 @@ function Offers() {
             </p>
           </div>
         </div>
-        <div
-          data-aos="zoom-out"
-          className="h-fit flex flex-col gap-4 items-start justify-start"
-        >
+        <div 
+          data-aos-once="true"
+         data-aos="zoom-out"
+         data-duration="100"
+          className="h-fit flex flex-col gap-4 items-start justify-start">
           <IoLibrary className="size-8" />
           <div className="flex flex-col gap-2 w-full">
             <h2 className="text-left">Modern Library</h2>

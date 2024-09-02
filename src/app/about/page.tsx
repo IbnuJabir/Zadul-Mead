@@ -9,7 +9,7 @@ import Footer from "@/components/Footer";
 function About() {
   return (
     <div className="w-full text-white ">
-      <div className="w-full h-[55vh] relative bg-black  bg-no-repeat bg-center bg-cover font-cinzel z-10 text-white">
+      <div className="w-full py-10 md:py-0 md:h-[55vh] relative bg-black  bg-no-repeat bg-center bg-cover font-cinzel z-10 text-white">
         <Navbar />
         <Image
           src={bkg}
