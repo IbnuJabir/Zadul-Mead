@@ -20,11 +20,23 @@ function Announcements() {
           className="object-cover align-center -z-10"
         />
         <div className="mt-12 ml-6 md:ml-16 w-[95%] md:w-1/2 flex flex-col gap-2">
-          <p className="text-2xl md:text-4xl font-extralight">Announcements of</p>
-          <h1 className="text-4xl">
+          <p 
+           data-aos="zoom-in" 
+           data-aos-duration="1000" 
+            data-aos-once="true"
+            className="text-2xl md:text-4xl font-extralight">Announcements of</p>
+          <h1 
+          data-aos="zoom-in" 
+          data-aos-duration="1000" 
+           data-aos-once="true"
+            className=" text-2xl md:text-3xl">
             <span className="font-bold">ZAD AL-MEAD</span> Islamic Center
           </h1>
-          <p className="font-montserrat text-[17px]">
+          <p 
+          data-aos="fade-up" 
+          data-aos-duration="1000" 
+           data-aos-once="true"
+            className="font-montserrat text-[18px]">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
@@ -44,6 +56,10 @@ function Announcements() {
             <div className="flex items-center justify-center flex-col md:flex-row md:justify-around">
               {/* <img src='/assets/kitab.png' alt="kitab" className="w-4/5 " /> */}
               <Image
+                data-aos="fade-right" 
+                data-aos-duration="1000" 
+                data-aos-delay="300"
+                 data-aos-once="true"
                 src={kitab}
                 alt="kitab"
                 className="w-[90%] md:w-[321px] h-[350px] md:h-[219px] cursor-pointer md:border-4 md:border-white rounded-lg my-5"
@@ -51,7 +67,12 @@ function Announcements() {
                 priority
                 onClick={() => console.log("Language")}
               />
-              <div className="flex flex-col gap-6 items-start">
+              <div 
+              data-aos="fade-left" 
+              data-aos-duration="1000" 
+              data-aos-delay="300"
+               data-aos-once="true"
+                className="flex flex-col gap-6 items-start">
                 <div className="w-full font-montserrat px-4 flex items-top justify-left gap-4">
                   <p className="w-8 h-6 text-black p-4 bg-slate-200 rounded-full flex items-center justify-center">
                     1
@@ -105,6 +126,10 @@ function Announcements() {
             <div className="flex items-center justify-center flex-col md:flex-row md:justify-around">
               {/* <img src='/assets/kitab.png' alt="kitab" className="w-4/5 " /> */}
               <Image
+               data-aos="fade-right" 
+               data-aos-duration="1000" 
+               data-aos-delay="300"
+                data-aos-once="true"
                 src={kitab}
                 alt="kitab"
                 className="w-[90%] md:w-[321px] h-[350px] md:h-[219px] cursor-pointer md:border-4 md:border-white rounded-md my-2"
@@ -112,7 +137,12 @@ function Announcements() {
                 priority
                 onClick={() => console.log("Language")}
               />
-              <div className="flex flex-col gap-6 items-start">
+              <div 
+              data-aos="fade-left" 
+              data-aos-duration="1000" 
+              data-aos-delay="300"
+               data-aos-once="true"
+                className="flex flex-col gap-6 items-start">
                 <div className="w-full font-montserrat px-4 flex items-top justify-left gap-4">
                   <p className="w-8 h-6 text-black p-4 bg-slate-200 rounded-full flex items-center justify-center">
                     1
@@ -166,6 +196,10 @@ function Announcements() {
             <div className="flex items-center justify-center flex-col md:flex-row md:justify-around">
               {/* <img src='/assets/kitab.png' alt="kitab" className="w-4/5 " /> */}
               <Image
+               data-aos="fade-right" 
+               data-aos-duration="1000" 
+               data-aos-delay="300"
+                data-aos-once="true"
                 src={kitab}
                 alt="kitab"
                 className="w-[90%] md:w-[321px] h-[350px] md:h-[219px] cursor-pointer md:border-4 md:border-white rounded-md my-2"
@@ -173,7 +207,12 @@ function Announcements() {
                 priority
                 onClick={() => console.log("Language")}
               />
-              <div className="flex flex-col gap-6 items-start">
+              <div
+              data-aos="fade-left" 
+              data-aos-duration="1000" 
+              data-aos-delay="300"
+               data-aos-once="true"
+                className="flex flex-col gap-6 items-start">
                 <div className="w-full font-montserrat px-4 flex items-top justify-left gap-4">
                   <p className="w-8 h-6 text-black p-4 bg-slate-200 rounded-full flex items-center justify-center">
                     1

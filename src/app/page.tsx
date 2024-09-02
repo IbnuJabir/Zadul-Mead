@@ -46,9 +46,9 @@ const Home: React.FC = () => {
           >
             WELCOME TO
             <span className="font-bold mr-1">
-              {" "}
-              <br></br>ZAD AL-MEAD{" "}
-            </span>{" "}
+              
+              <br></br>ZAD AL-MEAD
+            </span>
             Islamic Center
           </h1>
           <p
