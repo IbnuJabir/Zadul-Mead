@@ -72,11 +72,9 @@ function Offers() {
           </div>
         </div>
         <div
-          data-aos-once="true"
-         data-aos="zoom-out"
-         data-duration="100"
-
-          className="h-fit flex flex-col gap-4 items-start justify-start">
+          data-aos="zoom-out"
+          className="h-fit flex flex-col gap-4 items-start justify-start"
+        >
           <IoLibrary className="size-8" />
           <div className="flex flex-col gap-2 w-full">
             <h2 className="text-left">Modern Library</h2>
@@ -87,11 +85,10 @@ function Offers() {
             </p>
           </div>
         </div>
-        <div 
-          data-aos-once="true"
-         data-aos="zoom-out"
-         data-duration="100"
-          className="h-fit flex flex-col gap-4 items-start justify-start">
+        <div
+          data-aos="zoom-out"
+          className="h-fit flex flex-col gap-4 items-start justify-start"
+        >
           <IoLibrary className="size-8" />
           <div className="flex flex-col gap-2 w-full">
             <h2 className="text-left">Modern Library</h2>
@@ -107,6 +104,9 @@ function Offers() {
         {/* <button className="bg-gray-900 text-white px-4 py-2 rounded-full font-montserrat">
           Register Now
         </button> */}
+        <a href="/register">
+          <PulsatingButton>Register Now</PulsatingButton>
+        </a>
         <a href="/register">
           <PulsatingButton>Register Now</PulsatingButton>
         </a>

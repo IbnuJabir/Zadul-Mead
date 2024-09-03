@@ -24,13 +24,12 @@ function Navbar() {
         <Link href='/' className="text-white text-xl font-montserrat cursor-pointer">
           <p className="hover:text-gray-300">ZAD AL-MEAD</p>
         </Link>
-        <ul className="flex md:ml-20  md:space-x-6 lg:space-x-10 text-white font-montserrat">
-          <Link href='/' className={`${pathname === '/' ? " border-b-4 border-white text-white" : "text-gray-300"} cursor-pointer hover:text-white`}>Home</Link>
-          <Link href='/about' className={`${pathname === '/about' ? " border-b-4 border-white text-white " : "text-gray-300"} cursor-pointer hover:text-white `}>About</Link>
-          <Link href='/announcemets' className={`${ pathname === '/announcemets' ?" border-b-4 border-white text-white" : "text-gray-300"} cursor-pointer hover:text-white`}>Announcements</Link>
-          <Link href='/register' className={`${ pathname === '/register' ? " border-b-4 border-white text-white" : "text-gray-300"} cursor-pointer hover:text-white`}>Register</Link>
-          <Link href='/contact' className={`${pathname === '/contact'  ? " border-b-4 border-white text-white" : "text-gray-300"} cursor-pointer hover:text-white`}>Contact</Link>
-
+        <ul className="flex md:space-x-6 lg:space-x-10 text-white font-montserrat">
+          <a href='/' className="cursor-pointer hover:text-gray-300">Home</a>
+          <a href='/about' className="cursor-pointer hover:text-gray-300">About</a>
+          <a href='/announcemets' className="cursor-pointer hover:text-gray-300">Announcements</a>
+          <a href='/programs' className="cursor-pointer hover:text-gray-300">Programs</a>
+          <a href='/contact' className="cursor-pointer hover:text-gray-300">Contact</a>
         </ul>
         {/* <div className="text-white">
           <a href="#" className="border-b border-white">
