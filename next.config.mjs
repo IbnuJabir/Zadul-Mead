@@ -10,7 +10,6 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "api.zadalmead.com",
-        // hostname: "assets.aceternity.com",
       },
     ],
   },

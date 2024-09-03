@@ -1,9 +1,10 @@
-import React from 'react'
+import React from "react";
+import ScaleLoader from "react-spinners/ScaleLoader";
 
-function Loading() {
-  return (
-    <div>Loading ... New</div>
-  )
-}
+const Loader = ({ type = "ScaleLoader", color = "olive" }) => (
+  <div className="w-full flex items-center justify-center py-10">
+    <ScaleLoader height={40} width={8} />
+  </div>
+);
 
-export default Loading
+export default Loader;

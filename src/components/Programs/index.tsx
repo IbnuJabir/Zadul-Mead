@@ -2,21 +2,18 @@
 import Lottie from "lottie-react";
 import greenLive from "@/app/redliveicon.json";
 import { BentoGrid, BentoGridItem } from "../ui/bento-grid";
-import Link from "next/link";
 import { useEffect, useState } from "react";
-type Program = {
-  name: string;
-  classType: string;
-  schedule: { day: string; time: string }[];
-  _id: string;
-};
+import Loader from "@/app/loading";
+import { Program, Schedule } from "@/lib/types";
 
 function Programs() {
-  const [programs, setPrograms] = useState(null);
+  const [programs, setPrograms] = useState<Program[]>([]);
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_APP_BACKEND_API}/programs/getAllPrograms/all`)
+    fetch(
+      `${process.env.NEXT_PUBLIC_APP_BACKEND_API}/programs/getAllPrograms/all`
+    )
       .then((res) => res.json())
       .then((data) => {
         setPrograms(data);
@@ -24,8 +21,8 @@ function Programs() {
         setLoading(false);
       });
   }, []);
-  if (isLoading) return <p>Loading...</p>;
-  if (!programs) return <p>No profile data</p>;
+  if (isLoading) return <Loader />;
+  if (!programs) return <p>No Programs Available!</p>;
   return (
     <div className="w-full bg-programs-bkg bg-no-repeat bg-cover bg-center p-6 flex flex-col gap-16">
       <div className="flex flex-col gap-2 md:ml-10">
@@ -37,7 +34,12 @@ function Programs() {
           Learning for All Ages and Levels
         </p>
       </div>
-      <div className="w-[70%] xs:max-w-[48%] sm:max-w-[35%] md:max-w-[30%] lg:max-w-[22%] xl:max-w-[20%] 2xl:max-w-[18%]  h-16 mx-auto overflow-hidden bg-white rounded-lg flex items-center justify-start font-montserrat">
+      <div
+        data-aos="zoom-in"
+        data-aos-duration="500"
+        data-aos-once="true"
+        className="w-[70%] xs:max-w-[48%] sm:max-w-[35%] md:max-w-[30%] lg:max-w-[22%] xl:max-w-[20%] 2xl:max-w-[18%]  h-16 mx-auto overflow-hidden bg-white rounded-lg flex items-center justify-start font-montserrat"
+      >
         <div className="w-15 h-full flex ">
           <Lottie animationData={greenLive} loop={true} />
         </div>
@@ -52,7 +54,13 @@ function Programs() {
           <p className="">to start Tafsir</p>
         </div>
       </div>
-      <div className="w-full grid grid-cols-2 gap-y-8 md:grid-cols-3">
+      <div
+        data-aos="zoom-out"
+        data-aos-duration="500"
+        data-aos-once="true"
+        data-aos-delay="300"
+        className="w-full grid grid-cols-2 gap-y-8 md:grid-cols-3"
+      >
         {programs.map((program: Program) => (
           <BentoGrid
             key={program._id}
@@ -61,7 +69,7 @@ function Programs() {
             <BentoGridItem
               title={program.name}
               description={program.schedule
-                .map((val: any) => val.day)
+                .map((val: Schedule) => val.day)
                 .join(", ")}
             />
           </BentoGrid>
@@ -82,9 +90,9 @@ function Programs() {
           <BentoGridItem title={"Qur'an Tafsir"} description={"sat, sun"} />
         </BentoGrid>
       </div>
-      <Link
+      <a
         href="/programs"
-        className="text-right text-white mr-5 mt-10 flex items-center justify-end gap-1 cursor-pointertext-whit"
+        className="text-right text-white mr-5 mt-10 flex items-center justify-end gap-1 cursor-pointertext-whit "
       >
         MORE{" "}
         <svg
@@ -101,7 +109,7 @@ function Programs() {
             d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
           />
         </svg>
-      </Link>
+      </a>
     </div>
   );
 }

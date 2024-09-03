@@ -36,7 +36,7 @@ function Contact() {
   });
   return (
     <div className="w-full text-white ">
-      <div className="w-full h-[55vh] relative bg-black  bg-no-repeat bg-center bg-cover font-cinzel z-10 text-white">
+      <div className="w-full py-10 md:py-0 md:h-[55vh] relative bg-black  bg-no-repeat bg-center bg-cover font-cinzel z-10 text-white">
         <Navbar />
         <Image
           src={bkg}
@@ -44,23 +44,42 @@ function Contact() {
           fill
           priority
           placeholder="blur"
-          className="object-cover align-center -z-10"
+          className="object-cover  align-center -z-10"
         />
-       <div className="mt-12 ml-8 md:ml-16 w-[90%] md:w-1/2 flex flex-col gap-2">
-          <p className="text-4xl font-extralight">Contact Us</p>
-          <h1 className="text-4xl">
+        <div className="mt-12 ml-3 md:ml-16 w-[97%]  md:w-1/2 flex flex-col gap-2">
+          <p 
+          data-aos="zoom-in" 
+          data-aos-duration="1000" 
+           data-aos-once="true"
+           className="text-2xl md:text-4xl font-extralight">Contact Us</p>
+          <h1 
+          data-aos="zoom-in" 
+          data-aos-duration="1000" 
+           data-aos-once="true"
+            className="text-xl md:text-3xl">
             <span className="font-bold">ZAD AL-MEAD</span> Islamic Center
           </h1>
-          <p className="font-montserrat text-[19px]">
+          <p data-aos="fade-up" 
+           data-aos-duration="1000" 
+            data-aos-once="true"
+             className="font-montserrat text-[18px]">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            eiusmod tempor incididunt ut labore et dolore magna.
           </p>
         </div>
       </div>
       <div className=" w-full bg-about_page2 bg-no-repeat bg-center bg-cover bg-black bg-opacity-90  flex flex-col gap-20 -z-14 py-16">
-        <div className="w-[80%] ml-16">
-          <h1 className="font-bold text-2xl mb-4">Contact</h1>
-          <p className="font-montserrat text-justify">
+        <div className="w-[80%] ml-9 md:ml-16">
+          <h1 data-aos="fade-up" 
+           data-aos-duration="1000" 
+            data-aos-once="true"
+            className="font-bold text-2xl mb-4">Contact</h1>
+          <p 
+           data-aos="zoom-in" 
+           data-aos-duration="1000" 
+           data-aos-delay="300"
+            data-aos-once="true"
+             className="font-montserrat text-justify">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam,Lorem ipsum dolor sit amet, consectetur adipiscing
@@ -71,7 +90,12 @@ function Contact() {
         </div>
         <div className="w-full flex flex-col gap-4 md:justify-around md:items-top  font-montserrat mt-10 md:py md:gap-10">
           <div className="w-[90%] md:w-[80%] flex flex-col items-center justify- mx-auto md:flex-row">
-            <div className="w-full md:w-[50%] h-[26rem] mx-auto bg-slate-300 bg-opacity-30 flex flex-col items-center gap-4 p-4 rounded-lg text-black">
+            <div 
+            data-aos="fade-right" 
+            data-aos-duration="1000" 
+            data-aos-delay= "300"
+             data-aos-once="true"
+              className="w-full md:w-[50%] h-[30rem] md:h-[26rem] mx-auto bg-slate-300 bg-opacity-30 flex flex-col items-center gap-4 p-4 rounded-lg text-black">
               <p className="text-xl text-center text-white">
                 {" "}
                 Drop us a message
@@ -87,7 +111,7 @@ function Contact() {
                   {...form.getInputProps("name")}
                   className="rounded-[5px] p-1"
                 />
-                <div className="flex justify-between w-full m-auto">
+                <div className="flex md:flex-row flex-col justify-between w-full m-auto">
                   <TextInput
                     placeholder="Email"
                     withAsterisk
@@ -97,7 +121,7 @@ function Contact() {
                     id="email"
                     key={form.key("email")}
                     {...form.getInputProps("email")}
-                    className="w-[45%] rounded-[5px] p-1"
+                    className=" md:w-[85%] rounded-[5px] p-1"
                   />
                   <NumberInput
                     placeholder="Phone"
@@ -107,7 +131,7 @@ function Contact() {
                     mt="md"
                     key={form.key("phone")}
                     {...form.getInputProps("phone")}
-                    className="w-[50%] rounded-[5px] border-none p-1"
+                    className="md:w-[80%] rounded-[5px] border-none p-1"
                   />
                 </div>
                 <textarea
@@ -123,7 +147,12 @@ function Contact() {
                 </button>
               </form>
             </div>
-            <div className="hidden md:flex md:w-[90%] md:flex-col md:gap-4 md:justify-center md:items-start md:pl-10 text-white py-10">
+            <div 
+            data-aos="fade-left" 
+            data-aos-duration="1000" 
+            data-aos-delay ="300"
+             data-aos-once="true"
+              className="hidden md:flex md:w-[90%] md:flex-col md:gap-4 md:justify-center md:items-start md:pl-10 text-white py-10">
               <Link
                 href="https://t.me/ahmedadem"
                 className="flex gap-4 items-center"
@@ -180,8 +209,48 @@ function Contact() {
             ></iframe>
           </div>
         </div>
+
+      
       </div>
-      <Footer />
+      <div className="flex flex-col md:hidden md:w-[90%] md:flex-col md:gap-4 md:justify-center md:items-start px-5 md:pl-10 text-white bg-slate-900 py-10">
+              <Link
+                href="https://t.me/ahmedadem"
+                className="flex gap-4 items-center mt-5"
+              >
+                <BsTelegram className="size-[30px] lg:size-[40px]" />
+                <p>https://t.me/ahmedadem</p>
+              </Link>
+              <Link
+                href="https://www.facebook.com/yenegew"
+                className="flex gap-4 items-center mt-3"
+              >
+                <FaFacebook className="size-[30px] lg:size-[40px]" />
+                <p>https://www.facebook.com/yenegew</p>
+              </Link>
+              <Link
+                href="http://www.youtube.com/c/ZadulMaad"
+                className="flex gap-4 items-center mt-3"
+              >
+                <AiFillYoutube className="size-[30px] lg:size-[40px]" />
+                <p>http://www.youtube.com/c/ZadulMaad</p>
+              </Link>
+             
+              <Link
+                href="https://instagram.com/zad_al_mead"
+                className="flex gap-4 items-center mt-3"
+              >
+                <FaInstagram className="size-[30px] lg:size-[40px]" />
+                <p>https://instagram.com/zad_al_mead</p>
+              </Link>
+              <Link
+                href="https://x.com/zadal_mead"
+                className="flex gap-4 items-center mt-3"
+              >
+                <FaXTwitter className="size-[30px] lg:size-[40px]" />
+                <p>https://x.com/zadal_mead</p>
+              </Link>
+            </div>
+      {/* <Footer /> */}
     </div>
   );
 }

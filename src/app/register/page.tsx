@@ -54,12 +54,24 @@ function Register() {
           placeholder="blur"
           className="object-cover align-top -z-10"
         />
-        <div className="mt-12 ml-8 md:ml-16 w-[90%] md:w-1/2 flex flex-col gap-2">
-          <p className="text-4xl font-extralight">Register For</p>
-          <h1 className="text-4xl">
+        <div className="mt-12 ml-16 w-1/2 flex flex-col gap-2">
+          <p 
+            data-aos="zoom-in" 
+            data-aos-duration="1000" 
+            data-aos-once="true"
+            className="text-4xl font-extralight">Register For</p>
+          <h1
+          data-aos="zoom-in" 
+          data-aos-duration="1000" 
+           data-aos-once="true"
+            className="md:text-3xl text-2xl">
             <span className="font-bold">ZAD AL-MEAD</span> Islamic Center
           </h1>
-          <p className="font-montserrat text-[19px]">
+          <p
+          data-aos="fade-up" 
+          data-aos-duration="1000" 
+           data-aos-once="true"
+            className="font-montserrat text-[19px]">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
@@ -80,158 +92,6 @@ function Register() {
         <div className="text-black w-[60%] mx-auto bg-white rounded-lg">
           <MultiStepFormDemo />
         </div>
-        {/* <form
-          onSubmit={form.onSubmit(() => {})}
-          className="flex flex-col gap-8"
-        >
-          <div className="w-full flex justify-evenly">
-            <div className="flex gap-10 bg-white text-black py-10 px-4 rounded-md">
-              <div>
-                <TextInput
-                  label="Full Name"
-                  placeholder="Name"
-                  withAsterisk
-                  key={form.key("name")}
-                  {...form.getInputProps("name")}
-                />
-                <TextInput
-                  label="Email Address"
-                  placeholder="Your email"
-                  withAsterisk
-                  mt="md"
-                  key={form.key("email")}
-                  {...form.getInputProps("email")}
-                />
-                <TextInput
-                  label="Your job"
-                  placeholder="Your job"
-                  withAsterisk
-                  mt="md"
-                  key={form.key("job")}
-                  {...form.getInputProps("job")}
-                />
-
-                <TextInput
-                  label="Your favorite color"
-                  placeholder="Your favorite color"
-                  withAsterisk
-                  mt="md"
-                  key={form.key("favoriteColor")}
-                  {...form.getInputProps("favoriteColor")}
-                />
-              </div>
-              <div>
-                <TextInput
-                  label="Full Name"
-                  placeholder="Name"
-                  withAsterisk
-                  key={form.key("name")}
-                  {...form.getInputProps("name")}
-                />
-                <TextInput
-                  label="Email Address"
-                  placeholder="Your email"
-                  withAsterisk
-                  mt="md"
-                  key={form.key("email")}
-                  {...form.getInputProps("email")}
-                />
-                <TextInput
-                  label="Your job"
-                  placeholder="Your job"
-                  withAsterisk
-                  mt="md"
-                  key={form.key("job")}
-                  {...form.getInputProps("job")}
-                />
-
-                <TextInput
-                  label="Your favorite color"
-                  placeholder="Your favorite color"
-                  withAsterisk
-                  mt="md"
-                  key={form.key("favoriteColor")}
-                  {...form.getInputProps("favoriteColor")}
-                />
-              </div>
-            </div>
-            <div className="flex gap-10  bg-white text-black py-10 px-4 rounded-md">
-              <div>
-                <TextInput
-                  label="Full Name"
-                  placeholder="Name"
-                  withAsterisk
-                  key={form.key("name")}
-                  {...form.getInputProps("name")}
-                />
-                <TextInput
-                  label="Email Address"
-                  placeholder="Your email"
-                  withAsterisk
-                  mt="md"
-                  key={form.key("email")}
-                  {...form.getInputProps("email")}
-                />
-                <TextInput
-                  label="Your job"
-                  placeholder="Your job"
-                  withAsterisk
-                  mt="md"
-                  key={form.key("job")}
-                  {...form.getInputProps("job")}
-                />
-
-                <TextInput
-                  label="Your favorite color"
-                  placeholder="Your favorite color"
-                  withAsterisk
-                  mt="md"
-                  key={form.key("favoriteColor")}
-                  {...form.getInputProps("favoriteColor")}
-                />
-              </div>
-              <div>
-                <TextInput
-                  label="Full Name"
-                  placeholder="Name"
-                  withAsterisk
-                  key={form.key("name")}
-                  {...form.getInputProps("name")}
-                />
-                <TextInput
-                  label="Email Address"
-                  placeholder="Your email"
-                  withAsterisk
-                  mt="md"
-                  key={form.key("email")}
-                  {...form.getInputProps("email")}
-                />
-                <TextInput
-                  label="Your job"
-                  placeholder="Your job"
-                  withAsterisk
-                  mt="md"
-                  key={form.key("job")}
-                  {...form.getInputProps("job")}
-                />
-
-                <TextInput
-                  label="Your favorite color"
-                  placeholder="Your favorite color"
-                  withAsterisk
-                  mt="md"
-                  key={form.key("favoriteColor")}
-                  {...form.getInputProps("favoriteColor")}
-                />
-              </div>
-            </div>
-          </div>
-          <Group mt="md">
-            <Button type="submit" className="m-auto w-1/2">
-              Register
-            </Button>
-          </Group>
-        </form> */}
       </div>
       <Footer />
     </div>

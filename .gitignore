@@ -13,6 +13,14 @@
 /.next/
 /out/
 
+#enviroment files
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+
 # production
 /build
 
