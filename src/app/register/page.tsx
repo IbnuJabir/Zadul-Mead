@@ -43,8 +43,8 @@ function Register() {
     },
   });
   return (
-    <div className="w-full text-white ">
-      <div className="w-full h-[55vh] relative bg-black  bg-no-repeat bg-center bg-cover font-cinzel z-10 text-white">
+    <div className="overflow-x-hidden w-full text-white ">
+      <div className="w-full py-5 md:py-0 md:h-[55vh] relative bg-black  bg-no-repeat bg-center bg-cover font-cinzel z-10 text-white">
         <Navbar />
         <Image
           src={bkg}
@@ -52,14 +52,14 @@ function Register() {
           fill
           priority
           placeholder="blur"
-          className="object-cover align-top -z-10"
+          className=" object-cover align-top -z-10"
         />
-        <div className="mt-12 ml-16 w-1/2 flex flex-col gap-2">
+        <div className="mt-12 ml-6 md:ml-16 w-full md:w-1/2 flex flex-col gap-2">
           <p 
             data-aos="zoom-in" 
             data-aos-duration="1000" 
             data-aos-once="true"
-            className="text-4xl font-extralight">Register For</p>
+            className="text-2xl md:text-4xl font-extralight">Register For</p>
           <h1
           data-aos="zoom-in" 
           data-aos-duration="1000" 
@@ -71,14 +71,14 @@ function Register() {
           data-aos="fade-up" 
           data-aos-duration="1000" 
            data-aos-once="true"
-            className="font-montserrat text-[19px]">
+            className="font-montserrat text-[18px]">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            eiusmod tempor incididunt ut labore et dolore magna.
           </p>
         </div>
       </div>
       <div className=" w-full bg-about_page2 bg-no-repeat bg-center bg-cover bg-black bg-opacity-90  flex flex-col gap-20 -z-14 py-16">
-        <div className="w-[80%] ml-16">
+        <div className="w-[80%] ml-8 md:ml-16">
           <h1 className="font-bold text-2xl mb-4">Register</h1>
           <p className="font-montserrat text-justify">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -89,7 +89,7 @@ function Register() {
             laboris nisi ut aliquip ex ea commodo consequat.
           </p>
         </div>
-        <div className="text-black w-[60%] mx-auto bg-white rounded-lg">
+        <div className=" text-black w-[80%] md:w-[60%] mx-auto bg-white rounded-lg">
           <MultiStepFormDemo />
         </div>
       </div>

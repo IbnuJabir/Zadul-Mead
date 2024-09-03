@@ -73,11 +73,11 @@ function Navbar() {
               className="fixed top-2 right-3 bg-white text-black shadow-lg z-30 py-8 px-4 rounded-2xl"
             >
               <ul className="flex flex-col gap-6 font-montserrat w-22">
-                <a href='/' className="text-sm cursor-pointer hover:text-gray-400">Home</a>
-                <a href='/about' className="text-sm cursor-pointer hover:text-gray-400">About</a>
-                <a href='/announcemets' className="text-sm cursor-pointer hover:text-gray-400">Announcements</a>
-                <a href='/programs' className="text-sm cursor-pointer hover:text-gray-400">Programs</a>
-                <a href='/contact' className="text-sm cursor-pointer hover:text-gray-400">Contact</a>
+                <a href='/' className= {`${pathname === '/' ? " border-b-2 border-black text-black font-semibold" : "text-gray-700"} text-sm cursor-pointer hover:text-black`}>Home</a>
+                <a href='/about' className={`${pathname === '/about' ? " border-b-2 border-black text-black font-semibold" : "text-gray-700"} text-sm cursor-pointer hover:text-black`}>About</a>
+                <a href='/announcemets' className={`${pathname === '/announcemets' ? " border-b-2 border-black text-black font-semibold" : "text-gray-700"} text-sm cursor-pointer hover:text-black`}>Announcements</a>
+                <a href='/register' className={`${pathname === '/register' ? " border-b-2 border-black text-black font-semibold" : "text-gray-700"} text-sm cursor-pointer hover:text-black`}>Register</a>
+                <a href='/contact' className={`${pathname === '/contact' ? " border-b-2 border-black text-black font-semibold" : "text-gray-700"} text-sm cursor-pointer hover:text-black`}>Contact</a>
               </ul>
             </motion.div>
           )}

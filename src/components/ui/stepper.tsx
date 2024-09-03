@@ -20,7 +20,7 @@ const Stepper: React.FC<StepperProps> = ({
               index <= currentStep
                 ? "bg-blue-600 text-white"
                 : "bg-gray-300 text-gray-600"
-            }`}
+            } ${index + 1 <= currentStep ? "md:ml-0 -ml-40" : "ml-0"}`}
           >
             {variant === "numbers" ? index + 1 : "•"}
           </div>

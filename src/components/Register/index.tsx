@@ -84,13 +84,13 @@ export function MultiStepFormDemo() {
 
   return (
     <MultiStepForm
-      className="space-y-10 p-8 rounded-xl border"
+      className="space-y-10 p-6 md:p-8 rounded-xl border"
       schema={FormSchema}
       form={form}
       onSubmit={onSubmit}
     >
-      <MultiStepFormHeader className="flex w-full flex-col justify-center space-y-6">
-        <h2 className="text-xl font-bold">Registration Form</h2>
+      <MultiStepFormHeader className="flex w-full flex-col justify-center space-y-4 md:space-y-6">
+        <h2 className="text-lg md:text-xl font-bold">Registration Form</h2>
 
         <MultiStepFormContextProvider>
           {({ currentStepIndex }) => (
@@ -98,6 +98,8 @@ export function MultiStepFormDemo() {
               variant="numbers"
               steps={["Personal Info", "School Info", "Family Info", "Review"]}
               currentStep={currentStepIndex}
+
+              
             />
           )}
         </MultiStepFormContextProvider>
@@ -134,7 +136,7 @@ function PersonalInfoStep() {
             <FormItem>
               <FormLabel>Full Name</FormLabel>
               <FormControl>
-                <Input {...field} />
+                <Input {...field} className="w-full"/>
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -146,7 +148,7 @@ function PersonalInfoStep() {
             <FormItem>
               <FormLabel>Age</FormLabel>
               <FormControl>
-                <Input type="number" {...field} className="text-gray-600" />
+                <Input type="number" {...field} className="text-gray-600 w-full" />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -158,7 +160,7 @@ function PersonalInfoStep() {
             <FormItem>
               <FormLabel>Address</FormLabel>
               <FormControl>
-                <Input {...field} />
+                <Input {...field} className="w-full"/>
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -170,7 +172,7 @@ function PersonalInfoStep() {
             <FormItem>
               <FormLabel>Sex</FormLabel>
               <FormControl>
-                <Input {...field} />
+                <Input {...field} className="w-full"/>
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -198,7 +200,7 @@ function SchoolInfoStep() {
             <FormItem>
               <FormLabel>Education Status</FormLabel>
               <FormControl>
-                <Input {...field} />
+                <Input {...field} className="w-full"/>
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -210,7 +212,7 @@ function SchoolInfoStep() {
             <FormItem>
               <FormLabel>Previous School</FormLabel>
               <FormControl>
-                <Input {...field} />
+                <Input {...field} className="w-full"/>
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -222,7 +224,7 @@ function SchoolInfoStep() {
             <FormItem>
               <FormLabel>Average Result</FormLabel>
               <FormControl>
-                <Input {...field} />
+                <Input {...field} className="w-full"/>
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -234,7 +236,7 @@ function SchoolInfoStep() {
             <FormItem>
               <FormLabel>Behavior in Previous School</FormLabel>
               <FormControl>
-                <Input {...field} />
+                <Input {...field} className="w-full"/>
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -246,7 +248,7 @@ function SchoolInfoStep() {
             <FormItem>
               <FormLabel>Any Disease</FormLabel>
               <FormControl>
-                <Input {...field} />
+                <Input {...field} className="w-full"/>
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -725,7 +727,7 @@ function FamilyInfoStep() {
             <FormItem>
               <FormLabel>Father's Name</FormLabel>
               <FormControl>
-                <Input {...field} />
+                <Input {...field} className="w-full"/>
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -737,7 +739,7 @@ function FamilyInfoStep() {
             <FormItem>
               <FormLabel>Father's Phone</FormLabel>
               <FormControl>
-                <Input {...field} />
+                <Input {...field} className="w-full"/>
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -749,7 +751,7 @@ function FamilyInfoStep() {
             <FormItem>
               <FormLabel>Mother's Name</FormLabel>
               <FormControl>
-                <Input {...field} />
+                <Input {...field} className="w-full"/>
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -761,7 +763,7 @@ function FamilyInfoStep() {
             <FormItem>
               <FormLabel>Mother's Phone</FormLabel>
               <FormControl>
-                <Input {...field} />
+                <Input {...field} className="w-full"/>
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -773,7 +775,7 @@ function FamilyInfoStep() {
             <FormItem>
               <FormLabel>Emergency Responder Name</FormLabel>
               <FormControl>
-                <Input {...field} />
+                <Input {...field} className="w-full"/>
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -785,7 +787,7 @@ function FamilyInfoStep() {
             <FormItem>
               <FormLabel>Emergency Responder Phone</FormLabel>
               <FormControl>
-                <Input {...field} />
+                <Input {...field} className="w-full"/>
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -797,7 +799,7 @@ function FamilyInfoStep() {
             <FormItem>
               <FormLabel>Transaction Reference</FormLabel>
               <FormControl>
-                <Input {...field} />
+                <Input {...field} className="w-full"/>
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -823,66 +825,66 @@ function ReviewStep() {
       <div className="flex flex-col space-y-4">
         <div>Great! Please review your information.</div>
 
-        <div className="flex flex-col space-y-2 text-sm">
-          <div>
-            <span>Full Name</span>: <span>{values.personalInfo.fullName}</span>
+        <div className="flex flex-col space-y-3 pb-5 text-sm">
+          <div >
+            <span >Full Name</span> : <span className="px-1">{values.personalInfo.fullName}</span>
           </div>
           <div>
-            <span>Age</span>: <span>{values.personalInfo.age}</span>
+            <span>Age</span> : <span className="px-1">{values.personalInfo.age}</span>
           </div>
           <div>
-            <span>Address</span>: <span>{values.personalInfo.address}</span>
+            <span>Address</span> : <span className="px-1">{values.personalInfo.address}</span>
           </div>
           <div>
-            <span>Sex</span>: <span>{values.personalInfo.sex}</span>
+            <span>Sex</span> : <span className="px-1">{values.personalInfo.sex}</span>
           </div>
           <div>
-            <span>Education Status</span>:{" "}
-            <span>{values.schoolInfo.educationStatus}</span>
+            <span>Education Status</span> :{" "}
+            <span className="px-1">{values.schoolInfo.educationStatus}</span>
           </div>
           <div>
-            <span>Previous School</span>:{" "}
-            <span>{values.schoolInfo.previousSchool}</span>
+            <span>Previous School</span> :{" "}
+            <span className="px-1">{values.schoolInfo.previousSchool}</span>
           </div>
           <div>
-            <span>Average Result</span>:{" "}
-            <span>{values.schoolInfo.averageResultInPreviousSchool}</span>
+            <span>Average Result</span> :{" "}
+            <span className="px-1">{values.schoolInfo.averageResultInPreviousSchool}</span>
           </div>
           <div>
-            <span>Behavior</span>:{" "}
-            <span>{values.schoolInfo.behaviorInPreviousSchool}</span>
+            <span>Behavior</span> :{" "}
+            <span className="px-1">{values.schoolInfo.behaviorInPreviousSchool}</span>
           </div>
           <div>
-            <span>Any Disease</span>:{" "}
-            <span>{values.schoolInfo.anyDisease}</span>
+            <span>Any Disease</span> :{" "}
+            <span className="px-1">{values.schoolInfo.anyDisease}</span>
           </div>
           <div>
-            <span>Father's Name</span>:{" "}
-            <span>{values.familyInfo.fatherName}</span>
+            <span>Father's Name</span> :{" "}
+            <span className="px-1">{values.familyInfo.fatherName}</span>
           </div>
           <div>
-            <span>Father's Phone</span>:{" "}
-            <span>{values.familyInfo.fatherPhone}</span>
+            <span>Father's Phone</span> :{" "}
+            <span className="px-1">{values.familyInfo.fatherPhone}</span>
           </div>
           <div>
-            <span>Mother's Name</span>:{" "}
-            <span>{values.familyInfo.motherName}</span>
+            <span>Mother's Name</span> :{" "}
+            <span className="px-1">{values.familyInfo.motherName}</span>
           </div>
           <div>
-            <span>Mother's Phone</span>:{" "}
-            <span>{values.familyInfo.motherPhone}</span>
+            <span>Mother's Phone</span> :{" "}
+            <span className="px-1">{values.familyInfo.motherPhone}</span>
           </div>
           <div>
-            <span>Emergency Responder Name</span>:{" "}
-            <span>{values.familyInfo.emergencyResponderName}</span>
+            <span>Emergency Responder Name</span> :{" "}
+            <span className="px-1">{values.familyInfo.emergencyResponderName}</span>
           </div>
           <div>
-            <span>Emergency Responder Phone</span>:{" "}
-            <span>{values.familyInfo.emergencyResponderPhone}</span>
+            <span>Emergency Responder Phone</span> :{" "}
+            <span className="px-1">{values.familyInfo.emergencyResponderPhone}</span>
           </div>
           <div>
-            <span>Transaction Reference</span>:{" "}
-            <span>{values.familyInfo.tx_ref}</span>
+            <span>Transaction Reference</span> :{" "}
+            <span className="px-1">{values.familyInfo.tx_ref}</span>
           </div>
         </div>
       </div>
