@@ -17,7 +17,6 @@ function Programs() {
       .then((res) => res.json())
       .then((data) => {
         setPrograms(data);
-        // console.log("data", data);
         setLoading(false);
       });
   }, []);

@@ -273,7 +273,7 @@ function FamilyInfoStep() {
           name="familyInfo.fatherName"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Father's Name</FormLabel>
+              <FormLabel>Father&apos;s Name</FormLabel>
               <FormControl>
                 <Input {...field} />
               </FormControl>
@@ -285,7 +285,7 @@ function FamilyInfoStep() {
           name="familyInfo.fatherPhone"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Father's Phone</FormLabel>
+              <FormLabel>Father&apos;s Phone</FormLabel>
               <FormControl>
                 <Input {...field} />
               </FormControl>
@@ -297,7 +297,7 @@ function FamilyInfoStep() {
           name="familyInfo.motherName"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Mother's Name</FormLabel>
+              <FormLabel>Mother&apos;s Name</FormLabel>
               <FormControl>
                 <Input {...field} />
               </FormControl>
@@ -309,7 +309,7 @@ function FamilyInfoStep() {
           name="familyInfo.motherPhone"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Mother's Phone</FormLabel>
+              <FormLabel>Mother&apos;s Phone</FormLabel>
               <FormControl>
                 <Input {...field} />
               </FormControl>
@@ -407,19 +407,19 @@ function ReviewStep() {
             <span>{values.schoolInfo.anyDisease}</span>
           </div>
           <div>
-            <span>Father's Name</span>:{" "}
+            <span>Father&apos;s Name</span>:{" "}
             <span>{values.familyInfo.fatherName}</span>
           </div>
           <div>
-            <span>Father's Phone</span>:{" "}
+            <span>Father&apos;s Phone</span>:{" "}
             <span>{values.familyInfo.fatherPhone}</span>
           </div>
           <div>
-            <span>Mother's Name</span>:{" "}
+            <span>Mother&apos;s Name</span>:{" "}
             <span>{values.familyInfo.motherName}</span>
           </div>
           <div>
-            <span>Mother's Phone</span>:{" "}
+            <span>Mother&apos;s Phone</span>:{" "}
             <span>{values.familyInfo.motherPhone}</span>
           </div>
           <div>
