@@ -3,45 +3,11 @@ import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import React from "react";
 import bkg from "../../../public/assets/register_page.png";
-
-import {
-  useForm,
-  isNotEmpty,
-  isEmail,
-  isInRange,
-  hasLength,
-  matches,
-} from "@mantine/form";
-import { Button, Group, TextInput, NumberInput } from "@mantine/core";
 import Footer from "@/components/Footer";
 import { MultiStepFormDemo } from "@/components/Register";
 
 function Register() {
-  const form = useForm({
-    mode: "uncontrolled",
-    validateInputOnBlur: true,
-    initialValues: {
-      name: "",
-      job: "",
-      email: "",
-      favoriteColor: "",
-      age: 18,
-    },
-
-    validate: {
-      name: hasLength({ min: 2, max: 10 }, "Name must be 2-10 characters long"),
-      job: isNotEmpty("Enter your current job"),
-      email: isEmail("Invalid email"),
-      favoriteColor: matches(
-        /^#([0-9a-f]{3}){1,2}$/,
-        "Enter a valid hex color"
-      ),
-      age: isInRange(
-        { min: 18, max: 99 },
-        "You must be 18-99 years old to register"
-      ),
-    },
-  });
+ 
   return (
     <div className="overflow-x-hidden w-full text-white ">
       <div className="w-full py-5 md:py-0 md:h-[55vh] relative bg-black  bg-no-repeat bg-center bg-cover font-cinzel z-10 text-white">

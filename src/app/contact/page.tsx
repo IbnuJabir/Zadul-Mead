@@ -250,7 +250,7 @@ function Contact() {
                 <p>https://x.com/zadal_mead</p>
               </Link>
             </div>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
