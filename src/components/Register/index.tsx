@@ -82,8 +82,48 @@ export function MultiStepFormDemo() {
     mode: "onBlur",
   });
 
-  const onSubmit = (data: FormValues) => {
-    console.log("Form submitted:", data);
+  const onSubmit = async (data: FormValues) => {
+    const payload = {
+      fullName: data.personalInfo.fullName,
+      age: data.personalInfo.age,
+      address: data.personalInfo.address,
+      educationStatus: data.schoolInfo.educationStatus,
+      previousSchool: data.schoolInfo.previousSchool,
+      averageResultInPreviousSchool:
+        data.schoolInfo.averageResultInPreviousSchool,
+      behaviorInPreviousSchool: data.schoolInfo.behaviorInPreviousSchool,
+      anyDisease: data.schoolInfo.anyDisease,
+      fatherName: data.familyInfo.fatherName,
+      fatherPhone: data.familyInfo.fatherPhone,
+      motherName: data.familyInfo.motherName,
+      motherPhone: data.familyInfo.motherPhone,
+      emergencyResponderName: data.familyInfo.emergencyResponderName,
+      emergencyResponderPhone: data.familyInfo.emergencyResponderPhone,
+      tx_ref: data.paymentInfo.tx_ref,
+      sex: data.personalInfo.sex,
+    };
+    console.log('data', payload)
+
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_APP_BACKEND_API}/registration`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to submit form");
+      }
+
+      console.log("Form submitted successfully:", await response.json());
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
   };
 
   return (
@@ -279,7 +319,7 @@ function FamilyInfoStep() {
             <FormItem>
               <FormLabel>Father&apos;s Name</FormLabel>
               <FormControl>
-                <Input {...field} className="w-full"/>
+                <Input {...field} className="w-full" />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -291,7 +331,7 @@ function FamilyInfoStep() {
             <FormItem>
               <FormLabel>Father&apos;s Phone</FormLabel>
               <FormControl>
-                <Input {...field} className="w-full"/>
+                <Input {...field} className="w-full" />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -303,7 +343,7 @@ function FamilyInfoStep() {
             <FormItem>
               <FormLabel>Mother&apos;s Name</FormLabel>
               <FormControl>
-                <Input {...field} className="w-full"/>
+                <Input {...field} className="w-full" />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -315,7 +355,7 @@ function FamilyInfoStep() {
             <FormItem>
               <FormLabel>Mother&apos;s Phone</FormLabel>
               <FormControl>
-                <Input {...field} className="w-full"/>
+                <Input {...field} className="w-full" />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -327,7 +367,7 @@ function FamilyInfoStep() {
             <FormItem>
               <FormLabel>Emergency Responder Name</FormLabel>
               <FormControl>
-                <Input {...field} className="w-full"/>
+                <Input {...field} className="w-full" />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -339,7 +379,7 @@ function FamilyInfoStep() {
             <FormItem>
               <FormLabel>Emergency Responder Phone</FormLabel>
               <FormControl>
-                <Input {...field} className="w-full"/>
+                <Input {...field} className="w-full" />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -370,7 +410,7 @@ function PaymentInfoStep() {
             <FormItem>
               <FormLabel>Transaction Reference</FormLabel>
               <FormControl>
-                <Input {...field} className="w-full"/>
+                <Input {...field} className="w-full" />
               </FormControl>
               <FormMessage />
             </FormItem>
