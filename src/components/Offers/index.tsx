@@ -103,12 +103,6 @@ function Offers() {
         </div>
       </div>
       <div className="h-40 flex items-center justify-center">
-        {/* <button className="bg-gray-900 text-white px-4 py-2 rounded-full font-montserrat">
-          Register Now
-        </button> */}
-        <a href="/register">
-          <PulsatingButton>Register Now</PulsatingButton>
-        </a>
         <a href="/register">
           <PulsatingButton>Register Now</PulsatingButton>
         </a>

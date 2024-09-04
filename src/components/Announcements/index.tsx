@@ -31,7 +31,7 @@ function Announcements() {
       {announcements.map((announcement: AnnouncementsType) => {
         const imageUrl = `${process.env.NEXT_PUBLIC_APP_BACKEND_API}${announcement.coverPicture}`;
         return (
-          <div className="flex items-center justify-center flex-col gap-4 md:flex-row">
+          <div key={announcement._id} className="flex items-center justify-center flex-col gap-4 md:flex-row">
             {/* <img src='/assets/kitab.png' alt="kitab" className="w-4/5 " /> */}
             <Image
               data-aos="fade-right"
