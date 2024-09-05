@@ -49,3 +49,22 @@ export type Program = {
   __v: number;
   type: string;
 };
+
+export type PaymentInfoStepProps = {
+  loading: boolean;
+  success: boolean;
+};
+export type RegistrationResponse = {
+  msg: string;
+  reference: string;
+  error: string;
+};
+
+export type RegistrationState = {
+  registrationRef: string;
+  error: string;
+};
+export type DialogState = {
+  successDialog: boolean;
+  errorDialog: boolean;
+};
