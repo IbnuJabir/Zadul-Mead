@@ -31,11 +31,11 @@ function Footer() {
         <div className="flex justify-between text-white w-1/3">
           <div className="flex flex-col gap-2">
             <p className="text-gray-400 text-[12px]">Zad Al-Mead</p>
-            <a className="text-[13px]">Home</a>
-            <a className="text-[13px]">About Us</a>
-            <a className="text-[13px]">Announcements</a>
-            <a className="text-[13px]">Register</a>
-            <a className="text-[13px]">Contact</a>
+            <Link href="/" className="text-[13px] cursor-pointer hover:text-gray-300">Home</Link>
+            <Link href="/about" className="text-[13px] cursor-pointer hover:text-gray-300">About Us</Link>
+            <Link href="/announcements" className="text-[13px] cursor-pointer hover:text-gray-300">Announcements</Link>
+            <Link href="/register" className="text-[13px] cursor-pointer hover:text-gray-300">Register</Link>
+            <Link href="/contact" className="text-[13px] cursor-pointer hover:text-gray-300">Contact</Link>
           </div>
           <div className="flex flex-col gap-2">
             <p className="text-gray-400 text-[12px]">Services</p>

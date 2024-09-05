@@ -63,7 +63,7 @@ function programs() {
         data-aos-duration="800"
         data-aos-once="true"
         data-aos-delay="100"
-         className="bg-white text-black w-[350px] px-3 py-6 rounded-lg shadow-slate-500 shadow-lg">
+         className="bg-white text-black w-[350px] px-3 py-6 rounded-lg shadow-slate-500 shadow-lg text-lg">
           <p>Dars Name : 40 Hadith Habashi</p>
           <p>Starting Date : 23/2/2019</p>
           <p>Dars Day : Saturday & Sunday</p>
@@ -75,7 +75,7 @@ function programs() {
         data-aos-duration="800"
         data-aos-once="true"
         data-aos-delay="100"
-        className="bg-white text-black w-[350px] px-3 py-6 rounded-lg shadow-slate-500 shadow-lg">
+        className="bg-white text-black w-[350px] px-3 py-6 rounded-lg shadow-slate-500 shadow-lg text-lg">
           <p>Dars Name : 40 Hadith Habashi</p>
           <p>Starting Date : 23/2/2019</p>
           <p>Dars Day : Saturday & Sunday</p>
@@ -87,7 +87,7 @@ function programs() {
         data-aos-duration="800"
         data-aos-once="true"
         data-aos-delay="100"
-         className="bg-white text-black w-[350px] px-3 py-6 rounded-lg shadow-slate-500 shadow-lg">
+         className="bg-white text-black w-[350px] px-3 py-6 rounded-lg shadow-slate-500 shadow-lg text-lg">
           <p>Dars Name : 40 Hadith Habashi</p>
           <p>Starting Date : 23/2/2019</p>
           <p>Dars Day : Saturday & Sunday</p>
@@ -100,7 +100,7 @@ function programs() {
         data-aos-duration="800"
         data-aos-once="true"
         data-aos-delay="100"
-         className="bg-white text-black w-[350px] px-3 py-6 rounded-lg shadow-slate-500 shadow-lg">
+         className="bg-white text-black w-[350px] px-3 py-6 rounded-lg shadow-slate-500 shadow-lg text-lg">
           <p>Dars Name : 40 Hadith Habashi</p>
           <p>Starting Date : 23/2/2019</p>
           <p>Dars Day : Saturday & Sunday</p>
@@ -128,7 +128,7 @@ function programs() {
         data-aos-duration="800"
         data-aos-once="true"
         data-aos-delay="100"
-         className="bg-white text-black w-[350px] px-3 py-6 rounded-lg shadow-slate-500 shadow-lg">
+         className="bg-white text-black w-[350px] px-3 py-6 rounded-lg shadow-slate-500 shadow-lg text-lg">
           <p>Dars Name : 40 Hadith Habashi</p>
           <p>Starting Date : 23/2/2019</p>
           <p>Dars Day : Saturday & Sunday</p>
@@ -140,7 +140,7 @@ function programs() {
         data-aos-duration="800"
         data-aos-once="true"
         data-aos-delay="100"
-         className="bg-white text-black w-[350px] px-3 py-6 rounded-lg shadow-slate-500 shadow-lg">
+         className="bg-white text-black w-[350px] px-3 py-6 rounded-lg shadow-slate-500 shadow-lg text-lg">
           <p>Dars Name : 40 Hadith Habashi</p>
           <p>Starting Date : 23/2/2019</p>
           <p>Dars Day : Saturday & Sunday</p>
