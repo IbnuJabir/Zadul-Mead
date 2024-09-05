@@ -23,54 +23,61 @@ function About() {
         <h2 className="text-2xl font-semibold mb-6">OUR JOURNEY, OUR VISION</h2>
       </motion.div>
       <div className="  font-montserrat px-4 flex flex-col gap-2 md:w-[70%] lg:m-auto md:ml-[10%]">
-        <p  
-         data-aos="fade-up"
-  
-         data-aos-duration="500"
-         data-aos-once="true"
-         data-aos-delay="300"
-          className="text-xl font-semibold mt-4 mb-2">Who We Are</p>
-        <p  
+        <p
           data-aos="fade-up"
           data-aos-duration="500"
-          data-aos-delay="300" 
-          className="mb-6">
-          Established in [2000], Zadul-Mead is dedicated to providing
+          data-aos-once="true"
+          data-aos-delay="300"
+          className="text-xl font-semibold mt-4 mb-2"
+        >
+          Who We Are
+        </p>
+        <p
+          data-aos="fade-up"
+          data-aos-duration="500"
+          data-aos-delay="300"
+          className="mb-6"
+        >
+          Established in 1433 Hijra, Zadul-Mead is dedicated to providing
           high-quality Islamic education. Our center is a welcoming space for
           individuals seeking to enhance their knowledge and practice of Islam.
         </p>
 
-        <p 
-         data-aos="fade-up"
-         data-aos-duration="500"
-         data-aos-delay="400"
-         className="text-xl font-semibold mt-4 mb-2">Our Vision</p>
-        <p 
-           data-aos="fade-up"
-           data-aos-duration="500"
-           data-aos-delay="400"
-            className="mb-6">
-          We envision a world where Islamic knowledge is accessible to all,
-          fostering a community of learned, compassionate, and socially
-          responsible individuals.
+        <p
+          data-aos="fade-up"
+          data-aos-duration="500"
+          data-aos-delay="400"
+          className="text-xl font-semibold mt-4 mb-2"
+        >
+          Our Vision
+        </p>
+        <p
+          data-aos="fade-up"
+          data-aos-duration="500"
+          data-aos-delay="400"
+          className="mb-6"
+        >
+          We strive to establish a community built on authentic knowledge and
+          Islamic ethics, fostering learned, compassionate, and socially
+          responsible individuals. We envision a world where Islamic knowledge
+          is accessible to all, fostering a community of learned, compassionate,
+          and socially responsible individuals.
         </p>
 
-        <p  
-         data-aos="fade-up"
-         data-aos-duration="500"
-         data-aos-delay="500"
-         
-         className="text-xl font-semibold mt-4 mb-2">Our Values</p>
-        <p   
+        <p
           data-aos="fade-up"
           data-aos-duration="500"
           data-aos-delay="500"
-          >
+          className="text-xl font-semibold mt-4 mb-2"
+        >
+          Our Values
+        </p>
+        <p data-aos="fade-up" data-aos-duration="500" data-aos-delay="500">
           We are committed to the principles of faith, knowledge, and community.
           Our programs are designed to instill these values in our students,
           encouraging them to apply their learning in all aspects of life.
         </p>
-        <div  data-aos="zoom-in" className="flex justify-end">
+        <div data-aos="zoom-in" className="flex justify-end">
           <a
             href="/about"
             className="w-fit text-[#161C2D] hover:text-blue-500 mr-5 mt-10 flex items-center gap-2 cursor-pointer"

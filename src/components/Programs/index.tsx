@@ -23,7 +23,7 @@ function Programs() {
   if (isLoading) return <Loader />;
   if (!programs) return <p>No Programs Available!</p>;
   return (
-    <div className="w-full bg-programs-bkg bg-no-repeat bg-cover bg-center p-6 flex flex-col gap-16">
+    <div className="w-full overflow-x-hidden bg-programs-bkg bg-no-repeat bg-cover bg-center p-6 flex flex-col gap-16">
       <div className="flex flex-col gap-2 md:ml-10">
         <h1 className="text-white text-2xl text-left ">
           Programs <br />

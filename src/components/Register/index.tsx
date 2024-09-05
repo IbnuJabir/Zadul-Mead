@@ -1,7 +1,7 @@
-"use client";
-
+"use cleint";
+import { useState, useEffect } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import {
@@ -13,6 +13,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { MuiTelInput } from "mui-tel-input";
 import {
   MultiStepForm,
   MultiStepFormContextProvider,
@@ -22,7 +23,28 @@ import {
   useMultiStepFormContext,
 } from "@/components/ui/multi-step-form";
 import Stepper from "@/components/ui/stepper";
-
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { PaymentInfoStepProps, RegistrationResponse } from "@/lib/types";
+import {
+  DialogComponent,
+  ErrorDialogComponent,
+} from "../Commons/DialogComponent";
+import { useDispatch, useSelector } from "react-redux";
+import { setRegRef, setRegError } from "@/state/registerSlice";
+import { RootState } from "@/state/store";
+import {
+  closeErrorDialog,
+  closeSuccessDialog,
+  openErrorDialog,
+  openSuccessDialog,
+} from "@/state/dialogSlice";
+// import {} from ""
 const FormSchema = createStepSchema({
   personalInfo: z.object({
     fullName: z.string().min(1, "Full Name is required"),
@@ -41,20 +63,27 @@ const FormSchema = createStepSchema({
   }),
   familyInfo: z.object({
     fatherName: z.string().min(1, "Father's Name is required"),
-    fatherPhone: z.string().min(10, "Valid Phone is required"),
+    fatherPhone: z.string().min(10, "Invalid Phone! use +251 format"),
     motherName: z.string().min(1, "Mother's Name is required"),
-    motherPhone: z.string().min(10, "Valid Phone is required"),
+    motherPhone: z.string().min(10, "Invalid Phone! use +251 format"),
     emergencyResponderName: z.string().min(1, "Responder Name is required"),
-    emergencyResponderPhone: z.string().min(10, "Valid Phone is required"),
+    emergencyResponderPhone: z
+      .string()
+      .min(10, "Invalid Phone! use +251 format"),
   }),
   paymentInfo: z.object({
-    tx_ref: z.string().min(1, "Transaction Reference is required"),
+    tx_ref: z.string().min(10, "Invalid Transaction Reference"),
   }),
 });
 
 type FormValues = z.infer<typeof FormSchema>;
 
 export function MultiStepFormDemo() {
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+
+  const dispatch = useDispatch();
+
   const form = useForm<FormValues>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
@@ -83,6 +112,11 @@ export function MultiStepFormDemo() {
   });
 
   const onSubmit = async (data: FormValues) => {
+    setLoading(true);
+    setSuccess(false);
+
+    const formatPhone = (phone: string) => phone.replace(/\s+/g, "");
+
     const payload = {
       fullName: data.personalInfo.fullName,
       age: data.personalInfo.age,
@@ -94,15 +128,16 @@ export function MultiStepFormDemo() {
       behaviorInPreviousSchool: data.schoolInfo.behaviorInPreviousSchool,
       anyDisease: data.schoolInfo.anyDisease,
       fatherName: data.familyInfo.fatherName,
-      fatherPhone: data.familyInfo.fatherPhone,
+      fatherPhone: formatPhone(data.familyInfo.fatherPhone),
       motherName: data.familyInfo.motherName,
-      motherPhone: data.familyInfo.motherPhone,
+      motherPhone: formatPhone(data.familyInfo.motherPhone),
       emergencyResponderName: data.familyInfo.emergencyResponderName,
-      emergencyResponderPhone: data.familyInfo.emergencyResponderPhone,
+      emergencyResponderPhone: formatPhone(
+        data.familyInfo.emergencyResponderPhone
+      ),
       tx_ref: data.paymentInfo.tx_ref,
       sex: data.personalInfo.sex,
     };
-    console.log('data', payload)
 
     try {
       const response = await fetch(
@@ -115,14 +150,22 @@ export function MultiStepFormDemo() {
           body: JSON.stringify(payload),
         }
       );
+      const data: RegistrationResponse = await response.json();
 
       if (!response.ok) {
-        throw new Error("Failed to submit form");
+        dispatch(setRegError(data.error));
+        dispatch(openErrorDialog());
+        console.log("error Message", data.error);
+        throw new Error(data.error);
       }
-
-      console.log("Form submitted successfully:", await response.json());
+      dispatch(setRegRef(data.reference));
+      dispatch(openSuccessDialog());
+      setSuccess(true);
+      console.log("Form submitted successfully:", data);
     } catch (error) {
       console.error("Error submitting form:", error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -160,7 +203,7 @@ export function MultiStepFormDemo() {
       </MultiStepFormStep>
 
       <MultiStepFormStep name="paymentInfo">
-        <PaymentInfoStep />
+        <PaymentInfoStep loading={loading} success={success} />
       </MultiStepFormStep>
     </MultiStepForm>
   );
@@ -214,7 +257,15 @@ function PersonalInfoStep() {
             <FormItem>
               <FormLabel>Sex</FormLabel>
               <FormControl>
-                <Input {...field} />
+                <Select onValueChange={field.onChange}>
+                  <SelectTrigger className="w-full">
+                    <SelectValue placeholder="Select" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="m">Male</SelectItem>
+                    <SelectItem value="f">Female</SelectItem>
+                  </SelectContent>
+                </Select>
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -325,18 +376,21 @@ function FamilyInfoStep() {
             </FormItem>
           )}
         />
-        <FormField
+
+        <Controller
           name="familyInfo.fatherPhone"
+          control={form.control}
           render={({ field }) => (
             <FormItem>
               <FormLabel>Father&apos;s Phone</FormLabel>
               <FormControl>
-                <Input {...field} className="w-full" />
+                <MuiTelInput {...field} defaultCountry="ET" required />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
+
         <FormField
           name="familyInfo.motherName"
           render={({ field }) => (
@@ -349,18 +403,21 @@ function FamilyInfoStep() {
             </FormItem>
           )}
         />
-        <FormField
+
+        <Controller
           name="familyInfo.motherPhone"
+          control={form.control}
           render={({ field }) => (
             <FormItem>
               <FormLabel>Mother&apos;s Phone</FormLabel>
               <FormControl>
-                <Input {...field} className="w-full" />
+                <MuiTelInput {...field} defaultCountry="ET" required />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
+
         <FormField
           name="familyInfo.emergencyResponderName"
           render={({ field }) => (
@@ -373,13 +430,15 @@ function FamilyInfoStep() {
             </FormItem>
           )}
         />
-        <FormField
+
+        <Controller
           name="familyInfo.emergencyResponderPhone"
+          control={form.control}
           render={({ field }) => (
             <FormItem>
               <FormLabel>Emergency Responder Phone</FormLabel>
               <FormControl>
-                <Input {...field} className="w-full" />
+                <MuiTelInput {...field} defaultCountry="ET" required />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -398,8 +457,21 @@ function FamilyInfoStep() {
   );
 }
 
-function PaymentInfoStep() {
+function PaymentInfoStep({ loading, success }: PaymentInfoStepProps) {
   const { form, prevStep } = useMultiStepFormContext();
+  const successDialog = useSelector(
+    (state: RootState) => state.dialog.successDialog
+  );
+  const errorDialog = useSelector(
+    (state: RootState) => state.dialog.errorDialog
+  );
+  const dispatch = useDispatch();
+  // Open dialog only after registrationRef is updated and not null
+
+  const closeModal = () => {
+    dispatch(closeSuccessDialog());
+    dispatch(closeErrorDialog());
+  };
 
   return (
     <Form {...form}>
@@ -421,8 +493,12 @@ function PaymentInfoStep() {
         <Button type="button" variant="outline" onClick={prevStep}>
           Previous
         </Button>
-        <Button type="submit">Verify Payment</Button>
+        <Button disabled={loading} type="submit">
+          {loading ? "Loading..." : "Verify Payment"}
+        </Button>
       </div>
+      {successDialog && <DialogComponent onClose={closeModal} />}
+      {errorDialog && <ErrorDialogComponent onClose={closeModal} />}
     </Form>
   );
 }

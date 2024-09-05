@@ -212,7 +212,7 @@ function Contact() {
 
       
       </div>
-      <div className="flex flex-col md:hidden md:w-[90%] md:flex-col md:gap-4 md:justify-center md:items-start px-5 md:pl-10 text-white bg-slate-900 py-10">
+      {/* <div className="hidden md:flex flex-col md:w-[90%] md:flex-col md:gap-4 md:justify-center md:items-start px-5 md:pl-10 text-white bg-slate-900 py-10">
               <Link
                 href="https://t.me/ahmedadem"
                 className="flex gap-4 items-center mt-5"
@@ -249,7 +249,7 @@ function Contact() {
                 <FaXTwitter className="size-[30px] lg:size-[40px]" />
                 <p>https://x.com/zadal_mead</p>
               </Link>
-            </div>
+            </div> */}
       <Footer />
     </div>
   );

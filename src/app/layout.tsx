@@ -1,11 +1,8 @@
+// app/layout.tsx
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-
-import "@mantine/core/styles.css";
-import React from "react";
-import { MantineProvider, ColorSchemeScript } from "@mantine/core";
-import { theme } from "../theme";
+import { ClientProvider } from "@/components/Commons/ClientProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,7 +19,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <ColorSchemeScript />
         <link rel="shortcut icon" href="/favicon.svg" />
         <meta
           name="viewport"
@@ -30,7 +26,8 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <MantineProvider theme={theme}>{children}</MantineProvider>
+        {/* Wrap your app in the ClientProvider for client-side components */}
+        <ClientProvider>{children}</ClientProvider>
       </body>
     </html>
   );
