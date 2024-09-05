@@ -11,6 +11,7 @@ function Offers() {
           data-aos-once="true"
          data-duration="100"
          data-aos="zoom-out"
+         data-aos-delay= "100"
         className="h-fit flex flex-col gap-4 items-start justify-start">
           <IoLibrary className="size-8" />
           <div className="flex flex-col gap-2 w-full">
@@ -25,7 +26,8 @@ function Offers() {
         <div
          data-aos="zoom-out"
          data-aos-once="true"
-         data-duration="100"
+         data-duration="200"
+         data-aos-delay= "200"
          
         className="h-fit flex flex-col gap-4 items-start justify-start">
           <IoLibrary className="size-8" />
@@ -41,7 +43,9 @@ function Offers() {
         <div
           data-aos-once="true"
          data-aos="zoom-out"
-         data-duration="100"
+         data-duration="300"
+         data-aos-delay= "300"
+
 
           className="h-fit flex flex-col gap-4 items-start justify-start">
           <IoLibrary className="size-8" />
@@ -57,8 +61,9 @@ function Offers() {
         <div
           data-aos-once="true"
          data-aos="zoom-out"
-         data-duration="100"
-
+         data-duration="400"
+         data-aos-delay= "400"
+         
           className="h-fit flex flex-col gap-4 items-start justify-start">
           <IoLibrary className="size-8" />
           <div className="flex flex-col gap-2 w-full">
@@ -73,8 +78,9 @@ function Offers() {
         <div
           data-aos-once="true"
          data-aos="zoom-out"
-         data-duration="100"
-
+         data-duration="500"
+         data-aos-delay= "500"
+         
           className="h-fit flex flex-col gap-4 items-start justify-start">
           <IoLibrary className="size-8" />
           <div className="flex flex-col gap-2 w-full">
@@ -89,7 +95,9 @@ function Offers() {
         <div 
           data-aos-once="true"
          data-aos="zoom-out"
-         data-duration="100"
+         data-duration="600"
+         data-aos-delay= "600"
+
           className="h-fit flex flex-col gap-4 items-start justify-start">
           <IoLibrary className="size-8" />
           <div className="flex flex-col gap-2 w-full">

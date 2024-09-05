@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import annnouncement from "../../../public/assets/kitab.png";
 import { useEffect, useState } from "react";
 import { format } from "date-fns";
 import { AnnouncementsType } from "@/lib/types";
