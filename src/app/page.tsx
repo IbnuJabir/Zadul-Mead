@@ -46,7 +46,6 @@ const Home: React.FC = () => {
           >
             WELCOME TO
             <span className="font-bold mr-1">
-              
               <br></br>ZAD AL-MEAD
             </span>
             Islamic Center
@@ -78,7 +77,7 @@ const Home: React.FC = () => {
               data-aos-duration="500"
               data-aos-once="true"
               data-aos-delay="600"
-              className="w-max px-4 py-2 font-montserrat rounded-[26.24px] border-none flex text-center items-center bg-white lg:px-3 "
+              className="w-max px-4 py-2 font-montserrat rounded-[26.24px] flex text-center items-center bg-transparent border-2 border-white text-white lg:px-3 hover:bg-white hover:text-black transition-colors"
             >
               Register Now
             </a>
