@@ -5,11 +5,12 @@ import { BentoGrid, BentoGridItem } from "../ui/bento-grid";
 import { useEffect, useState } from "react";
 import Loader from "@/app/loading";
 import { Program, Schedule } from "@/lib/types";
+import { getAllPrograms } from "@/API";
 
 function Programs() {
   const [programs, setPrograms] = useState<Program[]>([]);
   const [isLoading, setLoading] = useState(true);
-
+  // const allPrograms = getAllPrograms();
   useEffect(() => {
     fetch(
       `${process.env.NEXT_PUBLIC_APP_BACKEND_API}/programs/getAllPrograms/all`
@@ -21,11 +22,11 @@ function Programs() {
       });
   }, []);
   if (isLoading) return <Loader />;
-  if (!programs) return <p>No Programs Available!</p>;
+  if (!programs) return <h1>No Programs Available!</h1>;
   return (
     <div className="w-full overflow-x-hidden bg-programs-bkg bg-no-repeat bg-cover bg-center p-6 flex flex-col gap-16">
       <div className="flex flex-col gap-2 md:ml-10">
-        <h1 className="text-white text-2xl text-left ">
+        <h1 className="text-white text-xl md:text-2xl text-left ">
           Programs <br />
           at <span className="font-bold">Badir Masjid</span>
         </h1>
@@ -37,6 +38,7 @@ function Programs() {
         data-aos="zoom-in"
         data-aos-duration="500"
         data-aos-once="true"
+        data-aos-delay="100"
         className="w-[70%] xs:max-w-[48%] sm:max-w-[35%] md:max-w-[30%] lg:max-w-[22%] xl:max-w-[20%] 2xl:max-w-[18%]  h-16 mx-auto overflow-hidden bg-white rounded-lg flex items-center justify-start font-montserrat"
       >
         <div className="w-15 h-full flex ">
@@ -55,9 +57,9 @@ function Programs() {
       </div>
       <div
         data-aos="zoom-out"
-        data-aos-duration="500"
+        data-aos-duration="800"
         data-aos-once="true"
-        data-aos-delay="300"
+        data-aos-delay="100"
         className="w-full grid grid-cols-2 gap-y-8 md:grid-cols-3"
       >
         {programs.map((program: Program) => (

@@ -4,11 +4,9 @@ import About from "@/components/About";
 import Announcements from "@/components/Announcements";
 import Programs from "@/components/Programs";
 import ScrollDown from "@/components/ScrollDown";
-import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import Highlights from "@/components/Highlights";
 import Offers from "@/components/Offers";
 import Contact from "@/components/Contact";
-import ExpandableCardDemo from "@/components/blocks/expandable-card-demo-grid";
 import Footer from "@/components/Footer";
 import Image from "next/image";
 import bkg from "../../public/assets/home_background1.png";
@@ -58,7 +56,6 @@ const Home: React.FC = () => {
           >
             A Community of Faith, Learning, and Spiritual Growth
           </p>
-          {/* <HoverBorderGradient children={"Join our Community"}/> */}
           <div className="flex flex-col md:flex-row items-center justify-center gap-10">
             <button
               data-aos="fade-up"
@@ -89,7 +86,6 @@ const Home: React.FC = () => {
         <Programs />
         <Highlights />
         <Offers />
-        {/* <ExpandableCardDemo /> */}
         <Contact />
         <Footer />
       </div>

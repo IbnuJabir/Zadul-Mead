@@ -27,7 +27,7 @@ function About() {
           data-aos="fade-up"
           data-aos-duration="500"
           data-aos-once="true"
-          data-aos-delay="300"
+          data-aos-delay="100"
           className="text-xl font-semibold mt-4 mb-2"
         >
           Who We Are
@@ -35,7 +35,7 @@ function About() {
         <p
           data-aos="fade-up"
           data-aos-duration="500"
-          data-aos-delay="300"
+          data-aos-delay="100"
           className="mb-6"
         >
           Established in 1433 Hijra, Zadul-Mead is dedicated to providing
@@ -46,7 +46,7 @@ function About() {
         <p
           data-aos="fade-up"
           data-aos-duration="500"
-          data-aos-delay="400"
+          data-aos-delay="100"
           className="text-xl font-semibold mt-4 mb-2"
         >
           Our Vision
@@ -54,7 +54,7 @@ function About() {
         <p
           data-aos="fade-up"
           data-aos-duration="500"
-          data-aos-delay="400"
+          data-aos-delay="100"
           className="mb-6"
         >
           We strive to establish a community built on authentic knowledge and
@@ -67,12 +67,12 @@ function About() {
         <p
           data-aos="fade-up"
           data-aos-duration="500"
-          data-aos-delay="500"
+          data-aos-delay="100"
           className="text-xl font-semibold mt-4 mb-2"
         >
           Our Values
         </p>
-        <p data-aos="fade-up" data-aos-duration="500" data-aos-delay="500">
+        <p data-aos="fade-up" data-aos-duration="500" data-aos-delay="100">
           We are committed to the principles of faith, knowledge, and community.
           Our programs are designed to instill these values in our students,
           encouraging them to apply their learning in all aspects of life.
