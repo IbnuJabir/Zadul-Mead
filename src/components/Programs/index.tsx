@@ -62,7 +62,7 @@ function Programs() {
         data-aos-delay="100"
         className="w-full grid grid-cols-2 gap-y-8 md:grid-cols-3"
       >
-        {programs.map((program: Program) => (
+        {/* {programs.map((program: Program) => (
           <BentoGrid
             key={program._id}
             className="w-[120px] h-[70px] bg-white rounded-lg mt-6"
@@ -74,7 +74,10 @@ function Programs() {
                 .join(", ")}
             />
           </BentoGrid>
-        ))}
+        ))} */}
+        <BentoGrid className="w-[120px] h-[70px] bg-white rounded-lg mt-6">
+          <BentoGridItem title={"Qur'an Tafsir"} description={"sat, sun"} />
+        </BentoGrid>{" "}
         <BentoGrid className="w-[120px] h-[70px] bg-white rounded-lg mt-6">
           <BentoGridItem title={"Qur'an Tafsir"} description={"sat, sun"} />
         </BentoGrid>{" "}
