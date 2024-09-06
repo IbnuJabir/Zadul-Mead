@@ -488,6 +488,10 @@ function PaymentInfoStep({ loading, success }: PaymentInfoStepProps) {
             </FormItem>
           )}
         />
+        <p>
+          Please enter the transaction reference of your payment in Commercial
+          Bank of Ethiopia. only CBE transaction reference is valid.{" "}
+        </p>
       </div>
       <div className="w-full flex justify-between items-center space-x-2 mt-8">
         <Button type="button" variant="outline" onClick={prevStep}>
