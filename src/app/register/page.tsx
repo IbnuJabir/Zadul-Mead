@@ -7,7 +7,6 @@ import Footer from "@/components/Footer";
 import { MultiStepFormDemo } from "@/components/Register";
 
 function Register() {
- 
   return (
     <div className="overflow-x-hidden w-full text-white ">
       <div className="w-full py-5 md:py-0 md:h-[55vh] relative bg-black  bg-no-repeat bg-center bg-cover font-cinzel z-10 text-white">
@@ -21,25 +20,30 @@ function Register() {
           className=" object-cover align-top -z-10"
         />
         <div className="mt-12 ml-6 md:ml-16 w-full md:w-1/2 flex flex-col gap-2">
-          <p 
-            data-aos="zoom-in" 
-            data-aos-duration="1000" 
+          <p
+            data-aos="zoom-in"
+            data-aos-duration="1000"
             data-aos-once="true"
-            className="text-2xl md:text-4xl font-extralight">Register For</p>
+            className="text-2xl md:text-4xl font-extralight"
+          >
+            Register For
+          </p>
           <h1
-          data-aos="zoom-in" 
-          data-aos-duration="1000" 
-           data-aos-once="true"
-            className="md:text-3xl text-2xl">
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+            data-aos-once="true"
+            className="md:text-3xl text-2xl"
+          >
             <span className="font-bold">ZAD AL-MEAD</span> Islamic Center
           </h1>
           <p
-          data-aos="fade-up" 
-          data-aos-duration="1000" 
-           data-aos-once="true"
-            className="font-montserrat text-[18px]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna.
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-once="true"
+            className="font-montserrat text-[18px]"
+          >
+            Enroll today at ZAD AL-MEAD Islamic Center and start your journey of
+            Islamic knowledge and spiritual growth.
           </p>
         </div>
       </div>
@@ -47,12 +51,12 @@ function Register() {
         <div className="w-[80%] ml-8 md:ml-16">
           <h1 className="font-bold text-2xl mb-4">Register</h1>
           <p className="font-montserrat text-justify">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam,Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-            laboris nisi ut aliquip ex ea commodo consequat.
+            At ZAD AL-MEAD Islamic Center, you can learn from respected Ustazs
+            and Sheikhs who know a lot about Islam. Our teachers are dedicated
+            to helping you understand your faith. They will guide you through
+            important teachings and support your spiritual and moral growth.
+            Join us now to start your journey toward more knowledge and
+            spiritual growth.
           </p>
         </div>
         <div className=" text-black w-[80%] md:w-[60%] mx-auto bg-white rounded-lg">

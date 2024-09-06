@@ -47,112 +47,112 @@ function Contact() {
           className="object-cover  align-center -z-10"
         />
         <div className="mt-12 ml-3 md:ml-16 w-[97%]  md:w-1/2 flex flex-col gap-2">
-          <p 
-          data-aos="zoom-in" 
-          data-aos-duration="1000" 
-           data-aos-once="true"
-           className="text-2xl md:text-4xl font-extralight">Contact Us</p>
-          <h1 
-          data-aos="zoom-in" 
-          data-aos-duration="1000" 
-           data-aos-once="true"
-            className="text-xl md:text-3xl">
+          <p
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+            data-aos-once="true"
+            className="text-2xl md:text-4xl font-extralight"
+          >
+            Contact Us
+          </p>
+          <h1
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+            data-aos-once="true"
+            className="text-xl md:text-3xl"
+          >
             <span className="font-bold">ZAD AL-MEAD</span> Islamic Center
           </h1>
-          <p data-aos="fade-up" 
-           data-aos-duration="1000" 
+          <p
+            data-aos="fade-up"
+            data-aos-duration="1000"
             data-aos-once="true"
-             className="font-montserrat text-[18px]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna.
+            className="font-montserrat text-[18px]"
+          >
+            Reach out to us through our available contact options, and we will
+            be happy to connect with you.
           </p>
         </div>
       </div>
       <div className=" w-full bg-about_page2 bg-no-repeat bg-center bg-cover bg-black bg-opacity-90  flex flex-col gap-20 -z-14 py-16">
         <div className="w-[80%] ml-9 md:ml-16">
-          <h1 data-aos="fade-up" 
-           data-aos-duration="1000" 
+          <h1
+            data-aos="fade-up"
+            data-aos-duration="1000"
             data-aos-once="true"
-            className="font-bold text-2xl mb-4">Contact</h1>
-          <p 
-           data-aos="zoom-in" 
-           data-aos-duration="1000" 
-           data-aos-delay="300"
+            className="font-bold text-2xl mb-4"
+          >
+            Contact Us
+          </h1>
+          <p
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+            data-aos-delay="300"
             data-aos-once="true"
-             className="font-montserrat text-justify">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam,Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-            laboris nisi ut aliquip ex ea commodo consequat.
+            className="font-montserrat text-justify"
+          >
+            We'd love to hear from you at ZAD AL-MEAD Islamic Center. Whether
+            you have questions about our programs, events, or services, or
+            you're looking for ways to get involved, we're here to help. Feel
+            free to reach out for support, feedback, or general inquiries, and a
+            member of our team will respond as soon as possible. Your connection
+            with us matters, and we're committed to fostering a strong community
+            bond.
           </p>
         </div>
         <div className="w-full flex flex-col gap-4 md:justify-around md:items-top  font-montserrat mt-10 md:py md:gap-10">
           <div className="w-[90%] md:w-[80%] flex flex-col items-center justify- mx-auto md:flex-row">
-            <div 
-            data-aos="fade-right" 
-            data-aos-duration="1000" 
-            data-aos-delay= "300"
-             data-aos-once="true"
-              className="w-full md:w-[50%] h-[30rem] md:h-[26rem] mx-auto bg-slate-300 bg-opacity-30 flex flex-col items-center gap-4 p-4 rounded-lg text-black">
+            <div
+              data-aos="fade-right"
+              data-aos-duration="1000"
+              data-aos-delay="300"
+              data-aos-once="true"
+              className="w-full text-black sm:w-[60%] md:w-[70%] h-[26rem] md:h-96 mx-auto bg-slate-300 bg-opacity-30 flex flex-col gap-4 p-4  rounded-lg"
+            >
               <p className="text-xl text-center text-white">
                 {" "}
                 Drop us a message
               </p>
-              <form
-                onSubmit={form.onSubmit(() => {})}
-                className="flex flex-col gap-0"
-              >
-                <TextInput
-                  placeholder="Full Name"
-                  withAsterisk
-                  key={form.key("name")}
-                  {...form.getInputProps("name")}
-                  className="rounded-[5px] p-1"
+              <input
+                type="text"
+                placeholder="Full Name"
+                className="rounded-[5px] p-1 pl-4"
+              />
+              <div className="flex flex-col md:flex-row justify-between w-full gap-4">
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Email"
+                  className="w-full md:w-[45%] rounded-[5px] p-1 pl-4"
                 />
-                <div className="flex md:flex-row flex-col justify-between w-full m-auto">
-                  <TextInput
-                    placeholder="Email"
-                    withAsterisk
-                    mt="md"
-                    type="email"
-                    name="email"
-                    id="email"
-                    key={form.key("email")}
-                    {...form.getInputProps("email")}
-                    className=" md:w-[85%] rounded-[5px] p-1"
-                  />
-                  <NumberInput
-                    placeholder="Phone"
-                    name="phone"
-                    id="phone"
-                    withAsterisk
-                    mt="md"
-                    key={form.key("phone")}
-                    {...form.getInputProps("phone")}
-                    className="md:w-[80%] rounded-[5px] border-none p-1"
-                  />
-                </div>
-                <textarea
-                  name="message"
-                  id="message"
-                  cols={30}
-                  rows={6}
-                  placeholder=" Your message"
-                  className="rounded-[5px] pl-4 m-auto mt-4"
-                ></textarea>
-                <button className="w-full px-4 py-2 rounded-[5px] border-none flex text-center items-center justify-center bg-white mt-4">
-                  Send Message
-                </button>
-              </form>
+                <input
+                  type="number"
+                  name="phone"
+                  id="phone"
+                  placeholder="Phone"
+                  className="w-full md:w-[45%] rounded-[5px] border-none p-1 pl-4"
+                />
+              </div>
+              <textarea
+                name="message"
+                id="message"
+                cols={30}
+                rows={6}
+                placeholder=" Your message"
+                className="rounded-[5px] pl-4"
+              ></textarea>
+              <button className="w-full px-4 py-2 rounded-[5px] border-none flex text-center items-center justify-center bg-white text-black md:mt-4">
+                Send Message
+              </button>
             </div>
-            <div 
-            data-aos="fade-left" 
-            data-aos-duration="1000" 
-            data-aos-delay ="300"
-             data-aos-once="true"
-              className="hidden md:flex md:w-[90%] md:flex-col md:gap-4 md:justify-center md:items-start md:pl-10 text-white py-10">
+            <div
+              data-aos="fade-left"
+              data-aos-duration="1000"
+              data-aos-delay="300"
+              data-aos-once="true"
+              className="hidden md:flex md:w-[90%] md:flex-col md:gap-4 md:justify-center md:items-start md:pl-10 text-white py-10"
+            >
               <Link
                 href="https://t.me/ahmedadem"
                 className="flex gap-4 items-center"
@@ -209,47 +209,7 @@ function Contact() {
             ></iframe>
           </div>
         </div>
-
-      
       </div>
-      {/* <div className="hidden md:flex flex-col md:w-[90%] md:flex-col md:gap-4 md:justify-center md:items-start px-5 md:pl-10 text-white bg-slate-900 py-10">
-              <Link
-                href="https://t.me/ahmedadem"
-                className="flex gap-4 items-center mt-5"
-              >
-                <BsTelegram className="size-[30px] lg:size-[40px]" />
-                <p>https://t.me/ahmedadem</p>
-              </Link>
-              <Link
-                href="https://www.facebook.com/yenegew"
-                className="flex gap-4 items-center mt-3"
-              >
-                <FaFacebook className="size-[30px] lg:size-[40px]" />
-                <p>https://www.facebook.com/yenegew</p>
-              </Link>
-              <Link
-                href="http://www.youtube.com/c/ZadulMaad"
-                className="flex gap-4 items-center mt-3"
-              >
-                <AiFillYoutube className="size-[30px] lg:size-[40px]" />
-                <p>http://www.youtube.com/c/ZadulMaad</p>
-              </Link>
-             
-              <Link
-                href="https://instagram.com/zad_al_mead"
-                className="flex gap-4 items-center mt-3"
-              >
-                <FaInstagram className="size-[30px] lg:size-[40px]" />
-                <p>https://instagram.com/zad_al_mead</p>
-              </Link>
-              <Link
-                href="https://x.com/zadal_mead"
-                className="flex gap-4 items-center mt-3"
-              >
-                <FaXTwitter className="size-[30px] lg:size-[40px]" />
-                <p>https://x.com/zadal_mead</p>
-              </Link>
-            </div> */}
       <Footer />
     </div>
   );

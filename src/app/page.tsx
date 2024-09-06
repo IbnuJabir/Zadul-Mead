@@ -57,7 +57,8 @@ const Home: React.FC = () => {
             A Community of Faith, Learning, and Spiritual Growth
           </p>
           <div className="flex flex-col md:flex-row items-center justify-center gap-10">
-            <button
+            <a
+              href="https://t.me/ahmedadem" target="_blank"
               data-aos="fade-up"
               data-aos-offset="0"
               data-aos-duration="500"
@@ -66,7 +67,7 @@ const Home: React.FC = () => {
               className="w-max px-4 py-2 font-montserrat rounded-[26.24px] border-none flex text-center items-center bg-white lg:px-3 "
             >
               Join our Community
-            </button>
+            </a>
             <a
               href="/register"
               data-aos="fade-up"

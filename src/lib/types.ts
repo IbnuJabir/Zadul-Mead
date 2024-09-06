@@ -50,6 +50,16 @@ export type Program = {
   type: string;
 };
 
+export type TodayProgram = {
+  programName: string;
+  startTime: string;
+  endTime: string;
+};
+export type NextProgram = {
+  programName: string;
+  timeLeft: Date;
+};
+
 export type PaymentInfoStepProps = {
   loading: boolean;
   success: boolean;

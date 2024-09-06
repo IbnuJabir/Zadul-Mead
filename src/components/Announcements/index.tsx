@@ -6,7 +6,7 @@ import { format } from "date-fns";
 import { AnnouncementsType } from "@/lib/types";
 import Loader from "@/app/loading";
 function Announcements() {
-  const [announcements, setAnnouncements] =  useState<AnnouncementsType[]>([]);
+  const [announcements, setAnnouncements] = useState<AnnouncementsType[]>([]);
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -15,23 +15,24 @@ function Announcements() {
     )
       .then((res) => res.json())
       .then((data) => {
-        console.log("Announcements", data);
         setAnnouncements(data);
         setLoading(false);
       });
   }, []);
 
-  if (isLoading) return <Loader />
+  if (isLoading) return <Loader />;
   if (!announcements) return <p>No Announcement is available!</p>;
 
   return (
     <div className="overflow-x-hidden w-full bg-announcement-phone-bkg  md:bg-announcement-bkg bg-no-repeat bg-cover md:bg-top flex items-center justify-center  flex-col py-8">
       <h1 className="text-3xl  mb-10 text-left md:w-[70%] ">ANNOUNCEMENTS</h1>
-      {announcements.map((announcement: AnnouncementsType) => {
+      {announcements.slice(0, 1).map((announcement: AnnouncementsType) => {
         const imageUrl = `${process.env.NEXT_PUBLIC_APP_BACKEND_API}${announcement.coverPicture}`;
         return (
-          <div key={announcement._id} className="flex items-center justify-center flex-col gap-4 md:flex-row">
-            {/* <img src='/assets/kitab.png' alt="kitab" className="w-4/5 " /> */}
+          <div
+            key={announcement._id}
+            className="flex items-center justify-center flex-col gap-4 md:flex-row"
+          >
             <Image
               data-aos="fade-right"
               data-aos-duration="1000"
@@ -43,7 +44,6 @@ function Announcements() {
               className="w-[60%] md:w-[40%] h-80 cursor-pointer rounded-md"
               // placeholder="blur"
               priority
-              onClick={() => console.log("Language")}
             />
             <div
               data-aos="fade-left"
@@ -90,6 +90,28 @@ function Announcements() {
           </div>
         );
       })}
+      <div data-aos="zoom-in" className="w-[90%] flex justify-end">
+        <a
+          href="/announcements"
+          className="w-fit text-[#161C2D] hover:text-blue-500 mr-5 mt-10 flex items-center gap-2 cursor-pointer"
+        >
+          MORE{" "}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="size-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
+            />
+          </svg>
+        </a>
+      </div>
     </div>
   );
 }

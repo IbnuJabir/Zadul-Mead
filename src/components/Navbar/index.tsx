@@ -27,8 +27,8 @@ function Navbar() {
         <ul className="flex md:ml-20  md:space-x-6 lg:space-x-10 text-white font-montserrat">
           <Link href='/' className={`${pathname === '/' ? " border-b-4 border-white text-white" : "text-gray-300"} cursor-pointer hover:text-white`}>Home</Link>
           <Link href='/about' className={`${pathname === '/about' ? " border-b-4 border-white text-white " : "text-gray-300"} cursor-pointer hover:text-white `}>About</Link>
-          <Link href='/announcemets' className={`${ pathname === '/announcemets' ?" border-b-4 border-white text-white" : "text-gray-300"} cursor-pointer hover:text-white`}>Announcements</Link>
-          <Link href='/register' className={`${ pathname === '/register' ? " border-b-4 border-white text-white" : "text-gray-300"} cursor-pointer hover:text-white`}>Register</Link>
+          <Link href='/announcements' className={`${ pathname === '/announcements' ?" border-b-4 border-white text-white" : "text-gray-300"} cursor-pointer hover:text-white`}>Announcements</Link>
+          <Link href='/programs' className={`${ pathname === '/programs' ? " border-b-4 border-white text-white" : "text-gray-300"} cursor-pointer hover:text-white`}>Programs</Link>
           <Link href='/contact' className={`${pathname === '/contact'  ? " border-b-4 border-white text-white" : "text-gray-300"} cursor-pointer hover:text-white`}>Contact</Link>
 
         </ul>
@@ -75,8 +75,8 @@ function Navbar() {
               <ul className="flex flex-col gap-6 font-montserrat w-22">
                 <a href='/' className= {`${pathname === '/' ? " border-b-2 border-black text-black font-semibold" : "text-gray-700"} text-sm cursor-pointer hover:text-black`}>Home</a>
                 <a href='/about' className={`${pathname === '/about' ? " border-b-2 border-black text-black font-semibold" : "text-gray-700"} text-sm cursor-pointer hover:text-black`}>About</a>
-                <a href='/announcemets' className={`${pathname === '/announcemets' ? " border-b-2 border-black text-black font-semibold" : "text-gray-700"} text-sm cursor-pointer hover:text-black`}>Announcements</a>
-                <a href='/register' className={`${pathname === '/register' ? " border-b-2 border-black text-black font-semibold" : "text-gray-700"} text-sm cursor-pointer hover:text-black`}>Register</a>
+                <a href='/announcements' className={`${pathname === '/announcements' ? " border-b-2 border-black text-black font-semibold" : "text-gray-700"} text-sm cursor-pointer hover:text-black`}>Announcements</a>
+                <a href='/programs' className={`${pathname === '/programs' ? " border-b-2 border-black text-black font-semibold" : "text-gray-700"} text-sm cursor-pointer hover:text-black`}>Programs</a>
                 <a href='/contact' className={`${pathname === '/contact' ? " border-b-2 border-black text-black font-semibold" : "text-gray-700"} text-sm cursor-pointer hover:text-black`}>Contact</a>
               </ul>
             </motion.div>

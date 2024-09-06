@@ -475,20 +475,20 @@ function PaymentInfoStep({ loading, success }: PaymentInfoStepProps) {
 
   return (
     <Form {...form}>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="flex flex-col gap-4">
         <FormField
           name="paymentInfo.tx_ref"
           render={({ field }) => (
             <FormItem>
               <FormLabel>Transaction Reference</FormLabel>
               <FormControl>
-                <Input {...field} className="w-full" />
+                <Input {...field} className="w-full md:w-1/2" />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
-        <p>
+        <p className="w-full md:w-1/2 text-sm text-gray-700">
           Please enter the transaction reference of your payment in Commercial
           Bank of Ethiopia. only CBE transaction reference is valid.{" "}
         </p>

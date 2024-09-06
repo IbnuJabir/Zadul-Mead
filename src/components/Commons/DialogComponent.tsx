@@ -28,7 +28,7 @@ export function DialogComponent({ onClose }: DialogComponentProps) {
   console.log("regReg", regRef);
   return (
     <Dialog open onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent className="w-[80%] sm:max-w-md">
         <DialogHeader>
           <DialogTitle>Registration completed ✅</DialogTitle>
           <DialogDescription>
@@ -75,7 +75,7 @@ export function ErrorDialogComponent({ onClose }: ErrorDialogComponentProps) {
 
   return (
     <Dialog open onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent className="w-[80%] sm:max-w-md">
         <DialogHeader>
           <DialogTitle className="text-red-500">Error Occurred ❌</DialogTitle>
           <DialogDescription>

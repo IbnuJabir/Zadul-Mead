@@ -28,6 +28,7 @@
     "clsx": "^2.1.1",
     "copy-to-clipboard": "^3.3.3",
     "date-fns": "^3.6.0",
+    "dayjs": "^1.11.13",
     "framer-motion": "^11.3.21",
     "lottie-react": "^2.4.0",
     "lucide-react": "^0.419.0",
