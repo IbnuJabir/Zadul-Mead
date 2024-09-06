@@ -31,7 +31,7 @@ function Announcements() {
         return (
           <div
             key={announcement._id}
-            className="flex items-center justify-center flex-col gap-4 md:flex-row"
+            className="flex items-center justify-center flex-col gap-6 md:flex-row"
           >
             <Image
               data-aos="fade-right"

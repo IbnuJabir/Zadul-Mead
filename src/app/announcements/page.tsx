@@ -70,7 +70,7 @@ function Announcements() {
             const imageUrl = `${process.env.NEXT_PUBLIC_APP_BACKEND_API}${announcement.coverPicture}`;
             return (
               <div key={announcement._id} className="flex flex-col gap-4">
-                <div className="flex items-center justify-center flex-col md:flex-row md:justify-start md:gap-20">
+                <div className="flex items-center justify-center flex-col md:flex-row md:justify-start gap-6 md:gap-20">
                   <Image
                     data-aos="fade-right"
                     data-aos-duration="1000"
@@ -79,7 +79,7 @@ function Announcements() {
                     alt="kitab"
                     width={300}
                     height={300}
-                    className="w-[60%] md:w-[38%] h-72 cursor-pointer rounded-md border-4 border-white"
+                    className="w-[80%] sm:w-[70%] md:min-w-[20rem] md:w-[38%] h-72 cursor-pointer rounded-md border-4 border-white"
                     // placeholder="blur"
                     priority
                   />
@@ -88,7 +88,7 @@ function Announcements() {
                     data-aos-duration="1000"
                     data-aos-delay="300"
                     data-aos-once="true"
-                    className="flex flex-col gap-8 items-start"
+                    className="flex flex-col gap-8 items-start justify-start"
                   >
                     <div className="w-full font-montserrat px-4 flex items-top justify-left gap-4">
                       <p className="w-8 h-6 text-black p-4 bg-slate-200 rounded-full flex items-center justify-center">

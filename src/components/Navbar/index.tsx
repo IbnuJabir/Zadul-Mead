@@ -6,59 +6,106 @@ import { useState } from "react";
 import languageIcon from "../../../public/assets/language.png";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
+import zadlogo from "../../../public/assets/svg/Asset 4@4x 2.svg";
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  
+
   const pathname = usePathname();
-  const subpage = pathname.split('/')?.[1]
-  
+  const subpage = pathname.split("/")?.[1];
 
-
-  
-  
   return (
     <div className="w-full">
       {/* Desktop Navbar */}
       <div className="hidden  md:flex md:justify-between md:items-center md:px-8 md:py-4">
-        <Link href='/' className="text-white text-xl font-montserrat cursor-pointer">
+        <Link
+          href="/"
+          className="text-white text-xl font-montserrat cursor-pointer"
+        >
           <p className="hover:text-gray-300">ZAD AL-MEAD</p>
         </Link>
         <ul className="flex md:ml-20  md:space-x-6 lg:space-x-10 text-white font-montserrat">
-          <Link href='/' className={`${pathname === '/' ? " border-b-4 border-white text-white" : "text-gray-300"} cursor-pointer hover:text-white`}>Home</Link>
-          <Link href='/about' className={`${pathname === '/about' ? " border-b-4 border-white text-white " : "text-gray-300"} cursor-pointer hover:text-white `}>About</Link>
-          <Link href='/announcements' className={`${ pathname === '/announcements' ?" border-b-4 border-white text-white" : "text-gray-300"} cursor-pointer hover:text-white`}>Announcements</Link>
-          <Link href='/programs' className={`${ pathname === '/programs' ? " border-b-4 border-white text-white" : "text-gray-300"} cursor-pointer hover:text-white`}>Programs</Link>
-          <Link href='/contact' className={`${pathname === '/contact'  ? " border-b-4 border-white text-white" : "text-gray-300"} cursor-pointer hover:text-white`}>Contact</Link>
-
+          <Link
+            href="/"
+            className={`${
+              pathname === "/"
+                ? " border-b-4 border-white text-white"
+                : "text-gray-300"
+            } cursor-pointer hover:text-white`}
+          >
+            Home
+          </Link>
+          <Link
+            href="/about"
+            className={`${
+              pathname === "/about"
+                ? " border-b-4 border-white text-white "
+                : "text-gray-300"
+            } cursor-pointer hover:text-white `}
+          >
+            About
+          </Link>
+          <Link
+            href="/announcements"
+            className={`${
+              pathname === "/announcements"
+                ? " border-b-4 border-white text-white"
+                : "text-gray-300"
+            } cursor-pointer hover:text-white`}
+          >
+            Announcements
+          </Link>
+          <Link
+            href="/programs"
+            className={`${
+              pathname === "/programs"
+                ? " border-b-4 border-white text-white"
+                : "text-gray-300"
+            } cursor-pointer hover:text-white`}
+          >
+            Programs
+          </Link>
+          <Link
+            href="/contact"
+            className={`${
+              pathname === "/contact"
+                ? " border-b-4 border-white text-white"
+                : "text-gray-300"
+            } cursor-pointer hover:text-white`}
+          >
+            Contact
+          </Link>
         </ul>
-        {/* <div className="text-white">
-          <a href="#" className="border-b border-white">
-            Register
-          </a>
-        </div> */}
         <div>
           <Image
             src={languageIcon}
             alt="menubar"
             className="w-8 h-8 cursor-pointer"
-            onClick={() => console.log("Language")}
           />
         </div>
       </div>
 
       {/* Mobile Navbar */}
-      <div className="md:hidden flex justify-between items-center p-2.5 text-white bg-opacity-70 relative">
-      <Link href='/' className="text-white text-xl font-montserrat cursor-pointer">
-          <p className="hover:text-gray-300">ZAD AL-MEAD</p>
+      <div className="md:hidden flex justify-between items-center pl-10 pr-2 text-white sticky top-0 h-20 bg-black bg-opacity-40">
+        <Link
+          href="/"
+          className="text-white text-xl font-montserrat cursor-pointer"
+        >
+          <Image
+            src={zadlogo}
+            alt="logo"
+            width={50}
+            height={50}
+            className="w-[80%] md:w-[20%] h-20 cursor-pointer"
+            priority
+          />
         </Link>
-        <div className="z-40">
+        <div className="z-4000">
           <Image
             src="/assets/menubar.png"
             alt="menubar"
             width={60}
             height={100}
-            className="w-12 h-8 fixed top-2 right-3 bg-opacity-20 bg-black p-2 rounded-full px-4 cursor-pointer"
+            className="w-18 h-10 bg-opacity-20 hover:bg-black p-2 px-4 cursor-pointer z-200 "
             onClick={() => setMenuOpen(!menuOpen)}
           />
         </div>
@@ -70,14 +117,59 @@ function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "110%" }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              className="fixed top-2 right-3 bg-white text-black shadow-lg z-30 py-8 px-4 rounded-2xl"
+              className="fixed top-2 right-3 bg-black bg-opacity-40 text-white shadow-lg -z-10 py-8 px-4 rounded-2xl"
             >
               <ul className="flex flex-col gap-6 font-montserrat w-22">
-                <a href='/' className= {`${pathname === '/' ? " border-b-2 border-black text-black font-semibold" : "text-gray-700"} text-sm cursor-pointer hover:text-black`}>Home</a>
-                <a href='/about' className={`${pathname === '/about' ? " border-b-2 border-black text-black font-semibold" : "text-gray-700"} text-sm cursor-pointer hover:text-black`}>About</a>
-                <a href='/announcements' className={`${pathname === '/announcements' ? " border-b-2 border-black text-black font-semibold" : "text-gray-700"} text-sm cursor-pointer hover:text-black`}>Announcements</a>
-                <a href='/programs' className={`${pathname === '/programs' ? " border-b-2 border-black text-black font-semibold" : "text-gray-700"} text-sm cursor-pointer hover:text-black`}>Programs</a>
-                <a href='/contact' className={`${pathname === '/contact' ? " border-b-2 border-black text-black font-semibold" : "text-gray-700"} text-sm cursor-pointer hover:text-black`}>Contact</a>
+                <a
+                  href="/"
+                  className={`${
+                    pathname === "/"
+                      ? " border-b-2 border-white text-white font-semibold"
+                      : "text-gray-100"
+                  } text-sm cursor-pointer hover:text-gray-100 w-fit`}
+                >
+                  Home
+                </a>
+                <a
+                  href="/about"
+                  className={`${
+                    pathname === "/about"
+                      ? " border-b-2 border-white text-white font-semibold"
+                      : "text-gray-100"
+                  } text-sm cursor-pointer hover:text-gray-100`}
+                >
+                  About
+                </a>
+                <a
+                  href="/announcements"
+                  className={`${
+                    pathname === "/announcements"
+                      ? " border-b-2 border-white text-white font-semibold"
+                      : "text-gray-100"
+                  } text-sm cursor-pointer hover:text-gray-100`}
+                >
+                  Announcements
+                </a>
+                <a
+                  href="/programs"
+                  className={`${
+                    pathname === "/programs"
+                      ? " border-b-2 border-white text-white font-semibold"
+                      : "text-gray-100"
+                  } text-sm cursor-pointer hover:text-gray-100`}
+                >
+                  Programs
+                </a>
+                <a
+                  href="/contact"
+                  className={`${
+                    pathname === "/contact"
+                      ? " border-b-2 border-white text-white font-semibold"
+                      : "text-gray-100"
+                  } text-sm cursor-pointer hover:text-gray-100`}
+                >
+                  Contact
+                </a>
               </ul>
             </motion.div>
           )}
