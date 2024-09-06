@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 import { Program, Schedule } from "@/lib/types";
 import Loader from "../loading";
 
-function programs() {
+function Programs() {
   const [programs, setPrograms] = useState<Program[]>([]);
   const [isLoading, setLoading] = useState(true);
 
@@ -211,4 +211,4 @@ function programs() {
   );
 }
 
-export default programs;
+export default Programs;

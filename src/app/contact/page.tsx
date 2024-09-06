@@ -91,12 +91,12 @@ function Contact() {
             data-aos-once="true"
             className="font-montserrat text-justify"
           >
-            We'd love to hear from you at ZAD AL-MEAD Islamic Center. Whether
+            We&apos;d love to hear from you at ZAD AL-MEAD Islamic Center. Whether
             you have questions about our programs, events, or services, or
-            you're looking for ways to get involved, we're here to help. Feel
+            you&apos;re looking for ways to get involved, we&apos;re here to help. Feel
             free to reach out for support, feedback, or general inquiries, and a
             member of our team will respond as soon as possible. Your connection
-            with us matters, and we're committed to fostering a strong community
+            with us matters, and we&apos;re committed to fostering a strong community
             bond.
           </p>
         </div>
