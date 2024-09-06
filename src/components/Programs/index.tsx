@@ -99,39 +99,42 @@ function Programs() {
   if (!programs.length) return <h1>No Programs Available!</h1>;
 
   return (
-    <div className="w-full overflow-x-hidden bg-programs-bkg bg-no-repeat bg-cover bg-center p-6 flex flex-col gap-16">
-      <div className="flex flex-col gap-2 md:ml-10">
-        <h1 className="text-white text-xl md:text-2xl text-left">
+    <div className="w-full overflow-x-hidden bg-programs-bkg bg-no-repeat bg-cover bg-center p-3 flex flex-col gap-10">
+      {/* <div className="flex flex-col gap-2 md:ml-10">
+        <h1 className="text-white text-xl md:text-2xl text-left ">
           Programs <br />
           at <span className="font-bold">Badir Masjid</span>
         </h1>
         <p className="text-gray-300 text-left text-lg font-montserrat">
           Learning for All Ages and Levels
         </p>
-      </div>
-      {nextProgram ? (
-        <div
-          data-aos="zoom-in"
-          data-aos-duration="500"
-          data-aos-once="true"
-          data-aos-delay="100"
-          className="w-[70%] xs:max-w-[48%] sm:max-w-[35%] md:max-w-[30%] lg:max-w-[22%] xl:max-w-[20%] 2xl:max-w-[18%] h-16 mx-auto overflow-hidden bg-white rounded-lg flex items-center justify-start font-montserrat"
-        >
-          <div className="w-15 h-full flex">
-            <Lottie animationData={greenLive} loop={true} />
-          </div>
-          <p className="text-2xl w-1/2 font-bold text-center">Live</p>
-          <div className="w-[80%] flex flex-col items-start justify-center">
-            <div className="flex items-center justify-start gap-2 w-full">
-              <p>{nextProgram.timeLeft}</p>
-              <p>left</p>
-            </div>
-            <p className="">to start {nextProgram.programName}</p>
+      </div> */}
+      <div
+        data-aos="zoom-in"
+        data-aos-duration="500"
+        data-aos-once="true"
+        data-aos-delay="100"
+        className="md:ml-[700px] md:mt-5 w-[70%] xs:max-w-[48%] sm:max-w-[35%] md:max-w-[30%] lg:max-w-[22%] xl:max-w-[20%] 2xl:max-w-[18%]  h-16 mx-auto overflow-hidden bg-white rounded-lg flex items-center justify-start font-montserrat"
+      >
+        <div className="w-15 h-full flex ">
+          <Lottie animationData={greenLive} loop={true} />
+        </div>
+        <p className="text-2xl w-1/2 font-bold text-center">Live</p>
+        <div className="w-[80%] flex flex-col items-start justify-center">
+          <div className="flex items-center justify-start gap-2 w-full">
+            <p>
+              10:07:<span className="text-red-600">52</span>
+            </p>
+            <p>left</p>
           </div>
         </div>
-      ) : (
-        <p className="text-white">No upcoming programs</p>
-      )}
+      </div>
+      <div>
+      <h1 className="text-white text-xl md:text-3xl md:ml-7 md:-mt-10 ">
+          Programs 
+          at Badir <span className="font-bold">Masjid</span>
+        </h1>
+      </div>
       <div
         data-aos="zoom-out"
         data-aos-duration="800"
@@ -151,7 +154,40 @@ function Programs() {
                 .join(", ")}
             />
           </BentoGrid>
-        ))}
+        ))} */}
+        <BentoGrid className="w-[120px] h-[70px] bg-white rounded-lg mt-3">
+          <BentoGridItem title={"Qur'an Tafsir"} description={"51 jobs"} />
+        </BentoGrid>{" "}
+        <BentoGrid className="w-[120px] h-[70px] bg-white rounded-lg mt-3">
+          <BentoGridItem title={"Fatawa"} description={"51 jobs"} />
+        </BentoGrid>{" "}
+        <BentoGrid className="w-[120px] h-[70px] bg-white rounded-lg mt-3">
+          <BentoGridItem title={"Jumu'a Khutba"} description={"51 jobs"} />
+        </BentoGrid>{" "}
+        </div>
+        <div>
+      <h1 className="text-white text-xl md:text-3xl md:ml-7 ">
+          Programs 
+          at Zadul Mead <span className="font-bold">Medresa</span>
+        </h1>
+      </div>
+        <div
+        data-aos="zoom-out"
+        data-aos-duration="800"
+        data-aos-once="true"
+        data-aos-delay="100"
+        className="w-full grid grid-cols-2 gap-y-8 md:grid-cols-3"
+      >
+       
+        <BentoGrid className="w-[120px] h-[70px] bg-white rounded-lg mt-3">
+          <BentoGridItem title={"Muhaderat"} description={"51 jobs"} />
+        </BentoGrid>{" "}
+        <BentoGrid className="w-[120px] h-[70px] bg-white rounded-lg mt-3">
+          <BentoGridItem title={"Siira"} description={"51 jobs"} />
+        </BentoGrid>{" "}
+        <BentoGrid className="w-[120px] h-[70px] bg-white rounded-lg mt-3">
+          <BentoGridItem title={"Tajweed"} description={"51 jobs"} />
+        </BentoGrid>
       </div>
       <a
         href="/programs"

@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import annnouncement from "../../../public/assets/kitab.png";
 import { useEffect, useState } from "react";
 import { format } from "date-fns";
 import { AnnouncementsType } from "@/lib/types";
@@ -26,7 +25,7 @@ function Announcements() {
   if (!announcements) return <p>No Announcement is available!</p>;
 
   return (
-    <div className="w-full bg-announcement-phone-bkg  md:bg-announcement-bkg bg-no-repeat bg-cover md:bg-top flex items-center justify-center  flex-col py-8">
+    <div className="overflow-x-hidden w-full bg-announcement-phone-bkg  md:bg-announcement-bkg bg-no-repeat bg-cover md:bg-top flex items-center justify-center  flex-col py-8">
       <h1 className="text-3xl  mb-10 text-left md:w-[70%] ">ANNOUNCEMENTS</h1>
       {announcements.map((announcement: AnnouncementsType) => {
         const imageUrl = `${process.env.NEXT_PUBLIC_APP_BACKEND_API}${announcement.coverPicture}`;
