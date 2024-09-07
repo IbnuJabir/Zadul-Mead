@@ -1,3 +1,4 @@
+import React, { Dispatch, ReactNode, SetStateAction } from "react";
 export type AnnouncementsType = {
   _id: string;
   name: string;
@@ -41,6 +42,8 @@ export type Program = {
   name: string;
   coverPicture: string;
   classType: string;
+  mualif: string;
+  qireatGivenBy: string;
   schedule: Schedule[];
   isActive: boolean;
   startingDate: string;
@@ -77,4 +80,18 @@ export type RegistrationState = {
 export type DialogState = {
   successDialog: boolean;
   errorDialog: boolean;
+};
+
+export type SidebarProps = {
+  show: boolean;
+  setter: Dispatch<SetStateAction<boolean>>;
+};
+
+export type MenuItemProps = {
+  icon: React.ReactNode;
+  name: string;
+  route: string;
+};
+export type LayoutProps = {
+  children: ReactNode;
 };

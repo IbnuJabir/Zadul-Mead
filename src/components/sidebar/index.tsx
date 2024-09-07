@@ -1,11 +1,11 @@
-// @/components/sidebar/index.tsx
-import React, { useState } from "react";
+import React, { useState, ReactNode } from "react";
 import Sidebar from "./SideBar";
 import MenuBarMobile from "./MenuBarMobile";
+import { LayoutProps } from "@/lib/types";
 
-export default function Layout({ children }) {
+export default function Layout({ children }: LayoutProps) {
   // Mobile sidebar visibility state
-  const [showSidebar, setShowSidebar] = useState(false);
+  const [showSidebar, setShowSidebar] = useState<boolean>(false);
 
   return (
     <>

@@ -34,7 +34,7 @@ const Home: React.FC = () => {
           placeholder="blur"
           className="object-cover -z-10"
         />
-        {/* <Navbar /> */}
+        <Navbar />
         <div className="w-full h-[89%] flex flex-col items-center md:items-start justify-center gap-6 lg:pl-16 md:pl-12">
           <h1
             data-aos="zoom-in"
