@@ -85,7 +85,7 @@ function Navbar() {
       </div>
 
       {/* Mobile Navbar */}
-      <div className="md:hidden flex justify-between items-center pl-10 pr-2 text-white sticky top-0 h-20 bg-black bg-opacity-40">
+      {/* <div className="md:hidden flex justify-between items-center pl-10 pr-2 text-white h-20 bg-black bg-opacity-40">
         <Link
           href="/"
           className="text-white text-xl font-montserrat cursor-pointer"
@@ -174,7 +174,7 @@ function Navbar() {
             </motion.div>
           )}
         </AnimatePresence>
-      </div>
+      </div> */}
     </div>
   );
 }

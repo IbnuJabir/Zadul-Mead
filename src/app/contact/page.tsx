@@ -1,6 +1,6 @@
 "use client";
 import Navbar from "@/components/Navbar";
-import React from "react";
+import React, { useState } from "react";
 import bkg from "../../../public/assets/contact_banner.png";
 import Image from "next/image";
 import { AiFillYoutube } from "react-icons/ai";
@@ -18,7 +18,11 @@ import {
   matches,
 } from "@mantine/form";
 import { Button, Group, TextInput, NumberInput } from "@mantine/core";
+import Sidebar from "@/components/sidebar/MenuBarMobile";
+import Layout from "@/components/sidebar";
 function Contact() {
+  const [showSidebar, setShowSidebar] = useState<boolean>(false);
+
   const form = useForm({
     mode: "uncontrolled",
     validateInputOnBlur: true,

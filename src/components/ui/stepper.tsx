@@ -25,7 +25,7 @@ const Stepper: React.FC<StepperProps> = ({
             {variant === "numbers" ? index + 1 : "•"}
           </div>
           <span
-            className={`ml-2 ${
+            className={`ml-2 text-nowrap ${
               index <= currentStep ? "text-blue-600" : "text-gray-600"
             }`}
           >

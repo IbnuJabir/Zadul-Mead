@@ -1,5 +1,5 @@
 // components/ClientProvider.tsx
-"use client"; // Explicitly mark this as a client component
+"use client";
 
 import React from "react";
 import { MantineProvider, ColorSchemeScript } from "@mantine/core";
@@ -8,7 +8,7 @@ import { Provider } from "react-redux";
 import { store } from "@/state/store";
 import { theme } from "../../theme";
 import "react-toastify/dist/ReactToastify.css";
-
+import Sidebar from "@/components/sidebar";
 export function ClientProvider({ children }: { children: React.ReactNode }) {
   return (
     <>
@@ -26,7 +26,9 @@ export function ClientProvider({ children }: { children: React.ReactNode }) {
         theme="colored"
       />
       <MantineProvider theme={theme}>
-        <Provider store={store}>{children}</Provider>
+        <Provider store={store}>
+          <Sidebar>{children}</Sidebar>
+        </Provider>
       </MantineProvider>
     </>
   );
