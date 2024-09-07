@@ -170,8 +170,18 @@ function Programs() {
                     <div className="w-28 h-[1px] mt-3 mb-2 bg-gray-500 before:w-10 before:h-10 before:bg-gray-500 before:rounded-full relative">
                       <div className="w-2 h-2 bg-gray-500 rounded-full absolute -mt-1"></div>
                     </div>
-                    {program?.mualif && <p><span className="font-semibold">Muallif :</span> {program?.mualif} </p>}
-                    {program?.qireatGivenBy && <p><span className="font-semibold">Given By :</span>{program?.qireatGivenBy} </p>}
+                    {program?.mualif && (
+                      <p>
+                        <span className="font-semibold">Muallif :</span>{" "}
+                        {program?.mualif}{" "}
+                      </p>
+                    )}
+                    {program?.qireatGivenBy && (
+                      <p>
+                        <span className="font-semibold">Given By :</span>
+                        {program?.qireatGivenBy}{" "}
+                      </p>
+                    )}
                   </div>
                 </div>
               );
@@ -203,7 +213,7 @@ function Programs() {
                   data-aos-delay="100"
                   className="bg-white mx-auto text-black w-[300px] max-h-[560px] rounded-xl shadow-slate-500 shadow-lg hover:bg-[#80807F] hover:bg-opacity-100 hover:text-white"
                 >
-                  <p className="bg-[#474747] text-white py-1 px-2 w-fit rounded-br-lg rounded-tl-lg">
+                  <p className="bg-[#474747] text-white py-1 px-2 w-fit rounded-br-lg rounded-tl-lg group-hover:bg-white group-hover:text-black">
                     {program.name}
                   </p>
                   <div className="px-10 py-6 flex flex-col items-start justify-between">
@@ -248,8 +258,18 @@ function Programs() {
                     <div className="w-28 h-[1px] mt-3 mb-2 bg-gray-500 before:w-10 before:h-10 before:bg-gray-500 before:rounded-full relative">
                       <div className="w-2 h-2 bg-gray-500 rounded-full absolute -mt-1"></div>
                     </div>
-                    {program?.mualif && <p><span className="font-semibold">Muallif :</span> {program?.mualif} </p>}
-                    {program?.qireatGivenBy && <p><span className="font-semibold">Given By :</span>{program?.qireatGivenBy} </p>}
+                    {program?.mualif && (
+                      <p>
+                        <span className="font-semibold">Muallif :</span>{" "}
+                        {program?.mualif}{" "}
+                      </p>
+                    )}
+                    {program?.qireatGivenBy && (
+                      <p>
+                        <span className="font-semibold">Given By :</span>
+                        {program?.qireatGivenBy}{" "}
+                      </p>
+                    )}
                   </div>
                 </div>
               );
