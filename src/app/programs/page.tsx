@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Program, Schedule } from "@/lib/types";
 import Loader from "../loading";
+import kitabTewhid from "../../../public/assets/kitab-tewhid.png";
 
 function Programs() {
   const [programs, setPrograms] = useState<Program[]>([]);
@@ -65,7 +66,7 @@ function Programs() {
           </p>
         </div>
       </div>
-      <div className="md:px-32 px-10 py-10">
+      <div className="md:px-40 px-24 py-10">
         <div>
           <h1
             data-aos="fade-up"
@@ -81,21 +82,29 @@ function Programs() {
           {programs
             .filter((program: Program) => program.type === "Mesjid") // Filter programs by type
             .map((program: Program) => (
+              
               <div
                 key={program._id}
                 data-aos="fade-right"
                 data-aos-duration="800"
                 data-aos-once="true"
                 data-aos-delay="100"
-                className="bg-white text-black w-[350px] px-3 py-6 rounded-lg shadow-slate-500 shadow-lg text-lg"
+                className="bg-white text-black w-[300px]  rounded-xl shadow-slate-500 shadow-lg "
               >
-                <p className="font-bold">Program Name : {program.name}</p>
-                <p>
+                <p className="bg-[#474747] text-white py-1 px-2 w-fit rounded-br-lg rounded-tl-lg">{program.name}</p>
+                <div className="px-10 py-6">
+                  <Image    
+                    src={kitabTewhid}
+                    alt="Ders kitab"
+                    className="w-[230px] items-center  rounded-xl"
+                    />
+              
+                <p className="py-2">
                   Started at :{" "}
                   {new Date(program.startingDate).toLocaleDateString()}
                 </p>
                 <div>
-                  <p className="font-bold border-b-2 border-black w-fit">Program Day</p>
+                  <p className="font-bold w-fit my-1">Program Day</p>
                   {program.schedule.map((val: Schedule) => {
                     const startTime = new Date(
                       val.startTime
@@ -120,50 +129,16 @@ function Programs() {
                     );
                   })}
                 </div>
+                <div className="w-28 h-[1px] mt-6 mb-3 bg-gray-500 before:w-10 before:h-10 before:bg-gray-500 before:rounded-full relative">
+                  <div className="w-2 h-2 bg-gray-500 rounded-full absolute -mt-1"></div>
+                  </div>
                 <p>Muallif : Sheikh Ahmed </p>
+                <p>Muallif : Sheikh Ahmed </p>
+                
+              </div>
               </div>
             ))}
 
-          <div
-            data-aos="fade-left"
-            data-aos-duration="800"
-            data-aos-once="true"
-            data-aos-delay="100"
-            className="bg-white text-black w-[350px] px-3 py-6 rounded-lg shadow-slate-500 shadow-lg text-lg"
-          >
-            <p>Dars Name : 40 Hadith Habashi</p>
-            <p>Starting Date : 23/2/2019</p>
-            <p>Dars Day : Saturday & Sunday</p>
-            <p>Muallif : Sheikh Ahmad </p>
-            <p>Muallif : Sheikh Ahmad </p>
-          </div>
-          <div
-            data-aos="fade-right"
-            data-aos-duration="800"
-            data-aos-once="true"
-            data-aos-delay="100"
-            className="bg-white text-black w-[350px] px-3 py-6 rounded-lg shadow-slate-500 shadow-lg text-lg"
-          >
-            <p>Dars Name : 40 Hadith Habashi</p>
-            <p>Starting Date : 23/2/2019</p>
-            <p>Dars Day : Saturday & Sunday</p>
-            <p>Muallif : Sheikh Ahmad </p>
-            <p>Muallif : Sheikh Ahmad </p>
-          </div>
-
-          <div
-            data-aos="fade-left"
-            data-aos-duration="800"
-            data-aos-once="true"
-            data-aos-delay="100"
-            className="bg-white text-black w-[350px] px-3 py-6 rounded-lg shadow-slate-500 shadow-lg text-lg"
-          >
-            <p>Dars Name : 40 Hadith Habashi</p>
-            <p>Starting Date : 23/2/2019</p>
-            <p>Dars Day : Saturday & Sunday</p>
-            <p>Muallif : Sheikh Ahmad </p>
-            <p>Muallif : Sheikh Ahmad </p>
-          </div>
         </div>
         <div>
           <h1
@@ -177,33 +152,66 @@ function Programs() {
           </h1>
         </div>
         <div className="w-full items-center justify-center grid grid-cols-1 gap-y-8 md:grid-cols-2 py-10">
-          <div
-            data-aos="fade-right"
-            data-aos-duration="800"
-            data-aos-once="true"
-            data-aos-delay="100"
-            className="bg-white text-black w-[350px] px-3 py-6 rounded-lg shadow-slate-500 shadow-lg text-lg"
-          >
-            <p>Dars Name : 40 Hadith Habashi</p>
-            <p>Starting Date : 23/2/2019</p>
-            <p>Dars Day : Saturday & Sunday</p>
-            <p>Muallif : Sheikh Ahmad </p>
-            <p>Muallif : Sheikh Ahmad </p>
+        {programs
+            .filter((program: Program) => program.type === "Mesjid") // Filter programs by type
+            .map((program: Program) => (
+              
+              <div
+                key={program._id}
+                data-aos="fade-right"
+                data-aos-duration="800"
+                data-aos-once="true"
+                data-aos-delay="100"
+                className="bg-white text-black w-[300px]  rounded-xl shadow-slate-500 shadow-lg "
+              >
+                <p className="bg-[#474747] text-white py-1 px-2 w-fit rounded-br-lg rounded-tl-lg">{program.name}</p>
+                <div className="px-10 py-6">
+                  <Image    
+                    src={kitabTewhid}
+                    alt="Ders kitab"
+                    className="w-[230px] items-center  rounded-xl"
+                    />
+              
+                <p className="py-2">
+                  Started at :{" "}
+                  {new Date(program.startingDate).toLocaleDateString()}
+                </p>
+                <div>
+                  <p className="font-bold w-fit my-1">Program Day</p>
+                  {program.schedule.map((val: Schedule) => {
+                    const startTime = new Date(
+                      val.startTime
+                    ).toLocaleTimeString([], {
+                      hour: "2-digit",
+                      minute: "2-digit",
+                      hour12: true,
+                    });
+                    const endTime = new Date(val.endTime).toLocaleTimeString(
+                      [],
+                      {
+                        hour: "2-digit",
+                        minute: "2-digit",
+                        hour12: true,
+                      }
+                    );
+
+                    return (
+                      <p key={val._id}>
+                        {val.day}: {startTime} - {endTime}
+                      </p>
+                    );
+                  })}
+                </div>
+                <div className="w-28 h-[1px] mt-6 mb-3 bg-gray-500 before:w-10 before:h-10 before:bg-gray-500 before:rounded-full relative">
+                  <div className="w-2 h-2 bg-gray-500 rounded-full absolute -mt-1"></div>
+                  </div>
+                <p>Muallif : Sheikh Ahmed </p>
+                <p>Muallif : Sheikh Ahmed </p>
+                
+              </div>
+              </div>
+            ))}
           </div>
-          <div
-            data-aos="fade-left"
-            data-aos-duration="800"
-            data-aos-once="true"
-            data-aos-delay="100"
-            className="bg-white text-black w-[350px] px-3 py-6 rounded-lg shadow-slate-500 shadow-lg text-lg"
-          >
-            <p>Dars Name : 40 Hadith Habashi</p>
-            <p>Starting Date : 23/2/2019</p>
-            <p>Dars Day : Saturday & Sunday</p>
-            <p>Muallif : Sheikh Ahmad </p>
-            <p>Muallif : Sheikh Ahmad </p>
-          </div>
-        </div>
       </div>
 
       <Footer />
