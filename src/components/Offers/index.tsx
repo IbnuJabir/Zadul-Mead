@@ -11,7 +11,7 @@ function Offers() {
           data-aos-once="true"
          data-duration="100"
          data-aos="zoom-out"
-         data-aos-delay= "10"
+       
         className="h-fit flex flex-col gap-4 items-start justify-start">
           <IoLibrary className="size-8" />
           <div className="flex flex-col gap-2 w-full">
@@ -27,7 +27,7 @@ function Offers() {
          data-aos="zoom-out"
          data-aos-once="true"
          data-duration="200"
-         data-aos-delay= "20"
+      
          
         className="h-fit flex flex-col gap-4 items-start justify-start">
           <IoLibrary className="size-8" />
@@ -44,7 +44,7 @@ function Offers() {
           data-aos-once="true"
          data-aos="zoom-out"
          data-duration="300"
-         data-aos-delay= "30"
+        
 
 
           className="h-fit flex flex-col gap-4 items-start justify-start">
@@ -62,7 +62,7 @@ function Offers() {
           data-aos-once="true"
          data-aos="zoom-out"
          data-duration="400"
-         data-aos-delay= "40"
+      
          
           className="h-fit flex flex-col gap-4 items-start justify-start">
           <IoLibrary className="size-8" />
@@ -79,7 +79,7 @@ function Offers() {
           data-aos-once="true"
          data-aos="zoom-out"
          data-duration="500"
-         data-aos-delay= "50"
+   
          
           className="h-fit flex flex-col gap-4 items-start justify-start">
           <IoLibrary className="size-8" />
@@ -96,7 +96,7 @@ function Offers() {
           data-aos-once="true"
          data-aos="zoom-out"
          data-duration="600"
-         data-aos-delay= "60"
+         
 
           className="h-fit flex flex-col gap-4 items-start justify-start">
           <IoLibrary className="size-8" />
