@@ -75,7 +75,7 @@ function Offers() {
          
           className="h-fit flex flex-col gap-4 items-start justify-start">
              <div className="flex items-center gap-3 w-full">
-          <IoMdFootball className="size-8" />
+          <ImSpoonKnife className="size-8" />
          
             <h2 className="text-left">Clean Dining Services
             </h2>
@@ -111,7 +111,7 @@ function Offers() {
 
           className="h-fit flex flex-col gap-4 items-start justify-start">
              <div className="flex items-center gap-3 w-full">
-          <ImSpoonKnife className="size-8" />
+          <IoMdFootball className="size-8" />
          
             <h2 className="text-left">Sports and Recreational</h2>
             </div>
