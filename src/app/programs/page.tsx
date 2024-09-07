@@ -98,7 +98,7 @@ function Programs() {
           </p>
         </div>
       </div>
-      <div className="md:px-40 px-16 py-10">
+     <div className=" flex flex-col md:ml-[18%] ml-[18%] py-10">
         <div>
           <h1
             data-aos="fade-up"
