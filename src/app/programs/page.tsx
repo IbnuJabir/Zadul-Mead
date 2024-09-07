@@ -66,7 +66,7 @@ function Programs() {
           </p>
         </div>
       </div>
-      <div className="md:px-40 px-24 py-10">
+      <div className="md:px-40 px-16 py-10">
         <div>
           <h1
             data-aos="fade-up"
