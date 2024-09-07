@@ -11,7 +11,7 @@ import PulsatingButton from "../ui/pulsating-button";
 function Offers() {
   return (
     <div className="pt-10 bg-about-bkg md:bg-about-desktop-bkg bg-no-repeat bg-cover">
-      <div className="h-fit w-[90%] bg-[#202020] font-light grid grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-4 text-white  m-auto rounded-3xl p-4 md:py-10">
+      <div className="h-fit w-[90%] bg-[#202020] font-light grid grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-4 text-white  m-auto rounded-3xl p-8 md:py-10">
         <div
           data-aos-once="true"
          data-duration="100"

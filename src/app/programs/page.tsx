@@ -66,7 +66,7 @@ function Programs() {
           </p>
         </div>
       </div>
-      <div className="md:px-40 px-16 py-10">
+     <div className=" flex flex-col md:ml-[18%] ml-[18%] py-10">
         <div>
           <h1
             data-aos="fade-up"
@@ -78,7 +78,7 @@ function Programs() {
             Programs at Badir <span className="font-bold">Masjid</span>
           </h1>
         </div>
-        <div className="w-full items-center justify-center grid grid-cols-1 gap-y-8 md:grid-cols-2 py-10">
+        <div className="w-full grid grid-cols-1 gap-y-8 md:grid-cols-2  items-center justify-center py-10">
           {programs
             .filter((program: Program) => program.type === "Mesjid") // Filter programs by type
             .map((program: Program) => (
@@ -151,7 +151,7 @@ function Programs() {
             Programs at Zadul Mead <span className="font-bold">Medresa</span>
           </h1>
         </div>
-        <div className="w-full items-center justify-center grid grid-cols-1 gap-y-8 md:grid-cols-2 py-10">
+        <div className="w-full  grid grid-cols-1 gap-y-8 md:grid-cols-2 items-center justify-center py-10">
         {programs
             .filter((program: Program) => program.type === "Mesjid") // Filter programs by type
             .map((program: Program) => (
