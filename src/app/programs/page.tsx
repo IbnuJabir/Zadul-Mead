@@ -98,14 +98,14 @@ function Programs() {
           </p>
         </div>
       </div>
-     <div className=" flex flex-col md:ml-[18%] ml-[18%] py-10">
+     <div className=" flex flex-col py-10">
         <div>
           <h1
             data-aos="fade-up"
             data-aos-duration="800"
             data-aos-once="true"
             data-aos-delay="100"
-            className="text-white text-xl md:text-3xl md:ml-2  font-cinzel mt-5"
+            className="text-white text-xl md:text-3xl md:ml-24 ml-14  font-cinzel mt-5"
           >
             Programs at Badir <span className="font-bold">Masjid</span>
           </h1>
@@ -125,7 +125,7 @@ function Programs() {
                   data-aos-delay="100"
                   className="bg-white mx-auto text-black w-[300px] max-h-[560px] rounded-xl shadow-slate-500 shadow-lg hover:bg-[#80807F] group hover:bg-opacity-100 hover:text-white"
                 >
-                  <p className="bg-[#474747] text-white py-1 px-2 w-fit rounded-br-lg rounded-tl-lg group-hover:bg-white group-hover:text-black">
+                  <p className="bg-[#474747] text-white font-semibold py-1 px-2 w-fit rounded-br-lg rounded-tl-lg group-hover:bg-white group-hover:text-black">
                     {program.name}
                   </p>
                   <div className="px-10 py-6 flex flex-col items-start justify-between">
@@ -193,7 +193,7 @@ function Programs() {
             data-aos-duration="800"
             data-aos-once="true"
             data-aos-delay="100"
-            className="text-white text-xl md:text-3xl md:ml-2  font-cinzel mt-10"
+            className="text-white text-xl md:text-3xl md:ml-24 ml-14  font-cinzel mt-10"
           >
             Programs at Zadul Mead <span className="font-bold">Medresa</span>
           </h1>
@@ -213,7 +213,7 @@ function Programs() {
                   data-aos-delay="100"
                   className="bg-white mx-auto text-black w-[300px] max-h-[560px] rounded-xl shadow-slate-500 shadow-lg hover:bg-[#80807F] group hover:bg-opacity-100 hover:text-white"
                 >
-                  <p className="bg-[#474747] text-white py-1 px-2 w-fit rounded-br-lg rounded-tl-lg group-hover:bg-white group-hover:text-black">
+                  <p className="bg-[#474747] text-white font-semibold py-1 px-2 w-fit rounded-br-lg rounded-tl-lg group-hover:bg-white group-hover:text-black">
                     {program.name}
                   </p>
                   <div className="px-10 py-6 flex flex-col items-start justify-between">
