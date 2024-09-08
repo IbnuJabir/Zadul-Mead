@@ -185,12 +185,12 @@ function About() {
               data-aos-once="true"
               className="  md:block font-montserrat text-justify mt-5"
             >
-              The center&apos;s commitment to its foundational motto, "Knowledge
-              Comes First," remains steadfast. By blending traditional Islamic
-              teachings with modern educational methods, Zadul Ma&apos;ad
-              strives to empower individuals, foster spiritual growth, and build
-              a knowledgeable community that is well-equipped to face the
-              challenges of contemporary life.
+              The center&apos;s commitment to its foundational motto,
+              &ldquo;Knowledge Comes First,&rdquo; remains steadfast. By
+              blending traditional Islamic teachings with modern educational
+              methods, Zadul Ma&apos;ad strives to empower individuals, foster
+              spiritual growth, and build a knowledgeable community that is
+              well-equipped to face the challenges of contemporary life.
             </p>
             <p
               data-aos="zoom-in"

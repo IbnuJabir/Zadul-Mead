@@ -26,11 +26,11 @@ function Offers() {
           <div className="flex  gap-3 items-center w-full">
             <FaBookOpen className="size-14 md:size-10" />
 
-            <h2 className="text-left">Qur'an Studies and Tafsir</h2>
+            <h2 className="text-left">Qur&apos;an Studies and Tafsir</h2>
           </div>
           <p className="w-full font-montserrat text-[11px] text-gray-300 text-left">
-            Learn the meanings and teachings of the Qur'an to better understand
-            Allah's words and guidance.
+            Learn the meanings and teachings of the Qur&apos;an to better understand
+            Allah&apos;s words and guidance.
           </p>
         </div>
         <div
