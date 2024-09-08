@@ -98,7 +98,7 @@ function Programs() {
           </p>
         </div>
       </div>
-     <div className=" flex flex-col py-10">
+      <div className=" flex flex-col py-10">
         <div>
           <h1
             data-aos="fade-up"
@@ -123,9 +123,9 @@ function Programs() {
                   data-aos-duration="800"
                   data-aos-once="true"
                   data-aos-delay="100"
-                  className="bg-white mx-auto text-black w-[300px] max-h-[560px] rounded-xl shadow-slate-500 shadow-lg hover:bg-[#80807F] group hover:bg-opacity-100 hover:text-white"
+                  className="bg-white mx-auto text-black w-[300px] max-h-[560px] rounded-xl shadow-slate-500 shadow-lg hover:bg-[#80807F] group hover:bg-opacity-100 hover:text-white transition duration-300 ease-in-out"
                 >
-                  <p className="bg-[#474747] text-white font-semibold py-1 px-2 w-fit rounded-br-lg rounded-tl-lg group-hover:bg-white group-hover:text-black">
+                  <p className="bg-[#474747] text-white font-semibold py-1 px-2 w-fit rounded-br-lg rounded-tl-lg group-hover:bg-white group-hover:text-black transition duration-300 ease-in-out">
                     {program.name}
                   </p>
                   <div className="px-10 py-6 flex flex-col items-start justify-between">
@@ -211,9 +211,9 @@ function Programs() {
                   data-aos-duration="800"
                   data-aos-once="true"
                   data-aos-delay="100"
-                  className="bg-white mx-auto text-black w-[300px] max-h-[560px] rounded-xl shadow-slate-500 shadow-lg hover:bg-[#80807F] group hover:bg-opacity-100 hover:text-white"
+                  className="bg-white mx-auto text-black w-[300px] max-h-[560px] rounded-xl shadow-slate-500 shadow-lg hover:bg-[#80807F] group hover:bg-opacity-100 hover:text-white transition duration-300 ease-in-out"
                 >
-                  <p className="bg-[#474747] text-white font-semibold py-1 px-2 w-fit rounded-br-lg rounded-tl-lg group-hover:bg-white group-hover:text-black">
+                  <p className="bg-[#474747] text-white font-semibold py-1 px-2 w-fit rounded-br-lg rounded-tl-lg group-hover:bg-white group-hover:text-black transition duration-300 ease-in-out">
                     {program.name}
                   </p>
                   <div className="px-10 py-6 flex flex-col items-start justify-between">

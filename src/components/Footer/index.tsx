@@ -10,7 +10,7 @@ import { FaXTwitter } from "react-icons/fa6";
 function Footer() {
   return (
     <>
-      <div className="w-full h-24 bg-slate-900 md:hidden flex items-center justify-around font-montserrat">
+      <div className="w-full h-24 bg-slate-950 md:hidden flex items-center justify-around font-montserrat">
         <a href="/" className="text-white font-montserrat">
           Zad Al-Mead
         </a>
@@ -38,18 +38,20 @@ function Footer() {
           </Link>
         </div>
       </div>
-      <div className="hidden w-full h-56 bg-slate-900 md:flex md:items-center md:justify-between font-montserrat px-20">
+      <div className="hidden w-full h-56 bg-slate-950 md:flex md:items-center md:justify-between font-montserrat px-20">
         <div className="flex flex-col items-center w-[30%] font-montserrat">
-          <Image
-            src={imageUrl}
-            alt="logo"
-            width={50}
-            height={50}
-            className="w-[30%] md:w-[20%] h-20 cursor-pointer rounded-md"
-            priority
-          />
+          <a href="/" className="w-96 h-full ">
+            <Image
+              src={imageUrl}
+              alt="logo"
+              width={50}
+              height={50}
+              className="w-[40%] md:w-[20%] mx-auto h-20 cursor-pointer rounded-md"
+              priority
+            />
+          </a>
           <p className="text-white font-montserrat text-[28px]">Zad Al-Mead</p>
-          <p className="text-gray-400 text-[10px]">Knowledge first</p>
+          <p className="text-gray-400 text-[10px]">Knowledge Comes First</p>
         </div>
         <div className="flex justify-between text-white w-1/3">
           <div className="flex flex-col gap-2">

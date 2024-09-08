@@ -7,6 +7,8 @@ import languageIcon from "../../../public/assets/language.png";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import zadlogo from "../../../public/assets/svg/Asset 4@4x 2.svg";
+import { FaUser } from "react-icons/fa";
+
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -76,11 +78,14 @@ function Navbar() {
           </Link>
         </ul>
         <div>
-          <Image
+          <a className="text-3xl flex text-white" href="/register">
+            <FaUser />
+          </a>
+          {/* <Image
             src={languageIcon}
             alt="menubar"
             className="w-8 h-8 cursor-pointer"
-          />
+          /> */}
         </div>
       </div>
 

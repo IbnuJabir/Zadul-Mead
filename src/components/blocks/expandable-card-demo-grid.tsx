@@ -3,9 +3,9 @@ import Image from "next/image";
 import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "@/hooks/use-outside-click";
-import library from "../../../public/assets/library.jpeg";
-import ders from "../../../public/assets/highlight1.jpeg";
-import dorm from "../../../public/assets/dorm.jpeg";
+import medrasa from "../../../public/assets/medrasa.jpg";
+import office from "../../../public/assets/office.jpg";
+import mesjid from "../../../public/assets/insideMesjid.jpg";
 export default function ExpandableCardDemo() {
   const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(
     null
@@ -70,7 +70,7 @@ export default function ExpandableCardDemo() {
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className="w-full max-w-[600px]  h-full md:h-fit md:max-h-[100%]  flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden"
+              className="w-full max-w-[600px]  h-full md:h-fit md:max-h-[100%]  flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl "
             >
               <motion.div layoutId={`image-${active.title}-${id}`}>
                 <Image
@@ -118,7 +118,7 @@ export default function ExpandableCardDemo() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="text-neutral-600 text-xs md:text-sm lg:text-base h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
+                    className="text-neutral-600 text-xs md:text-sm lg:text-base h-80 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
                   >
                     {typeof active.content === "function"
                       ? active.content()
@@ -222,45 +222,39 @@ export const CloseIcon = () => {
 const cards = [
   {
     description: "Zadul Mead Medrasa",
-    title: "Library",
-    src: ders,
+    title: "Madresa",
+    src: medrasa,
     ctaText: "Visit",
-    ctaLink: "https://ui.aceternity.com/templates",
+    ctaLink: "https://zadalmead.com/",
     content: () => {
       return (
-        <p>
-          Lana Del Rey, an iconic American singer-songwriter, is celebrated for
-          her melancholic and cinematic music style. Born Elizabeth Woolridge
-          Grant in New York City, she has captivated audiences worldwide with
-          her haunting voice and introspective lyrics. <br /> <br /> Her songs
-          often explore themes of tragic romance, glamour, and melancholia,
-          drawing inspiration from both contemporary and vintage pop culture.
-          With a career that has seen numerous critically acclaimed albums, Lana
-          Del Rey has established herself as a unique and influential figure in
-          the music industry, earning a dedicated fan base and numerous
-          accolades.
-        </p>
+        <>
+          <p>
+            Zad Al-Mead Medresa is dedicated to providing structured Islamic
+            education, where students are guided by qualified teachers in
+            learning the Qur&apos;an, Hadith, Aqidah, Menhaj, Fiqh and sira.
+            It&apos;s a place where knowledge is imparted with care and
+            attention to detail, helping students develop a strong foundation in
+            Islamic principles while nurturing their spiritual growth.
+          </p>
+        </>
       );
     },
   },
   {
     description: "Zadul Mead Medrasa",
-    title: "Dormitory - 1",
-    src: library,
+    title: "Badr Mesjid",
+    src: mesjid,
     ctaText: "Visit",
-    ctaLink: "https://ui.aceternity.com/templates",
+    ctaLink: "https://zadalmead.com/",
     content: () => {
       return (
         <p>
-          Babu Maan, a legendary Punjabi singer, is renowned for his soulful
-          voice and profound lyrics that resonate deeply with his audience. Born
-          in the village of Khant Maanpur in Punjab, India, he has become a
-          cultural icon in the Punjabi music industry. <br /> <br /> His songs
-          often reflect the struggles and triumphs of everyday life, capturing
-          the essence of Punjabi culture and traditions. With a career spanning
-          over two decades, Babu Maan has released numerous hit albums and
-          singles that have garnered him a massive fan following both in India
-          and abroad.
+          Badr serves as the spiritual core of the center, offering a space for
+          prayer, reflection, and communal gatherings. It&apos;s not only a
+          place for prayer but also a welcoming environment for guests and
+          community members. The masjid plays a central role in promoting
+          Islamic teachings and fostering unity among the faithful.
         </p>
       );
     },
@@ -268,46 +262,21 @@ const cards = [
 
   {
     description: "Zadul Mead Medrasa",
-    title: "Dormitory",
-    src: dorm,
+    title: "Office",
+    src: office,
     ctaText: "Visit",
-    ctaLink: "https://ui.aceternity.com/templates",
+    ctaLink: "https://zadalmead.com/",
     content: () => {
       return (
         <p>
-          Metallica, an iconic American heavy metal band, is renowned for their
-          powerful sound and intense performances that resonate deeply with
-          their audience. Formed in Los Angeles, California, they have become a
-          cultural icon in the heavy metal music industry. <br /> <br /> Their
-          songs often reflect themes of aggression, social issues, and personal
-          struggles, capturing the essence of the heavy metal genre. With a
-          career spanning over four decades, Metallica has released numerous hit
-          albums and singles that have garnered them a massive fan following
-          both in the United States and abroad.
+          in our office, we manages the overall operations of the center,
+          ensuring all Islamic teachings and activities align with values and
+          mission of islam. we handles administrative tasks, oversees events,
+          and supports the educational goals of the medrasa. The office also
+          welcomes and assists guests, providing them with guidance and
+          information about the center&apos;s services.
         </p>
       );
     },
   },
-  // {
-  //   description: "Zadul Mead Mesjid",
-  //   title: "Badr Mesjid",
-  //   src: "/assets/programs_background.png",
-  //   ctaText: "Visit",
-  //   ctaLink: "https://ui.aceternity.com/templates",
-  //   content: () => {
-  //     return (
-  //       <p>
-  //         Himesh Reshammiya, a renowned Indian music composer, singer, and
-  //         actor, is celebrated for his distinctive voice and innovative
-  //         compositions. Born in Mumbai, India, he has become a prominent figure
-  //         in the Bollywood music industry. <br /> <br /> His songs often feature
-  //         a blend of contemporary and traditional Indian music, capturing the
-  //         essence of modern Bollywood soundtracks. With a career spanning over
-  //         two decades, Himesh Reshammiya has released numerous hit albums and
-  //         singles that have garnered him a massive fan following both in India
-  //         and abroad.
-  //       </p>
-  //     );
-  //   },
-  // },
 ];
