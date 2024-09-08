@@ -12,12 +12,11 @@ type MenuBarMobileProps = {
 
 export default function MenuBarMobile({ setter }: MenuBarMobileProps) {
   return (
-    <nav className="md:hidden z-20 fixed top-0 left-0 right-0 bg-black bg-opacity-60 h-20 flex [&>*]:my-auto px-4">
-      <Link className="text-3xl flex text-white" href="/register">
-        {/* <GrLanguage className="w-70 h-70" /> */}
+    <nav className="md:hidden z-20 fixed top-0 left-0 right-0 bg-black bg-opacity-60 h-20 flex justify-between [&>*]:my-auto px-4">
+      {/* <Link className="text-3xl flex text-white" href="/register">
         <FaUser />
-      </Link>
-      <Link href="/" className="mx-auto">
+      </Link> */}
+      <Link href="/">
         <img src={logo.src} alt="Company Logo" width={50} height={50} className="h-16" />
       </Link>
       <button

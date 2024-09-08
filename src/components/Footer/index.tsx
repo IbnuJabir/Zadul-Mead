@@ -98,6 +98,12 @@ function Footer() {
           </div>
         </div>
       </div>
+      <p className="text-white bg-slate-950  w-full py-4 text-center font-montserrat border-t-[1px] border-t-white">
+        Developed by:{" "}
+        <a href="https://t.me/bullo01" target="_blank" className="font-bold text-orange-500">
+         {" "} ALIF TECHS
+        </a>
+      </p>
     </>
   );
 }

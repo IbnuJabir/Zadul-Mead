@@ -78,9 +78,9 @@ function Navbar() {
           </Link>
         </ul>
         <div>
-          <a className="text-3xl flex text-white" href="/register">
+          {/* <a className="text-3xl flex text-white" href="/register">
             <FaUser />
-          </a>
+          </a> */}
           {/* <Image
             src={languageIcon}
             alt="menubar"
