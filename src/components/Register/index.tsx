@@ -489,8 +489,9 @@ function PaymentInfoStep({ loading, success }: PaymentInfoStepProps) {
           )}
         />
         <p className="w-full md:w-1/2 text-sm text-gray-700">
-          Please enter the transaction reference of your payment in Commercial
-          Bank of Ethiopia. only CBE transaction reference is valid.{" "}
+          To complete your registration, please enter the transaction reference
+          for your payment of 1550 Birr made through the Commercial Bank of
+          Ethiopia. Only CBE transaction references are valid.{" "}
         </p>
       </div>
       <div className="w-full flex justify-between items-center space-x-2 mt-8">

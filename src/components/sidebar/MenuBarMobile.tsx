@@ -12,12 +12,12 @@ type MenuBarMobileProps = {
 
 export default function MenuBarMobile({ setter }: MenuBarMobileProps) {
   return (
-    <nav className="md:hidden z-20 fixed top-0 left-0 right-0 bg-black bg-opacity-60 h-20 flex justify-between [&>*]:my-auto px-4">
+    <nav className="md:hidden z-20 fixed top-0 left-0 right-0 bg-black bg-opacity-60 h-12 flex justify-between [&>*]:my-auto px-4">
       {/* <Link className="text-3xl flex text-white" href="/register">
         <FaUser />
       </Link> */}
       <Link href="/">
-        <img src={logo.src} alt="Company Logo" width={50} height={50} className="h-16" />
+        <img src={logo.src} alt="Company Logo" width={50} height={50} className="h-10" />
       </Link>
       <button
         className="text-4xl flex text-white"
@@ -25,7 +25,7 @@ export default function MenuBarMobile({ setter }: MenuBarMobileProps) {
           setter((oldVal: boolean) => !oldVal);
         }}
       >
-        <Image src={menubar} alt="menubar" unoptimized className="w-8 h-5 cursor-pointer" />
+        <Image src={menubar} alt="menubar" unoptimized className="w-6 h-4 cursor-pointer" />
         {/* <Icon /> */}
       </button>
     </nav>
