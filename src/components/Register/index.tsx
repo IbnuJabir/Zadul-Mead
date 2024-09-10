@@ -47,34 +47,31 @@ import {
 // import {} from ""
 const FormSchema = createStepSchema({
   personalInfo: z.object({
-    fullName: z.string().min(1, "Full Name is required"),
-    age: z.coerce.number().min(1, "Age must be at least 1"),
-    address: z.string().min(1, "Address is required"),
-    sex: z.string().min(1, "Sex is required"),
+    fullName: z.string().min(1, ""),
+    age: z.coerce.number().min(1, ""),
+    address: z.string().min(1, ""),
+    sex: z.string().min(1, ""),
   }),
   schoolInfo: z.object({
-    educationStatus: z.string().min(1, "Education Status is required"),
-    previousSchool: z.string().min(1, "Previous School is required"),
-    averageResultInPreviousSchool: z
-      .string()
-      .min(1, "Average Result is required"),
-    behaviorInPreviousSchool: z.string().min(1, "Behavior is required"),
+    educationStatus: z.string().min(1, ""),
+    previousSchool: z.string().min(1, ""),
+    averageResultInPreviousSchool: z.string().min(1, ""),
+    behaviorInPreviousSchool: z.string().min(1, ""),
     anyDisease: z.string().optional(),
   }),
   familyInfo: z.object({
-    fatherName: z.string().min(1, "Father's Name is required"),
-    fatherPhone: z.string().min(10, "Invalid Phone! use +251 format"),
-    motherName: z.string().min(1, "Mother's Name is required"),
-    motherPhone: z.string().min(10, "Invalid Phone! use +251 format"),
-    emergencyResponderName: z.string().min(1, "Responder Name is required"),
-    emergencyResponderPhone: z
-      .string()
-      .min(10, "Invalid Phone! use +251 format"),
+    fatherName: z.string().min(1, ""),
+    fatherPhone: z.string().min(10, ""),
+    motherName: z.string().min(1, ""),
+    motherPhone: z.string().min(10, ""),
+    emergencyResponderName: z.string().min(1, ""),
+    emergencyResponderPhone: z.string().min(10, ""),
   }),
   paymentInfo: z.object({
-    tx_ref: z.string().min(10, "Invalid Transaction Reference"),
+    tx_ref: z.string().min(10, ""),
   }),
 });
+
 
 type FormValues = z.infer<typeof FormSchema>;
 
@@ -384,7 +381,7 @@ function FamilyInfoStep() {
             <FormItem>
               <FormLabel>Father&apos;s Phone</FormLabel>
               <FormControl>
-                <MuiTelInput {...field} defaultCountry="ET" required />
+                <MuiTelInput {...field} defaultCountry="ET" required className="w-full"/>
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -411,7 +408,7 @@ function FamilyInfoStep() {
             <FormItem>
               <FormLabel>Mother&apos;s Phone</FormLabel>
               <FormControl>
-                <MuiTelInput {...field} defaultCountry="ET" required />
+                <MuiTelInput {...field} defaultCountry="ET" required className="w-full"/>
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -438,7 +435,7 @@ function FamilyInfoStep() {
             <FormItem>
               <FormLabel>Emergency Responder Phone</FormLabel>
               <FormControl>
-                <MuiTelInput {...field} defaultCountry="ET" required />
+                <MuiTelInput {...field} defaultCountry="ET" required className="w-full"/>
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -490,7 +487,7 @@ function PaymentInfoStep({ loading, success }: PaymentInfoStepProps) {
         />
         <p className="w-full md:w-1/2 text-sm text-gray-700">
           To complete your registration, please enter the transaction reference
-          for your payment of 1550 Birr made through the Commercial Bank of
+          for your <span className="font-bold">payment of 1550 Birr </span>made through the Commercial Bank of
           Ethiopia. Only CBE transaction references are valid.{" "}
         </p>
       </div>

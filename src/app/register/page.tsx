@@ -19,7 +19,7 @@ function Register() {
           placeholder="blur"
           className=" object-cover align-top -z-10"
         />
-        <div className="mt-12 ml-6 md:ml-16 w-full md:w-1/2 flex flex-col gap-2">
+        <div className="h-[82%] mt-12 md:mt-4 lg:mt-0 ml-3 md:ml-16 w-[96%] md:w-1/2 flex flex-col  gap-3 md:gap-2 items-start justify-end md:pb-10">
           <p
             data-aos="zoom-in"
             data-aos-duration="1000"

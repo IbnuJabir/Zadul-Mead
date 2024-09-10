@@ -20,7 +20,7 @@ function About() {
           placeholder="blur"
           className="object-cover align-middle md:align-top -z-10"
         />
-        <div className="mt-12 ml-3 md:ml-16 w-[96%] md:w-1/2 flex flex-col  gap-3 md:gap-2">
+        <div className="h-[82%] mt-12 md:mt-4 lg:mt-0 ml-3 md:ml-16 w-[96%] md:w-1/2 flex flex-col  gap-3 md:gap-2 items-start justify-end md:pb-10">
           <p
             data-aos="zoom-in"
             data-aos-duration="1000"
@@ -51,7 +51,7 @@ function About() {
       <div className=" w-full bg-about_page2 bg-no-repeat bg-center bg-cover bg-black  flex flex-col gap-20 -z-14 py-16">
         <div className="absolute top-0 left-0 w-full h-full bg-black opacity-80 z-0"></div>
         <div className="relative z-10  flex flex-col gap-10">
-          <div className="w-[90%] md:w-[70%] ml-[5%] md:ml-[10%] mt-10">
+          <div className="w-[90%] md:w-[70%] mx-auto mt-10">
             <h1
               data-aos="fade-up"
               data-aos-duration="1000"
@@ -205,7 +205,7 @@ function About() {
               in the timeless principles of Islam.
             </p>
           </div>
-          <div className=" w-[90%] md:w-[70%] ml-[5%] md:ml-[10%] ">
+          <div className=" w-[90%] md:w-[70%] mx-auto ">
             <h1
               data-aos="fade-up"
               data-aos-duration="1000"
@@ -281,7 +281,7 @@ function About() {
               together, thus strengthening community bonds and shared values.
             </p>
           </div>
-          <div className=" w-[90%] md:w-[70%] ml-[5%] md:ml-[10%] ">
+          <div className=" w-[90%] md:w-[70%] mx-auto">
             <h1
               data-aos="fade-up"
               data-aos-duration="1000"

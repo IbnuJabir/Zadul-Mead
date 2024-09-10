@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 function About() {
   return (
-    <div className=" text-center bg-about-bkg w-full min-h-screen bg-cover bg-no-repeat bg-center text-black pt-10 pb-4">
+    <div className=" text-center bg-about-bkg w-full min-h-screen bg-cover bg-no-repeat bg-center text-black pt-16 pb-4">
       <motion.div
         variants={{
           offScreen: { opacity: 0, y: "100%" },

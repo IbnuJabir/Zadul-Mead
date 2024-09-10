@@ -10,7 +10,7 @@ import { FaXTwitter } from "react-icons/fa6";
 function Footer() {
   return (
     <>
-      <div className="w-full h-24 bg-slate-950 md:hidden flex items-center justify-around font-montserrat">
+      <div className="w-full h-24 bg-black md:hidden flex items-center justify-around font-montserrat">
         <a href="/" className="text-white font-montserrat">
           Zad Al-Mead
         </a>
@@ -38,7 +38,7 @@ function Footer() {
           </Link>
         </div>
       </div>
-      <div className="hidden w-full h-56 bg-slate-950 md:flex md:items-center md:justify-between font-montserrat px-20">
+      <div className="hidden w-full h-56 bg-black md:flex md:items-center md:justify-between font-montserrat px-20">
         <div className="flex flex-col items-center w-[30%] font-montserrat">
           <a href="/" className="w-96 h-full ">
             <Image
@@ -98,7 +98,7 @@ function Footer() {
           </div>
         </div>
       </div>
-      <p className="text-white bg-slate-950  w-full py-4 text-center font-montserrat border-t-[1px] border-t-white">
+      <p className="text-white bg-black w-full py-4 text-center font-montserrat border-t-[1px] border-t-white">
         Developed by:{" "}
         <a href="https://t.me/bullo01" target="_blank" className="font-bold text-orange-500">
          {" "} ALIF TECHS

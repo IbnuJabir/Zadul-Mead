@@ -50,7 +50,7 @@ function Contact() {
           placeholder="blur"
           className="object-cover  align-center -z-10"
         />
-        <div className="mt-12 ml-3 md:ml-16 w-[97%]  md:w-1/2 flex flex-col gap-2">
+        <div className="h-[82%] mt-12 md:mt-4 lg:mt-0 ml-3 md:ml-16 w-[96%] md:w-1/2 flex flex-col  gap-3 md:gap-2 items-start justify-end md:pb-10">
           <p
             data-aos="zoom-in"
             data-aos-duration="1000"
@@ -79,7 +79,7 @@ function Contact() {
         </div>
       </div>
       <div className=" w-full bg-about_page2 bg-no-repeat bg-center bg-cover bg-black bg-opacity-90  flex flex-col gap-20 -z-14 py-16">
-        <div className="w-[80%] ml-9 md:ml-16">
+        <div className="w-[80%] mx-auto">
           <h1
             data-aos="fade-up"
             data-aos-duration="1000"
@@ -201,7 +201,7 @@ function Contact() {
               </Link>
             </div>
           </div>
-          <div className="w-[80%] h-[28.5rem] md:w-[80%] mx-auto rounded-xl md:pr-14">
+          <div className="w-[80%] h-[28.5rem] md:w-[80%] mx-auto rounded-xl">
             {/* Map */}
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d985.3138038617237!2d38.68982031586916!3d8.948614305259683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b80e159e07527%3A0x8029ecd6cbe2cded!2zTWFzamlkIEFsLUJhZHIg4Ymg4Yu14YitIOGImOGIteGMheGLtSDZhdiz2KzYrw!5e0!3m2!1sen!2set!4v1722911142213!5m2!1sen!2set"
@@ -209,7 +209,7 @@ function Contact() {
               height="100%"
               allowFullScreen
               loading="lazy"
-              className="rounded-xl"
+              className="rounded-xl w-full"
             ></iframe>
           </div>
         </div>

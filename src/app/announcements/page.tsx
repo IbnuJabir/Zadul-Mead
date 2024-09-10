@@ -6,7 +6,12 @@ import bkg from "../../../public/assets/announcements_banner.png";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { AnnouncementsType } from "@/lib/types";
-import { differenceInDays, differenceInHours, differenceInMinutes, format } from "date-fns";
+import {
+  differenceInDays,
+  differenceInHours,
+  differenceInMinutes,
+  format,
+} from "date-fns";
 import Loader from "../loading";
 
 function Announcements() {
@@ -14,7 +19,9 @@ function Announcements() {
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_APP_BACKEND_API}/announcements/getAllAnnouncements/all`)
+    fetch(
+      `${process.env.NEXT_PUBLIC_APP_BACKEND_API}/announcements/getAllAnnouncements/all`
+    )
       .then((res) => res.json())
       .then((data) => {
         setAnnouncements(data);
@@ -34,10 +41,14 @@ function Announcements() {
     const hours = differenceInHours(endDate, startDate) % 24;
     const minutes = differenceInMinutes(endDate, startDate) % 60;
 
-    let duration = '';
-    if (days > 0) duration += `${days} day${days > 1 ? 's' : ''}`;
-    if (hours > 0) duration += (duration ? ', ' : '') + `${hours} hour${hours > 1 ? 's' : ''}`;
-    if (minutes > 0 || duration === '') duration += (duration ? ', ' : '') + `${minutes} minute${minutes > 1 ? 's' : ''}`;
+    let duration = "";
+    if (days > 0) duration += `${days} day${days > 1 ? "s" : ""}`;
+    if (hours > 0)
+      duration +=
+        (duration ? ", " : "") + `${hours} hour${hours > 1 ? "s" : ""}`;
+    if (minutes > 0 || duration === "")
+      duration +=
+        (duration ? ", " : "") + `${minutes} minute${minutes > 1 ? "s" : ""}`;
 
     return duration;
   };
@@ -54,7 +65,7 @@ function Announcements() {
           placeholder="blur"
           className="object-cover align-center -z-10"
         />
-        <div className="mt-12 ml-6 md:ml-16 w-[95%] md:w-1/2 flex flex-col gap-2">
+        <div className="h-[82%] mt-12 md:mt-4 lg:mt-0 ml-3 md:ml-16 w-[96%] md:w-1/2 flex flex-col  gap-3 md:gap-2 items-start justify-end md:pb-10">
           <p
             data-aos="zoom-in"
             data-aos-duration="1000"
@@ -77,7 +88,8 @@ function Announcements() {
             data-aos-once="true"
             className="font-montserrat text-[18px]"
           >
-            Stay informed with the latest announcements and updates from ZAD AL-MEAD Islamic Center.
+            Stay informed with the latest announcements and updates from ZAD
+            AL-MEAD Islamic Center.
           </p>
         </div>
       </div>
@@ -129,7 +141,8 @@ function Announcements() {
                       </p>
                       <div className="flex flex-col items-start gap-2">
                         <h3 className="text-lg font-semibold normal-case text-nowrap">
-                          {format(startDate, "MMM d")} {" - "} {format(endDate, "MMM d")}
+                          {format(startDate, "MMM d")} {" - "}{" "}
+                          {format(endDate, "MMM d")}
                         </h3>
                         <p className="text-left text-xs">Date</p>
                       </div>

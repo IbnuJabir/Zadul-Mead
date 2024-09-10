@@ -25,7 +25,7 @@ const Home: React.FC = () => {
   }, []);
   return (
     <>
-      <div className=" w-full h-[100svh] bg-[#f5f5f5] relative bg-no-repeat bg-center bg-cover font-cinzel z-10 pt-10">
+      <div className=" w-full h-[100svh] bg-[#f5f5f5] relative bg-no-repeat bg-center bg-cover font-cinzel z-10">
         <Image
           src={bkg}
           alt="Home-background"
