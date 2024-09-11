@@ -38,7 +38,7 @@ function About() {
           data-aos-delay="100"
           className="mb-6"
         >
-          Established in 1433 Hijra, Zadul-Mead is dedicated to providing
+          Established in 1433 Hijra, Zad Al-Mead is dedicated to providing
           high-quality Islamic education. Our center is a welcoming space for
           individuals seeking to enhance their knowledge and practice of Islam.
         </p>

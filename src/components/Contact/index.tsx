@@ -16,7 +16,7 @@ function Contact() {
             data-aos-duration="1000"
             data-aos-delay="300"
             data-aos-once="true"
-            className="w-full text-black sm:w-[90%]  h-[30rem] md:h-[28rem] mx-auto bg-slate-300 bg-opacity-30 flex flex-col gap-4 p-4  rounded-lg"
+            className="w-full text-black md:w-[90%]  h-[30rem] md:h-[28rem] mx-auto bg-slate-300 bg-opacity-30 flex flex-col gap-4 p-4  rounded-lg"
           >
             <p className="text-xl text-center text-white"> Drop us a message</p>
             <input
@@ -82,7 +82,7 @@ function Contact() {
             </Link>
           </div>
         </div>
-        <div className="w-[80%] h-[28.5rem] md:w-[65%] mx-auto rounded-xl md:pr-14">
+        <div className="w-[90%] h-[28.5rem] md:w-[65%] mx-auto rounded-xl md:pr-14">
           {/* Map */}
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d985.3138038617237!2d38.68982031586916!3d8.948614305259683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b80e159e07527%3A0x8029ecd6cbe2cded!2zTWFzamlkIEFsLUJhZHIg4Ymg4Yu14YitIOGImOGIteGMheGLtSDZhdiz2KzYrw!5e0!3m2!1sen!2set!4v1722911142213!5m2!1sen!2set"

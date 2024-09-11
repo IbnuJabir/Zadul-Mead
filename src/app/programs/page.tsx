@@ -71,7 +71,7 @@ function Programs() {
           placeholder="blur"
           className="object-cover align-center -z-10"
         />
-         <div className="h-[82%] mt-12 md:mt-4 lg:mt-0 ml-3 md:ml-16 w-[96%] md:w-1/2 flex flex-col  gap-3 md:gap-2 items-start justify-end md:pb-10">
+        <div className="h-[82%] mt-12 md:mt-4 lg:mt-0 ml-3 md:ml-16 w-[96%] md:w-1/2 flex flex-col  gap-3 md:gap-2 items-start justify-end md:pb-10">
           <p
             data-aos="zoom-in"
             data-aos-duration="1000"
@@ -123,12 +123,12 @@ function Programs() {
                   data-aos-duration="800"
                   data-aos-once="true"
                   data-aos-delay="100"
-                  className="bg-white mx-auto text-black w-[300px] h-[550px] rounded-xl shadow-slate-500 shadow-lg hover:bg-[#80807F] group hover:bg-opacity-100 hover:text-white transition duration-300 ease-in-out"
+                  className="bg-white mx-auto text-black w-[300px] h-[550px] rounded-xl shadow-slate-500 shadow-lg hover:bg-[#80807F] group hover:bg-opacity-100 hover:text-white transition duration-300 ease-in-out overflow-hidden"
                 >
                   <p className="bg-[#474747] text-white font-semibold py-1 px-2 w-fit rounded-br-lg rounded-tl-lg group-hover:bg-white group-hover:text-black transition duration-300 ease-in-out">
                     {program.name}
                   </p>
-                  <div className="px-4 py-6 flex flex-col items-start justify-between h-[94%] rounded-b-xl">
+                  <div className="px-4 py-6 flex flex-col items-start h-[94%] rounded-b-xl">
                     <Image
                       src={imageUrl}
                       alt="Program Cover"
@@ -136,52 +136,53 @@ function Programs() {
                       height={300}
                       className="w-[230px] h-[200px] items-center rounded-xl mx-auto"
                     />
+                    <div className="w-full h-full flex flex-col justify-around">
+                      <div className="w-full">
+                        <p className="py-2 w-full">
+                          {getDateDifferenceMessage(program.startingDate)}
+                        </p>
 
-                    <p className="py-2 w-full">
-                      {getDateDifferenceMessage(program.startingDate)}
-                    </p>
+                        <p className="font-bold w-fit">Program Day</p>
+                        {program.schedule.map((val: Schedule) => {
+                          const startTime = new Date(
+                            val.startTime
+                          ).toLocaleTimeString([], {
+                            hour: "2-digit",
+                            minute: "2-digit",
+                            hour12: true,
+                          });
+                          const endTime = new Date(
+                            val.endTime
+                          ).toLocaleTimeString([], {
+                            hour: "2-digit",
+                            minute: "2-digit",
+                            hour12: true,
+                          });
 
-                    <div className="w-full">
-                      <p className="font-bold w-fit my-1">Program Day</p>
-                      {program.schedule.map((val: Schedule) => {
-                        const startTime = new Date(
-                          val.startTime
-                        ).toLocaleTimeString([], {
-                          hour: "2-digit",
-                          minute: "2-digit",
-                          hour12: true,
-                        });
-                        const endTime = new Date(
-                          val.endTime
-                        ).toLocaleTimeString([], {
-                          hour: "2-digit",
-                          minute: "2-digit",
-                          hour12: true,
-                        });
-
-                        return (
-                          <p key={val._id} className="text-[13px] w-full">
-                            {val.day}: {startTime} - {endTime}
-                          </p>
-                        );
-                      })}
+                          return (
+                            <p
+                              key={val._id}
+                              className="text-[13px] w-full ml-2"
+                            >
+                              {val.day}: {startTime} - {endTime}
+                            </p>
+                          );
+                        })}
+                      </div>
+                      <div className="w-full">
+                        <div className="w-28 h-[1px] mt-3 mb-2 bg-gray-500 before:w-10 before:h-10 before:bg-gray-500 before:rounded-full relative">
+                          <div className="w-2 h-2 bg-gray-500 rounded-full absolute -mt-1"></div>
+                        </div>
+                        <p className="text-nowrap text-[14px] w-full">
+                          <span className="font-semibold">Muallif :</span>{" "}
+                          {program?.mualif || "Not Set"}
+                        </p>
+                        <p className="text-nowrap text-[14px] w-full">
+                          <span className="font-semibold">Given By :</span>{" "}
+                          {program?.qireatGivenBy || "Not Set"}
+                        </p>
+                      </div>
                     </div>
-
-                    <div className="w-28 h-[1px] mt-3 mb-2 bg-gray-500 before:w-10 before:h-10 before:bg-gray-500 before:rounded-full relative">
-                      <div className="w-2 h-2 bg-gray-500 rounded-full absolute -mt-1"></div>
-                    </div>
-                    {program?.mualif && (
-                      <p className="text-nowrap text-[14px] w-full">
-                        <span className="font-semibold">Muallif :</span>{" "}
-                        {program?.mualif}{" "}
-                      </p>
-                    )}
-                    {program?.qireatGivenBy && (
-                      <p className="text-nowrap text-[14px] w-full">
-                        <span className="font-semibold">Given By :</span>
-                        {program?.qireatGivenBy}{" "}
-                      </p>
-                    )}
                   </div>
                 </div>
               );
@@ -195,7 +196,7 @@ function Programs() {
             data-aos-delay="100"
             className="text-white text-xl md:text-3xl md:ml-24 ml-14  font-cinzel mt-10"
           >
-            Programs at Zadul Mead <span className="font-bold">Medresa</span>
+            Programs at Zad Al-Mead <span className="font-bold">Medresa</span>
           </h1>
         </div>
         <div className="w-full mx-auto items-center justify-center grid grid-cols-1 lg:grid-cols-2 gap-6 py-10 font-montserrat">
@@ -211,12 +212,12 @@ function Programs() {
                   data-aos-duration="800"
                   data-aos-once="true"
                   data-aos-delay="100"
-                  className="bg-white mx-auto text-black w-[300px] h-[550px] rounded-xl shadow-slate-500 shadow-lg hover:bg-[#80807F] group hover:bg-opacity-100 hover:text-white transition duration-300 ease-in-out"
+                  className="bg-white mx-auto text-black w-[300px] h-[550px] rounded-xl shadow-slate-500 shadow-lg hover:bg-[#80807F] group hover:bg-opacity-100 hover:text-white transition duration-300 ease-in-out overflow-hidden"
                 >
                   <p className="bg-[#474747] text-white font-semibold py-1 px-2 w-fit rounded-br-lg rounded-tl-lg group-hover:bg-white group-hover:text-black transition duration-300 ease-in-out">
                     {program.name}
                   </p>
-                  <div className="px-4 py-6 flex flex-col items-start justify-between h-[94%] rounded-b-xl">
+                  <div className="px-4 py-6 flex flex-col items-start h-[94%] rounded-b-xl">
                     <Image
                       src={imageUrl}
                       alt="Program Cover"
@@ -224,52 +225,53 @@ function Programs() {
                       height={300}
                       className="w-[230px] h-[200px] items-center rounded-xl mx-auto"
                     />
+                    <div className="w-full h-full flex flex-col justify-around">
+                      <div className="w-full">
+                        <p className="py-2 w-full">
+                          {getDateDifferenceMessage(program.startingDate)}
+                        </p>
 
-                    <p className="py-2 w-full">
-                      {getDateDifferenceMessage(program.startingDate)}
-                    </p>
+                        <p className="font-bold w-fit">Program Day</p>
+                        {program.schedule.map((val: Schedule) => {
+                          const startTime = new Date(
+                            val.startTime
+                          ).toLocaleTimeString([], {
+                            hour: "2-digit",
+                            minute: "2-digit",
+                            hour12: true,
+                          });
+                          const endTime = new Date(
+                            val.endTime
+                          ).toLocaleTimeString([], {
+                            hour: "2-digit",
+                            minute: "2-digit",
+                            hour12: true,
+                          });
 
-                    <div className="w-full">
-                      <p className="font-bold w-fit my-1">Program Day</p>
-                      {program.schedule.map((val: Schedule) => {
-                        const startTime = new Date(
-                          val.startTime
-                        ).toLocaleTimeString([], {
-                          hour: "2-digit",
-                          minute: "2-digit",
-                          hour12: true,
-                        });
-                        const endTime = new Date(
-                          val.endTime
-                        ).toLocaleTimeString([], {
-                          hour: "2-digit",
-                          minute: "2-digit",
-                          hour12: true,
-                        });
-
-                        return (
-                          <p key={val._id} className="text-[13px] w-full">
-                            {val.day}: {startTime} - {endTime}
-                          </p>
-                        );
-                      })}
+                          return (
+                            <p
+                              key={val._id}
+                              className="text-[13px] w-full ml-2"
+                            >
+                              {val.day}: {startTime} - {endTime}
+                            </p>
+                          );
+                        })}
+                      </div>
+                      <div className="w-full">
+                        <div className="w-28 h-[1px] mt-3 mb-2 bg-gray-500 before:w-10 before:h-10 before:bg-gray-500 before:rounded-full relative">
+                          <div className="w-2 h-2 bg-gray-500 rounded-full absolute -mt-1"></div>
+                        </div>
+                        <p className="text-nowrap text-[14px] w-full">
+                          <span className="font-semibold">Muallif :</span>{" "}
+                          {program?.mualif || "Not Set"}
+                        </p>
+                        <p className="text-nowrap text-[14px] w-full">
+                          <span className="font-semibold">Given By :</span>{" "}
+                          {program?.qireatGivenBy || "Not Set"}
+                        </p>
+                      </div>
                     </div>
-
-                    <div className="w-28 h-[1px] mt-3 mb-2 bg-gray-500 before:w-10 before:h-10 before:bg-gray-500 before:rounded-full relative">
-                      <div className="w-2 h-2 bg-gray-500 rounded-full absolute -mt-1"></div>
-                    </div>
-                    {program?.mualif && (
-                      <p className="text-nowrap text-[14px] w-full">
-                        <span className="font-semibold">Muallif :</span>{" "}
-                        {program?.mualif}{" "}
-                      </p>
-                    )}
-                    {program?.qireatGivenBy && (
-                      <p className="text-nowrap text-[14px] w-full">
-                        <span className="font-semibold">Given By :</span>
-                        {program?.qireatGivenBy}{" "}
-                      </p>
-                    )}
                   </div>
                 </div>
               );

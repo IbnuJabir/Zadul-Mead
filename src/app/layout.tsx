@@ -7,8 +7,8 @@ import { ClientProvider } from "@/components/Commons/ClientProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Zadul-Mead",
-  description: "Zadul-Mead Medresa",
+  title: "Zad AlMead",
+  description: "Zad Al-Mead Islamic Knowledge and training Center",
 };
 
 export default function RootLayout({

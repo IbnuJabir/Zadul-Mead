@@ -29,8 +29,8 @@ function Offers() {
             <h2 className="text-left">Qur&apos;an Studies and Tafsir</h2>
           </div>
           <p className="w-full font-montserrat text-[11px] text-gray-300 text-left">
-            Learn the meanings and teachings of the Qur&apos;an to better understand
-            Allah&apos;s words and guidance.
+            Learn the meanings and teachings of the Qur&apos;an to better
+            understand Allah&apos;s words and guidance.
           </p>
         </div>
         <div
@@ -71,9 +71,16 @@ function Offers() {
           className="h-fit flex flex-col gap-4 items-start justify-start"
         >
           <div className="flex items-center gap-3 w-full">
-            <Image src={language} width={100} height={100} alt="language" className="w-10" />
-
-            <h2 className="text-left">Arabic Language</h2>
+            <Image
+              src={language}
+              width={100}
+              height={100}
+              alt="language"
+              className="w-8 md:w-10"
+            />
+            <h2 className="text-left text-sm md:text-normal">
+              Arabic Language
+            </h2>
           </div>
           <p className="w-full font-montserrat text-[11px] text-gray-300 text-left">
             Improve your reading and understanding of Islamic texts by learning

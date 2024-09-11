@@ -62,7 +62,7 @@ export default function ExpandableCardDemo() {
                   duration: 0.05,
                 },
               }}
-              className="flex absolute top-2 right-2 lg:hidden items-center justify-center bg-white rounded-full h-6 w-6"
+              className="flex absolute top-[6%] mx-auto lg:hidden items-center justify-center bg-white rounded-full h-6 w-6"
               onClick={() => setActive(null)}
             >
               <CloseIcon />
@@ -221,7 +221,7 @@ export const CloseIcon = () => {
 
 const cards = [
   {
-    description: "Zadul Mead Medrasa",
+    description: "Zad Al-Mead",
     title: "Madresa",
     src: medrasa,
     ctaText: "Visit",
@@ -242,7 +242,7 @@ const cards = [
     },
   },
   {
-    description: "Zadul Mead Medrasa",
+    description: "Zad Al-Mead",
     title: "Badr Mesjid",
     src: mesjid,
     ctaText: "Visit",
@@ -261,7 +261,7 @@ const cards = [
   },
 
   {
-    description: "Zadul Mead Medrasa",
+    description: "Zad Al-Mead",
     title: "Office",
     src: office,
     ctaText: "Visit",

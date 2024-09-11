@@ -178,7 +178,7 @@ function Programs() {
       </div>
       <div>
         <h1 className="text-white text-xl md:text-3xl md:ml-7 ">
-          Programs at Zadul Mead <span className="font-bold">Medresa</span>
+          Programs at Zad Al-Mead <span className="font-bold">Medresa</span>
         </h1>
       </div>
       <div

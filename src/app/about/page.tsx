@@ -67,7 +67,7 @@ function About() {
               data-aos-once="true"
               className="  md:block font-montserrat text-justify"
             >
-              Zadul Ma&apos;ad Knowledge and Training Center was founded in the
+              Zad Al-Ma&apos;ad Knowledge and Training Center was founded in the
               year 1433 Hijri, a time marked by a growing awareness of the
               importance of accessible Islamic education in communities around
               the world. The center was established under the insightful
@@ -88,7 +88,7 @@ function About() {
               formative years, the center capitalized on the burgeoning
               popularity of social media and messaging applications. By
               utilizing platforms such as WhatsApp, Telegram, and Facebook,
-              Zadul Ma&apos;ad began to share a wealth of educational content,
+              Zad Al-Ma&apos;ad began to share a wealth of educational content,
               including:
             </p>
             <Image
@@ -136,7 +136,7 @@ function About() {
               <span className="font-bold">Growth and Expansion </span> As the
               center&apos;s online presence flourished, it became evident that
               there was a strong desire for in-person learning opportunities.
-              After seven years of successful digital outreach, Zadul Ma&apos;ad
+              After seven years of successful digital outreach, Zad Al-Ma&apos;ad
               expanded its offerings to include physical gatherings. These
               sessions were designed to cater to both men and women, reflecting
               a commitment to inclusivity and community engagement.
@@ -171,7 +171,7 @@ function About() {
               data-aos-once="true"
               className="  md:block font-montserrat text-justify mt-5"
             >
-              Today, Zadul Ma&apos;ad Qur&apos;an Training Center operates from
+              Today, Zad Al-Ma&apos;ad Qur&apos;an Training Center operates from
               its Furi locations, conducting separate gatherings for men and
               women to honor the diverse needs of its community. The center
               continues to maintain an active presence across various social
@@ -188,7 +188,7 @@ function About() {
               The center&apos;s commitment to its foundational motto,
               &ldquo;Knowledge Comes First,&rdquo; remains steadfast. By
               blending traditional Islamic teachings with modern educational
-              methods, Zadul Ma&apos;ad strives to empower individuals, foster
+              methods, Zad Al-Ma&apos;ad strives to empower individuals, foster
               spiritual growth, and build a knowledgeable community that is
               well-equipped to face the challenges of contemporary life.
             </p>
@@ -199,7 +199,7 @@ function About() {
               data-aos-once="true"
               className="  md:block font-montserrat text-justify mt-5"
             >
-              Zadul Ma&apos;ad Knowledge and Training Center stands as a
+              Zad Al-Ma&apos;ad Knowledge and Training Center stands as a
               testament to the power of knowledge and community, continuously
               evolving to meet the needs of its learners while remaining rooted
               in the timeless principles of Islam.
@@ -221,7 +221,7 @@ function About() {
               data-aos-once="true"
               className="  md:block  font-montserrat text-justify"
             >
-              Zadul Ma&apos;ad Knowledge and Training Center envisions a vibrant
+              Zad Al-Ma&apos;ad Knowledge and Training Center envisions a vibrant
               and enlightened community where knowledge is revered as a
               foundation for personal and collective growth. The center seeks to
               foster an environment where individuals are not only informed
@@ -297,7 +297,7 @@ function About() {
               data-aos-once="true"
               className="  md:block  font-montserrat text-justify"
             >
-              The mission of Zadul Ma&apos;ad Knowledge and Training Center is a
+              The mission of Zad Al-Ma&apos;ad Knowledge and Training Center is a
               multifaceted commitment to providing high-quality Islamic
               education and fostering a supportive community. The mission can be
               broken down into several core components:
@@ -391,7 +391,7 @@ function About() {
               data-aos-once="true"
               className="  md:block  font-montserrat text-justify mt-5"
             >
-              Through these initiatives, Zadul Ma&apos;ad Knowledge and Training
+              Through these initiatives, Zad Al-Ma&apos;ad Knowledge and Training
               Center aims to fulfill its mission of nurturing knowledgeable,
               spiritually aware, and engaged members of the community who are
               equipped to contribute positively to society.
