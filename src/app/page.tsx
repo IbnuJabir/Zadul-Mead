@@ -64,7 +64,7 @@ const Home: React.FC = () => {
               data-aos-duration="500"
               data-aos-once="true"
               data-aos-delay="300"
-              className="w-max px-4 py-2 font-montserrat rounded-[26.24px] border-none flex text-center items-center bg-white lg:px-3 "
+              className="w-max px-4 py-2 font-montserrat rounded-[26.24px] flex text-center items-center bg-white lg:px-3 hover:bg-transparent hover:text-white hover:border-2 hover:border-white transition-colors"
             >
               Join our Community
             </a>

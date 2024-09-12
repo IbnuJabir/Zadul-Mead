@@ -6,12 +6,7 @@ import bkg from "../../../public/assets/announcements_banner.png";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { AnnouncementsType } from "@/lib/types";
-import {
-  differenceInDays,
-  differenceInHours,
-  differenceInMinutes,
-  format,
-} from "date-fns";
+import { differenceInDays, format } from "date-fns";
 import Loader from "../loading";
 
 function Announcements() {
@@ -24,7 +19,12 @@ function Announcements() {
     )
       .then((res) => res.json())
       .then((data) => {
-        setAnnouncements(data);
+        // Filter announcements whose end date has not passed
+        const validAnnouncements = data.filter(
+          (announcement: AnnouncementsType) =>
+            new Date(announcement.endDate) > new Date()
+        );
+        setAnnouncements(validAnnouncements);
         setLoading(false);
       });
   }, []);
@@ -33,24 +33,15 @@ function Announcements() {
   if (announcements.length === 0) return <p>No announcements available!</p>;
 
   const calculateDuration = (startDate: Date, endDate: Date) => {
-    if (endDate < startDate) {
-      [startDate, endDate] = [endDate, startDate];
+    const days = differenceInDays(endDate, startDate);
+
+    // If duration is more than a day, show only the days remaining
+    if (days > 1) {
+      return `${days} days`;
     }
 
-    const days = differenceInDays(endDate, startDate);
-    const hours = differenceInHours(endDate, startDate) % 24;
-    const minutes = differenceInMinutes(endDate, startDate) % 60;
-
-    let duration = "";
-    if (days > 0) duration += `${days} day${days > 1 ? "s" : ""}`;
-    if (hours > 0)
-      duration +=
-        (duration ? ", " : "") + `${hours} hour${hours > 1 ? "s" : ""}`;
-    if (minutes > 0 || duration === "")
-      duration +=
-        (duration ? ", " : "") + `${minutes} minute${minutes > 1 ? "s" : ""}`;
-
-    return duration;
+    // Otherwise, return the time normally
+    return `${days} day`;
   };
 
   return (

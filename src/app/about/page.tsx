@@ -48,7 +48,7 @@ function About() {
           </p>
         </div>
       </div>
-      <div className=" w-full bg-about_page2 bg-no-repeat bg-center bg-cover bg-black  flex flex-col gap-20 -z-14 py-16">
+      <div className=" w-full bg-about_page2 bg-no-repeat bg-center bg-cover bg-black  opacity-90 flex flex-col gap-20 -z-14 py-16">
         <div className="absolute top-0 left-0 w-full h-full bg-black opacity-80 z-0"></div>
         <div className="relative z-10  flex flex-col gap-10">
           <div className="w-[90%] md:w-[70%] mx-auto mt-10">

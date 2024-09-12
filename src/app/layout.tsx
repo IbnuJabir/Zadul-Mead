@@ -7,7 +7,7 @@ import { ClientProvider } from "@/components/Commons/ClientProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Zad AlMead",
+  title: "Zad Al-Mead",
   description: "Zad Al-Mead Islamic Knowledge and training Center",
 };
 

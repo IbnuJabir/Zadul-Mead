@@ -60,7 +60,7 @@ function Programs() {
   if (!programs.length) return <h1>No Programs Available!</h1>;
 
   return (
-    <div className="overflow-x-hidden w-full text-white bg-black">
+    <div className="overflow-x-hidden w-full text-white">
       <div className="w-full py-10 md:py-0 md:h-[55vh] relative bg-black  bg-no-repeat bg-center bg-cover font-cinzel z-10 text-white">
         <Navbar />
         <Image
@@ -81,12 +81,13 @@ function Programs() {
             Programs at
           </p>
           <h1
+          id="mesjid"
             data-aos="zoom-in"
             data-aos-duration="1000"
             data-aos-once="true"
             className=" text-2xl md:text-3xl"
           >
-            <span className="font-bold">ZAD AL-MEAD</span> Islamic Community
+            <span className="font-bold">ZAD AL-MEAD</span> Islamic Knowledge and Training Center
           </h1>
           <p
             data-aos="fade-up"
@@ -98,7 +99,8 @@ function Programs() {
           </p>
         </div>
       </div>
-      <div className=" flex flex-col py-10">
+      {/* <div className="w-full bg-about_page2 bg-no-repeat bg-center bg-cover bg-black bg-opacity-90 flex flex-col gap-20 -z-14 py-16"> */}
+      <div className=" flex flex-col py-10 bg-about_page2 bg-no-repeat bg-center bg-cover bg-black bg-opacity-90 ">
         <div>
           <h1
             data-aos="fade-up"
@@ -110,7 +112,7 @@ function Programs() {
             Programs at Badir <span className="font-bold">Masjid</span>
           </h1>
         </div>
-        <div className="w-full mx-auto items-center justify-center grid grid-cols-1 lg:grid-cols-2 gap-6 py-10 font-montserrat">
+        <div className="w-full mx-auto items-center justify-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-10 font-montserrat">
           {programs
             .filter((program: Program) => program.type === "Mesjid") // Filter programs by type
             .map((program: Program) => {
@@ -190,6 +192,7 @@ function Programs() {
         </div>
         <div>
           <h1
+          id="medrasa"
             data-aos="fade-up"
             data-aos-duration="800"
             data-aos-once="true"
@@ -199,7 +202,7 @@ function Programs() {
             Programs at Zad Al-Mead <span className="font-bold">Medresa</span>
           </h1>
         </div>
-        <div className="w-full mx-auto items-center justify-center grid grid-cols-1 lg:grid-cols-2 gap-6 py-10 font-montserrat">
+        <div className="w-full mx-auto items-center justify-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-10 font-montserrat">
           {programs
             .filter((program: Program) => program.type === "Merkez") // Filter programs by type
             .map((program: Program) => {

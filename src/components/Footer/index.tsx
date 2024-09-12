@@ -89,10 +89,10 @@ function Footer() {
           </div>
           <div className="flex flex-col gap-2">
             <p className="text-gray-400 text-[12px]">Programs</p>
-            <a href="/programs" className="text-[13px]">
+            <a href="/programs#mesjid" className="text-[13px]">
               Mesjid
             </a>
-            <a href="/programs" className="text-[13px]">
+            <a href="/programs#medrasa" className="text-[13px]">
               Madrasa
             </a>
           </div>

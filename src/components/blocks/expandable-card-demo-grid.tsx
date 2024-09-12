@@ -62,7 +62,7 @@ export default function ExpandableCardDemo() {
                   duration: 0.05,
                 },
               }}
-              className="flex absolute top-[6%] mx-auto lg:hidden items-center justify-center bg-white rounded-full h-6 w-6"
+              className="flex absolute top-[6%] mx-auto md:hidden items-center justify-center bg-white rounded-full h-6 w-6"
               onClick={() => setActive(null)}
             >
               <CloseIcon />
@@ -79,7 +79,7 @@ export default function ExpandableCardDemo() {
                   height={200}
                   src={active.src}
                   alt={active.title}
-                  className="w-full h-80 lg:h-80 sm:rounded-tr-lg sm:rounded-tl-lg object-cover object-top"
+                  className="w-full h-80 lg:h-80 mt-12 md:mt-0 sm:rounded-tr-lg sm:rounded-tl-lg object-cover object-top"
                 />
               </motion.div>
 
@@ -130,7 +130,7 @@ export default function ExpandableCardDemo() {
           </div>
         ) : null}
       </AnimatePresence>
-      <ul className="mx-auto w-full md:w-[50%]  2xl:w-[25%] h-full grid grid-cols-1 md:grid-cols-2 items-start gap-4 relative py-8">
+      <ul className="mx-auto w-full md:w-[80%]  2xl:w-[80%] h-full grid grid-cols-1 md:grid-cols-2 items-start gap-4 relative py-8">
         {cards.map((card, index) => (
           <motion.div
             key={index}
@@ -159,6 +159,7 @@ export default function ExpandableCardDemo() {
               onClick={() => setActive(card)}
               className="flex flex-col bg-red-500 hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer"
             >
+              {/* <p className="absolute px-10 py-2 bg-green-400"> Mesjid view</p> */}
               <motion.div layoutId={`image-${card.title}-${id}`}>
                 <Image
                   priority
@@ -169,11 +170,11 @@ export default function ExpandableCardDemo() {
                   alt={card.title}
                   className={`h-[16rem] w-[50%] absolute rounded-lg object-cover border-white border-4 object-center md:h-[20rem] ${
                     index === 0
-                      ? "md:top-[8%] md:left-2 left-[4%] md:w-[15rem] md:h-[20rem]"
+                      ? "md:top-[8%] md:left-2 left-[4%] md:w-[25rem] lg:w-[27rem] xl:h-[30rem]"
                       : index === 1
-                      ? "md:top-0 right-[4%] md:right-auto md:w-[13rem] md:h-[17rem]"
+                      ? "md:top-0 right-0  md:right-auto md:w-[20rem] lg:w-[20rem] lg:h-[30rem]"
                       : index === 2
-                      ? "md:top-[40%] lg:top-[35%] xl:top[20%]  md:left-[37%] left-[4%] md:w-[12rem] md:h-[18rem]"
+                      ? "md:top-[40%] lg:top-[35%] xl:top[20%]  md:left-[37%] left-[4%] lg:w-[17rem] md:h-[25rem]"
                       : ""
                   } absolute`}
                 />
