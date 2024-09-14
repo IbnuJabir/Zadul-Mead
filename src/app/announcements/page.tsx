@@ -6,7 +6,12 @@ import bkg from "../../../public/assets/announcements_banner.png";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { AnnouncementsType } from "@/lib/types";
-import { differenceInDays, differenceInHours, differenceInMinutes, format } from "date-fns";
+import {
+  differenceInDays,
+  differenceInHours,
+  differenceInMinutes,
+  format,
+} from "date-fns";
 import Loader from "../loading";
 import Unavailable from "@/components/Commons/Unavailable";
 
@@ -48,10 +53,14 @@ function Announcements() {
     const hours = differenceInHours(endDate, startDate) % 24;
     const minutes = differenceInMinutes(endDate, startDate) % 60;
 
-    let duration = '';
-    if (days > 0) duration += `${days} day${days > 1 ? 's' : ''}`;
-    else if (hours > 0) duration += (duration ? ', ' : '') + `${hours} hour${hours > 1 ? 's' : ''}`;
-    else if (minutes > 0 || duration === '') duration += (duration ? ', ' : '') + `${minutes} minute${minutes > 1 ? 's' : ''}`;
+    let duration = "";
+    if (days > 0) duration += `${days} day${days > 1 ? "s" : ""}`;
+    else if (hours > 0)
+      duration +=
+        (duration ? ", " : "") + `${hours} hour${hours > 1 ? "s" : ""}`;
+    else if (minutes > 0 || duration === "")
+      duration +=
+        (duration ? ", " : "") + `${minutes} minute${minutes > 1 ? "s" : ""}`;
 
     return duration;
   };
@@ -116,7 +125,7 @@ function Announcements() {
                       alt={announcement.name}
                       width={300}
                       height={300}
-                      className="w-[80%] sm:w-[70%] md:min-w-[20rem] md:w-[38%] h-72 cursor-pointer rounded-md border-4 border-white"
+                      className="w-[80%] sm:w-[70%] md:min-w-[20rem] md:w-[50%] h-72 cursor-pointer rounded-md border-4 border-white"
                       priority
                     />
                     <div
