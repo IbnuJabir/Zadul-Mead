@@ -130,7 +130,7 @@ export default function ExpandableCardDemo() {
           </div>
         ) : null}
       </AnimatePresence>
-      <ul className="mx-auto w-full md:w-[80%]  2xl:w-[80%] h-full grid grid-cols-1 md:grid-cols-2 items-start gap-4 relative py-8">
+      <ul className="mx-auto w-full md:w-[50%]  lg:w-[75%] lg:ml-60  h-full grid grid-cols-1 md:grid-cols-2 items-start gap-4 relative py-8">
         {cards.map((card, index) => (
           <motion.div
             key={index}
@@ -159,7 +159,6 @@ export default function ExpandableCardDemo() {
               onClick={() => setActive(card)}
               className="flex flex-col bg-red-500 hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer"
             >
-              {/* <p className="absolute px-10 py-2 bg-green-400"> Mesjid view</p> */}
               <motion.div layoutId={`image-${card.title}-${id}`}>
                 <Image
                   priority
@@ -170,11 +169,13 @@ export default function ExpandableCardDemo() {
                   alt={card.title}
                   className={`h-[16rem] w-[50%] absolute rounded-lg object-cover border-white border-4 object-center md:h-[20rem] ${
                     index === 0
-                      ? "md:top-[8%] md:left-2 left-[4%] md:w-[25rem] lg:w-[27rem] xl:h-[30rem]"
+                      ? "md:top-[8%] md:left-2 left-[4%] md:w-[15rem] md:h-[20rem]"
                       : index === 1
-                      ? "md:top-0 right-0  md:right-auto md:w-[20rem] lg:w-[20rem] lg:h-[30rem]"
+                      ? "md:top-[40%] lg:top-[35%] xl:top[20%] right-1 md:right-[6%] md:w-[15rem] md:h-[17rem]"
                       : index === 2
-                      ? "md:top-[40%] lg:top-[35%] xl:top[20%]  md:left-[37%] left-[4%] lg:w-[17rem] md:h-[25rem]"
+                      ? "md:top-[8%] md:left-[47%] left-[4%] md:w-[15rem] md:h-[18rem]"
+                      : index === 3
+                      ? "md:top-[40%] lg:top-[35%] xl:top[20%]  md:left-[22%] left-[4%] md:w-[15rem] md:h-[18rem]"
                       : ""
                   } absolute`}
                 />
@@ -276,6 +277,24 @@ const cards = [
           and supports the educational goals of the medrasa. The office also
           welcomes and assists guests, providing them with guidance and
           information about the center&apos;s services.
+        </p>
+      );
+    },
+  },
+  {
+    description: "Zad Al-Mead",
+    title: "Badr Mesjid-2",
+    src: mesjid,
+    ctaText: "Visit",
+    ctaLink: "https://zadalmead.com/",
+    content: () => {
+      return (
+        <p>
+          Badr serves as the spiritual core of the center, offering a space for
+          prayer, reflection, and communal gatherings. It&apos;s not only a
+          place for prayer but also a welcoming environment for guests and
+          community members. The masjid plays a central role in promoting
+          Islamic teachings and fostering unity among the faithful.
         </p>
       );
     },

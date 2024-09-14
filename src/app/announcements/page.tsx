@@ -6,12 +6,14 @@ import bkg from "../../../public/assets/announcements_banner.png";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { AnnouncementsType } from "@/lib/types";
-import { differenceInDays, format } from "date-fns";
+import { differenceInDays, differenceInHours, differenceInMinutes, format } from "date-fns";
 import Loader from "../loading";
+import Unavailable from "@/components/Commons/Unavailable";
 
 function Announcements() {
   const [announcements, setAnnouncements] = useState<AnnouncementsType[]>([]);
   const [isLoading, setLoading] = useState(true);
+  const [hasError, setHasError] = useState(false);
 
   useEffect(() => {
     fetch(
@@ -24,24 +26,34 @@ function Announcements() {
           (announcement: AnnouncementsType) =>
             new Date(announcement.endDate) > new Date()
         );
-        setAnnouncements(validAnnouncements);
+        // setAnnouncements(validAnnouncements);
         setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching announcements:", error);
+        setLoading(false);
+        setHasError(true);
       });
   }, []);
 
   if (isLoading) return <Loader />;
-  if (announcements.length === 0) return <p>No announcements available!</p>;
+  if (hasError) return <Unavailable message="Unable to load announcements" />;
 
   const calculateDuration = (startDate: Date, endDate: Date) => {
-    const days = differenceInDays(endDate, startDate);
-
-    // If duration is more than a day, show only the days remaining
-    if (days > 1) {
-      return `${days} days`;
+    if (endDate < startDate) {
+      [startDate, endDate] = [endDate, startDate];
     }
 
-    // Otherwise, return the time normally
-    return `${days} day`;
+    const days = differenceInDays(endDate, startDate);
+    const hours = differenceInHours(endDate, startDate) % 24;
+    const minutes = differenceInMinutes(endDate, startDate) % 60;
+
+    let duration = '';
+    if (days > 0) duration += `${days} day${days > 1 ? 's' : ''}`;
+    else if (hours > 0) duration += (duration ? ', ' : '') + `${hours} hour${hours > 1 ? 's' : ''}`;
+    else if (minutes > 0 || duration === '') duration += (duration ? ', ' : '') + `${minutes} minute${minutes > 1 ? 's' : ''}`;
+
+    return duration;
   };
 
   return (
@@ -84,76 +96,80 @@ function Announcements() {
           </p>
         </div>
       </div>
-      <div className="w-full bg-about_page2 bg-no-repeat bg-center bg-cover bg-black bg-opacity-90 flex flex-col gap-20 -z-14 py-16">
+      <div className="w-full bg-about_page2 bg-no-repeat bg-center bg-cover bg-black bg-opacity-95 flex flex-col gap-20 -z-14 py-16">
         <div className="w-[70%] mx-auto flex flex-col gap-10">
-          {announcements.map((announcement: AnnouncementsType) => {
-            const imageUrl = `${process.env.NEXT_PUBLIC_APP_BACKEND_API}${announcement.coverPicture}`;
-            const startDate = new Date(announcement.startingDate);
-            const endDate = new Date(announcement.endDate);
-            const duration = calculateDuration(startDate, endDate);
+          {announcements.length > 0 ? (
+            announcements.map((announcement: AnnouncementsType) => {
+              const imageUrl = `${process.env.NEXT_PUBLIC_APP_BACKEND_API}${announcement.coverPicture}`;
+              const startDate = new Date(announcement.startingDate);
+              const endDate = new Date(announcement.endDate);
+              const duration = calculateDuration(startDate, endDate);
 
-            return (
-              <div key={announcement._id} className="flex flex-col gap-4">
-                <div className="flex items-center justify-center flex-col md:flex-row md:justify-start gap-6 md:gap-20">
-                  <Image
-                    data-aos="fade-right"
-                    data-aos-duration="1000"
-                    data-aos-once="true"
-                    src={imageUrl}
-                    alt={announcement.name}
-                    width={300}
-                    height={300}
-                    className="w-[80%] sm:w-[70%] md:min-w-[20rem] md:w-[38%] h-72 cursor-pointer rounded-md border-4 border-white"
-                    priority
-                  />
-                  <div
-                    data-aos="fade-left"
-                    data-aos-duration="1000"
-                    data-aos-delay="300"
-                    data-aos-once="true"
-                    className="flex flex-col gap-8 items-start justify-start"
-                  >
-                    <div className="w-full font-montserrat px-4 flex items-top justify-left gap-4">
-                      <p className="w-8 h-6 text-black p-4 bg-slate-200 rounded-full flex items-center justify-center">
-                        1
-                      </p>
-                      <div className="flex flex-col items-start gap-2">
-                        <h3 className="text-xl font-semibold normal-case">
-                          {announcement.name}
-                        </h3>
-                        <p className="text-left text-xs">
-                          {announcement.description}
+              return (
+                <div key={announcement._id} className="flex flex-col gap-4">
+                  <div className="flex items-center justify-center flex-col md:flex-row md:justify-start gap-6 md:gap-20">
+                    <Image
+                      data-aos="fade-right"
+                      data-aos-duration="1000"
+                      data-aos-once="true"
+                      src={imageUrl}
+                      alt={announcement.name}
+                      width={300}
+                      height={300}
+                      className="w-[80%] sm:w-[70%] md:min-w-[20rem] md:w-[38%] h-72 cursor-pointer rounded-md border-4 border-white"
+                      priority
+                    />
+                    <div
+                      data-aos="fade-left"
+                      data-aos-duration="1000"
+                      data-aos-delay="300"
+                      data-aos-once="true"
+                      className="flex flex-col gap-8 items-start justify-start"
+                    >
+                      <div className="w-full font-montserrat px-4 flex items-top justify-left gap-4">
+                        <p className="w-8 h-6 text-black p-4 bg-slate-200 rounded-full flex items-center justify-center">
+                          1
                         </p>
+                        <div className="flex flex-col items-start gap-2">
+                          <h3 className="text-xl font-semibold normal-case">
+                            {announcement.name}
+                          </h3>
+                          <p className="text-left text-xs">
+                            {announcement.description}
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                    <div className="w-full font-montserrat px-4 flex items-top justify-left gap-4">
-                      <p className="w-8 h-6 text-black p-4 bg-slate-200 rounded-full flex items-center justify-center">
-                        2
-                      </p>
-                      <div className="flex flex-col items-start gap-2">
-                        <h3 className="text-lg font-semibold normal-case text-nowrap">
-                          {format(startDate, "MMM d")} {" - "}{" "}
-                          {format(endDate, "MMM d")}
-                        </h3>
-                        <p className="text-left text-xs">Date</p>
+                      <div className="w-full font-montserrat px-4 flex items-top justify-left gap-4">
+                        <p className="w-8 h-6 text-black p-4 bg-slate-200 rounded-full flex items-center justify-center">
+                          2
+                        </p>
+                        <div className="flex flex-col items-start gap-2">
+                          <h3 className="text-lg font-semibold normal-case text-nowrap">
+                            {format(startDate, "MMM d")} {" - "}{" "}
+                            {format(endDate, "MMM d")}
+                          </h3>
+                          <p className="text-left text-xs">Date</p>
+                        </div>
                       </div>
-                    </div>
-                    <div className="w-full font-montserrat px-4 flex items-top justify-left gap-4">
-                      <p className="w-8 h-6 text-black p-4 bg-slate-200 rounded-full flex items-center justify-center">
-                        3
-                      </p>
-                      <div className="flex flex-col items-start gap-2">
-                        <h3 className="text-xl font-semibold normal-case">
-                          {duration}
-                        </h3>
-                        <p className="text-left text-xs">Duration</p>
+                      <div className="w-full font-montserrat px-4 flex items-top justify-left gap-4">
+                        <p className="w-8 h-6 text-black p-4 bg-slate-200 rounded-full flex items-center justify-center">
+                          3
+                        </p>
+                        <div className="flex flex-col items-start gap-2">
+                          <h3 className="text-xl font-semibold normal-case">
+                            {duration}
+                          </h3>
+                          <p className="text-left text-xs">Duration</p>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })
+          ) : (
+            <Unavailable message="No announcements available" />
+          )}
         </div>
       </div>
       <Footer />

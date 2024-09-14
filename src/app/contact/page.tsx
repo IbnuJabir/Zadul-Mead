@@ -78,7 +78,7 @@ function Contact() {
           </p>
         </div>
       </div>
-      <div className=" w-full bg-about_page2 bg-no-repeat bg-center bg-cover bg-black bg-opacity-90  flex flex-col gap-20 -z-14 py-16">
+      <div className=" w-full bg-about_page2 bg-no-repeat bg-center bg-cover bg-black bg-opacity-95  flex flex-col gap-20 -z-14 py-16">
         <div className="w-[80%] mx-auto">
           <h1
             data-aos="fade-up"

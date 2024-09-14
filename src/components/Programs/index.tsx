@@ -7,10 +7,13 @@ import Loader from "@/app/loading";
 import { Program, Schedule, TodayProgram } from "@/lib/types";
 import { getAllPrograms } from "@/API";
 import dayjs from "dayjs";
+import Unavailable from "../Commons/Unavailable";
+import ProgramsUnavailable from "../Commons/programsNotAvailable";
 
 function Programs() {
   const [programs, setPrograms] = useState<Program[]>([]);
   const [isLoading, setLoading] = useState(true);
+  const [hasError, setHasError] = useState(false);
   const [nextProgram, setNextProgram] = useState<{
     programName: string;
     timeLeft: string;
@@ -22,9 +25,14 @@ function Programs() {
     )
       .then((res) => res.json())
       .then((data) => {
-        setPrograms(data);
+        // setPrograms(data);
         setLoading(false);
         setCountdown(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching programs:", error);
+        setLoading(false);
+        setHasError(true);
       });
   }, []);
 
@@ -119,7 +127,7 @@ function Programs() {
     return name;
   };
   if (isLoading) return <Loader />;
-  if (!programs.length) return <h1>No Programs Available!</h1>;
+  if (hasError) return <Unavailable message="Unable to load announcements" />;
 
   return (
     <div className="w-full relative min-h-[40rem] overflow-x-hidden bg-programs-bkg bg-no-repeat bg-cover bg-center p-3 flex flex-col justify-center gap-16 pt-20">
@@ -129,9 +137,9 @@ function Programs() {
           data-aos-duration="500"
           data-aos-once="true"
           data-aos-delay="100"
-          className="md:absolute md:right-[5%] md: top-[2%] md:mt-5 pr-4 w-[70%] xs:max-w-[48%] sm:max-w-[35%] md:max-w-[30%] lg:max-w-[22%] xl:max-w-[20%] 2xl:max-w-[18%] h-16 mx-auto overflow-hidden bg-white rounded-lg flex items-center justify-start font-montserrat"
+          className="md:absolute md:right-[5%] md:top-[2%] md:mt-5 pr-4 w-[70%] xs:max-w-[48%] sm:max-w-[35%] md:max-w-[30%] lg:max-w-[22%] xl:max-w-[20%] 2xl:max-w-[18%] h-16 mx-auto overflow-hidden bg-white rounded-lg flex items-center justify-start font-montserrat"
         >
-          <div className="w-15 h-full flex ">
+          <div className="w-15 h-full flex">
             <Lottie animationData={greenLive} loop={true} />
           </div>
           <p className="text-2xl w-1/2 font-bold text-center">Live</p>
@@ -152,59 +160,71 @@ function Programs() {
           Programs at Badir <span className="font-bold">Masjid</span>
         </h1>
       </div>
-      <div
-        data-aos="zoom-out"
-        data-aos-duration="800"
-        data-aos-once="true"
-        data-aos-delay="100"
-        className="w-full grid grid-cols-1 sm:grid-cols-2 gap-y-8 md:grid-cols-3"
-      >
-        {programs
-          .filter((program: Program) => program.type === "Mesjid") // Filter programs by type
-          .slice(0, 3) // Get the top 3 programs
-          .map((program: Program) => (
-            <BentoGrid
-              key={program._id}
-              className="w-[70%] xs:w-[60%] sm:w-[80%] md:w-[70%] lg:w-[55%] h-[70px] bg-white rounded-lg mt-3 py-2"
-            >
-              <BentoGridItem
-                title={program.name}
-                description={program.schedule
-                  .map((val: Schedule) => val.day)
-                  .join(", ")}
-              />
-            </BentoGrid>
-          ))}
-      </div>
+      {programs.filter((program: Program) => program.type === "Mesjid").length >
+      0 ? (
+        <div
+          data-aos="zoom-out"
+          data-aos-duration="800"
+          data-aos-once="true"
+          data-aos-delay="100"
+          className="w-full grid grid-cols-1 sm:grid-cols-2 gap-y-8 md:grid-cols-3"
+        >
+          {programs
+            .filter((program: Program) => program.type === "Mesjid") // Filter programs by type
+            .slice(0, 3) // Get the top 3 programs
+            .map((program: Program) => (
+              <BentoGrid
+                key={program._id}
+                className="w-[70%] xs:w-[60%] sm:w-[80%] md:w-[70%] lg:w-[55%] h-[70px] bg-white rounded-lg mt-3 py-2"
+              >
+                <BentoGridItem
+                  title={program.name}
+                  description={program.schedule
+                    .map((val: Schedule) => val.day)
+                    .join(", ")}
+                />
+              </BentoGrid>
+            ))}
+        </div>
+      ) : (
+        <ProgramsUnavailable message="Currently No Programs available At Badr Masjid" />
+      )}
+
       <div>
         <h1 className="text-white text-xl md:text-3xl md:ml-7 ">
           Programs at Zad Al-Mead <span className="font-bold">Medresa</span>
         </h1>
       </div>
-      <div
-        data-aos="zoom-out"
-        data-aos-duration="800"
-        data-aos-once="true"
-        data-aos-delay="100"
-        className="w-full grid grid-cols-1 sm:grid-cols-2 gap-y-8 md:grid-cols-3"
-      >
-        {programs
-          .filter((program: Program) => program.type === "Merkez") // Filter programs by type
-          .slice(0, 3) // Get the top 3 programs
-          .map((program: Program) => (
-            <BentoGrid
-              key={program._id}
-              className="w-[70%] xs:w-[60%] sm:w-[80%] md:w-[70%] lg:w-[55%] h-[70px] bg-white rounded-lg mt-3 py-2"
-            >
-              <BentoGridItem
-                title={program.name}
-                description={program.schedule
-                  .map((val: Schedule) => val.day)
-                  .join(", ")}
-              />
-            </BentoGrid>
-          ))}
-      </div>
+      {programs.filter((program: Program) => program.type === "Merkez").length >
+      0 ? (
+        <div
+          data-aos="zoom-out"
+          data-aos-duration="800"
+          data-aos-once="true"
+          data-aos-delay="100"
+          className="w-full grid grid-cols-1 sm:grid-cols-2 gap-y-8 md:grid-cols-3"
+        >
+          {programs
+            .filter((program: Program) => program.type === "Merkez") // Filter programs by type "Merkez"
+            .slice(0, 3) // Get the top 3 programs
+            .map((program: Program) => (
+              <BentoGrid
+                key={program._id}
+                className="w-[70%] xs:w-[60%] sm:w-[80%] md:w-[70%] lg:w-[55%] h-[70px] bg-white rounded-lg mt-3 py-2"
+              >
+                <BentoGridItem
+                  title={program.name}
+                  description={program.schedule
+                    .map((val: Schedule) => val.day)
+                    .join(", ")}
+                />
+              </BentoGrid>
+            ))}
+        </div>
+      ) : (
+        <ProgramsUnavailable message="Currently no programs available at our madrasa" />
+      )}
+
       <a
         href="/programs"
         className="text-right text-white hover:text-blue-500 mr-5 mb-6 flex items-center justify-end gap-1 cursor-pointer"
