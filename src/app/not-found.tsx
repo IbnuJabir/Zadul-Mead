@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/PageNotFound.scss";
+import "../styles/PageNotFound.css";
 const NotFoundPage = () => {
   return (
     <div className="background">

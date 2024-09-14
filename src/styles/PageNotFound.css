@@ -1,28 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans');
 @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Protest+Guerrilla&family=Sofadi+One&display=swap');
-/*Variables*/
-$background_color: #353b48;
-$font: "Fira Sans", sans-serif;
-$white: #f5f6fa;
-$black: #0C0E10;
-$gray: #202425;
-$blue: #446182;
 
-/*Mixins*/
-@mixin smallscreens {
-    @media (max-width: 770px) {
-        @content;
-    }
+/* Variables (converted to CSS custom properties) */
+:root {
+    --background-color: #353b48;
+    --font: "Fira Sans", sans-serif;
+    --white: #f5f6fa;
+    --black: #0C0E10;
+    --gray: #202425;
+    --blue: #446182;
 }
 
-/*Extends*/
-%Ycenter {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-/*Main Layout Styles*/
+/* Main Layout Styles */
 * {
     box-sizing: border-box;
 }
@@ -33,8 +22,8 @@ html, body {
 }
 
 body {
-    font-family: $font;
-    color: $white;
+    font-family: var(--font);
+    color: var(--white);
 }
 
 .background {
@@ -43,18 +32,20 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient($black, $blue);
+    background: linear-gradient(var(--black), var(--blue));
+}
 
-    .ground {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        height: 25vh;
-        background: $black;
+.background .ground {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 25vh;
+    background: var(--black);
+}
 
-        @include smallscreens {
-            height: 0vh;
-        }
+@media (max-width: 770px) {
+    .background .ground {
+        height: 0vh;
     }
 }
 
@@ -67,8 +58,10 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
 
-    @include smallscreens {
+@media (max-width: 770px) {
+    .container {
         flex-direction: column;
         padding-bottom: 0vh;
     }
@@ -78,24 +71,29 @@ body {
     position: relative;
 }
 
-/*Left Section Styles*/
 .left-section {
     width: 40%;
+}
 
-    @include smallscreens {
+@media (max-width: 770px) {
+    .left-section {
         width: 100%;
         height: 40%;
         position: absolute;
         top: 0;
     }
+}
 
-    .inner-content {
-        @extend %Ycenter;
+.left-section .inner-content {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
 
-        @include smallscreens {
-            position: relative;
-            padding: 1rem 0;
-        }
+@media (max-width: 770px) {
+    .left-section .inner-content {
+        position: relative;
+        padding: 1rem 0;
     }
 }
 
@@ -106,8 +104,10 @@ body {
     margin: 2rem 0 0.5rem 0;
     padding: 0;
     text-shadow: 0 0 1rem #fefefe;
+}
 
-    @include smallscreens {
+@media (max-width: 770px) {
+    .heading {
         font-size: 7em;
         line-height: 1.15;
         margin: 0;
@@ -121,19 +121,22 @@ body {
     line-height: 1.15em;
     padding: 0 1rem;
     margin: 0 auto;
+}
 
-    @include smallscreens {
+@media (max-width: 770px) {
+    .subheading {
         font-size: 1.3em;
         line-height: 1.15;
         max-width: 100%;
     }
 }
 
-/*Right Section Styles*/
 .right-section {
     width: 50%;
+}
 
-    @include smallscreens {
+@media (max-width: 770px) {
+    .right-section {
         width: 100%;
         height: 60%;
         position: absolute;
@@ -148,40 +151,42 @@ body {
     padding-left: 1vh;
     max-width: 100%;
     max-height: 100%;
+}
 
-    @include smallscreens {
+@media (max-width: 770px) {
+    .svgimg {
         padding: 0;
     }
+}
 
-    .bench-legs {
-        fill: $black;
-    }
+.svgimg .bench-legs {
+    fill: var(--black);
+}
 
-    .top-bench, .bottom-bench {
-        stroke: $black;
-        stroke-width: 1px;
-        fill: #5B3E2B;
-    }
+.svgimg .top-bench, .svgimg .bottom-bench {
+    stroke: var(--black);
+    stroke-width: 1px;
+    fill: #5B3E2B;
+}
 
-    .bottom-bench path:nth-child(1) {
-        fill: darken(#5B3E2B, 7%);
-    }
+.svgimg .bottom-bench path:nth-child(1) {
+    fill: darken(#5B3E2B, 7%);
+}
 
-    .lamp-details {
-        fill: $gray;
-    }
+.svgimg .lamp-details {
+    fill: var(--gray);
+}
 
-    .lamp-accent {
-        fill: lighten($gray, 5%);
-    }
+.svgimg .lamp-accent {
+    fill: lighten(var(--gray), 5%);
+}
 
-    .lamp-bottom {
-        fill: linear-gradient($gray, $black);
-    }
+.svgimg .lamp-bottom {
+    fill: linear-gradient(var(--gray), var(--black));
+}
 
-    .lamp-light {
-        fill: #EFEFEF;
-    }
+.svgimg .lamp-light {
+    fill: #EFEFEF;
 }
 
 @keyframes glow {
