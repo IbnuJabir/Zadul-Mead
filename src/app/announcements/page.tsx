@@ -45,22 +45,29 @@ function Announcements() {
   if (hasError) return <Unavailable message="Unable to load announcements" />;
 
   const calculateDuration = (startDate: Date, endDate: Date) => {
+    // Ensure startDate is always before or equal to endDate
     if (endDate < startDate) {
       [startDate, endDate] = [endDate, startDate];
     }
 
-    const days = differenceInDays(endDate, startDate);
-    const hours = differenceInHours(endDate, startDate) % 24;
-    const minutes = differenceInMinutes(endDate, startDate) % 60;
+    // Reset time to midnight for accurate day calculation (ignoring hours and minutes)
+    const start = new Date(
+      startDate.getFullYear(),
+      startDate.getMonth(),
+      startDate.getDate()
+    );
+    const end = new Date(
+      endDate.getFullYear(),
+      endDate.getMonth(),
+      endDate.getDate()
+    );
 
-    let duration = "";
-    if (days > 0) duration += `${days} day${days > 1 ? "s" : ""}`;
-    else if (hours > 0)
-      duration +=
-        (duration ? ", " : "") + `${hours} hour${hours > 1 ? "s" : ""}`;
-    else if (minutes > 0 || duration === "")
-      duration +=
-        (duration ? ", " : "") + `${minutes} minute${minutes > 1 ? "s" : ""}`;
+    // Calculate the total difference in milliseconds and convert to days
+    const msInDay = 24 * 60 * 60 * 1000; // Milliseconds in one day
+    const days = Math.round((end.getTime() - start.getTime()) / msInDay); // Total days difference
+
+    // Build the duration string
+    let duration = `${days} day${days > 1 ? "s" : ""}`;
 
     return duration;
   };
