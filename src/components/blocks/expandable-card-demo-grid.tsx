@@ -63,7 +63,7 @@ export default function ExpandableCardDemo() {
                   duration: 0.05,
                 },
               }}
-              className="flex absolute top-[6%] mx-auto md:hidden items-center justify-center bg-white rounded-full h-6 w-6"
+              className="flex absolute top-[12%] mx-auto md:hidden items-center justify-center bg-white rounded-full h-6 w-6"
               onClick={() => setActive(null)}
             >
               <CloseIcon />
@@ -71,7 +71,7 @@ export default function ExpandableCardDemo() {
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className="w-full max-w-[600px]  h-full md:h-fit md:max-h-[100%]  flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl "
+              className="w-full max-w-[600px] h-fit md:max-h-[100%]  flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl "
             >
               <motion.div layoutId={`image-${active.title}-${id}`}>
                 <Image
@@ -80,7 +80,7 @@ export default function ExpandableCardDemo() {
                   height={200}
                   src={active.src}
                   alt={active.title}
-                  className="w-full h-80 lg:h-80 mt-12 md:mt-0 sm:rounded-tr-lg sm:rounded-tl-lg object-cover object-top"
+                  className="w-full h-80 lg:h-80  md:mt-0 sm:rounded-tr-lg sm:rounded-tl-lg object-cover object-top"
                 />
               </motion.div>
 
@@ -119,7 +119,7 @@ export default function ExpandableCardDemo() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="text-neutral-600 text-xs md:text-sm lg:text-base h-80 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
+                    className="text-neutral-600 text-xs md:text-sm lg:text-base h-fit md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
                   >
                     {typeof active.content === "function"
                       ? active.content()
