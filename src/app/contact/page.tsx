@@ -38,7 +38,7 @@ function Contact() {
     resolver: zodResolver(FormSchema),
     defaultValues: {
       fullName: "",
-      phone: "",
+      phone: undefined,
       email: "",
       message: "",
     },

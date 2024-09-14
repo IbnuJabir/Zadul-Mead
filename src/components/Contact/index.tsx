@@ -31,13 +31,14 @@ function Contact() {
     resolver: zodResolver(FormSchema),
     defaultValues: {
       fullName: "",
-      phone: "",
+      phone: undefined,
       email: "",
       message: "",
     },
     reValidateMode: "onBlur",
     mode: "onBlur",
   });
+  
 
   // Function to get the first error
   const getFirstErrorMessage = () => {
