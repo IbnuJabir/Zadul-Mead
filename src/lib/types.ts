@@ -95,3 +95,17 @@ export type MenuItemProps = {
 export type LayoutProps = {
   children: ReactNode;
 };
+
+export type RegistrationSettings = {
+  maintenanceMode: boolean;
+  maxRegistrationsMale: number;
+  maxRegistrationsFemale: number;
+  registrationStartDate: string; // or Date if you prefer to parse it as a Date object
+  registrationEndDate: string; // or Date if you prefer to parse it as a Date object
+  registrationPaymentAmount: number;
+  createdAt: string; // or Date if you prefer to parse it as a Date object
+  updatedAt: string; // or Date if you prefer to parse it as a Date object
+  __v: number;
+  registrationAccountNumber: string;
+  registrationPaymentReceiver: string;
+};

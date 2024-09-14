@@ -30,7 +30,11 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { PaymentInfoStepProps, RegistrationResponse } from "@/lib/types";
+import {
+  PaymentInfoStepProps,
+  RegistrationResponse,
+  RegistrationSettings,
+} from "@/lib/types";
 import {
   DialogComponent,
   ErrorDialogComponent,
@@ -44,7 +48,10 @@ import {
   openErrorDialog,
   openSuccessDialog,
 } from "@/state/dialogSlice";
-// import {} from ""
+import Unavailable from "../Commons/Unavailable";
+import ProgramsUnavailable from "../Commons/programsNotAvailable";
+import Loader from "@/app/loading";
+
 const FormSchema = createStepSchema({
   personalInfo: z.object({
     fullName: z.string().min(1, ""),
@@ -77,9 +84,11 @@ type FormValues = z.infer<typeof FormSchema>;
 export function MultiStepFormDemo() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [hasError, setHasError] = useState(false);
+  const [registerSettings, setRegisterSettings] =
+    useState<RegistrationSettings | null>(null);
 
   const dispatch = useDispatch();
-
   const form = useForm<FormValues>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
@@ -106,6 +115,26 @@ export function MultiStepFormDemo() {
     reValidateMode: "onBlur",
     mode: "onBlur",
   });
+
+  useEffect(() => {
+    const fetchRegisterSettings = async () => {
+      setLoading(true);
+      try {
+        const response = await fetch(
+          `${process.env.NEXT_PUBLIC_APP_BACKEND_API}/user/setting`
+        );
+        const data: RegistrationSettings = await response.json();
+        setRegisterSettings(data);
+      } catch (error) {
+        console.error("Error fetching registration settings:", error);
+        setHasError(true);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchRegisterSettings();
+  }, []);
 
   const onSubmit = async (data: FormValues) => {
     setLoading(true);
@@ -136,6 +165,7 @@ export function MultiStepFormDemo() {
     };
 
     try {
+      setLoading(true);
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_APP_BACKEND_API}/registration`,
         {
@@ -146,24 +176,38 @@ export function MultiStepFormDemo() {
           body: JSON.stringify(payload),
         }
       );
-      const data: RegistrationResponse = await response.json();
+
+      const result: RegistrationResponse = await response.json();
 
       if (!response.ok) {
-        dispatch(setRegError(data.error));
+        dispatch(setRegError(result.error));
         dispatch(openErrorDialog());
-        console.log("error Message", data.error);
-        throw new Error(data.error);
+        throw new Error(result.error);
       }
-      dispatch(setRegRef(data.reference));
+
+      dispatch(setRegRef(result.reference));
       dispatch(openSuccessDialog());
       setSuccess(true);
-      console.log("Form submitted successfully:", data);
+      console.log("Form submitted successfully:", result);
     } catch (error) {
       console.error("Error submitting form:", error);
     } finally {
       setLoading(false);
     }
   };
+
+  if (loading) return <Loader />;
+  if (hasError)
+    return (
+      <Unavailable message="Unable to load registration details, try again" />
+    );
+  if (registerSettings?.maintenanceMode) {
+    return (
+      <div className="w-full bg-black">
+        <ProgramsUnavailable message="Registration is currently unavailable" />
+      </div>
+    );
+  }
 
   return (
     <MultiStepForm

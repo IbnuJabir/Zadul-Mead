@@ -21,7 +21,7 @@ function Programs() {
     )
       .then((res) => res.json())
       .then((data) => {
-        // setPrograms(data);
+        setPrograms(data);
         setLoading(false);
       })
       .catch((error) => {

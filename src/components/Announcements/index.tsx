@@ -27,7 +27,7 @@ function Announcements() {
           (announcement: AnnouncementsType) =>
             new Date(announcement.endDate) > new Date()
         );
-        // setAnnouncements(validAnnouncements);
+        setAnnouncements(validAnnouncements);
         setLoading(false);
       })
       .catch((error) => {

@@ -6,6 +6,7 @@ import { useOutsideClick } from "@/hooks/use-outside-click";
 import medrasa from "../../../public/assets/medrasa.jpg";
 import office from "../../../public/assets/office.jpg";
 import mesjid from "../../../public/assets/insideMesjid.jpg";
+import mesjid2 from "../../../public/assets/mesjid2.jpg";
 export default function ExpandableCardDemo() {
   const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(
     null
@@ -284,7 +285,7 @@ const cards = [
   {
     description: "Zad Al-Mead",
     title: "Badr Mesjid-2",
-    src: mesjid,
+    src: mesjid2,
     ctaText: "Visit",
     ctaLink: "https://zadalmead.com/",
     content: () => {
