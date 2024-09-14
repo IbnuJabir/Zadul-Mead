@@ -126,6 +126,7 @@ function Programs() {
     }
     return name;
   };
+
   if (isLoading) return <Loader />;
   if (hasError) return <Unavailable message="Unable to load Programs" />;
 
@@ -175,13 +176,35 @@ function Programs() {
             .map((program: Program) => (
               <BentoGrid
                 key={program._id}
-                className="w-[70%] xs:w-[60%] sm:w-[80%] md:w-[70%] lg:w-[55%] h-[70px] bg-white rounded-lg mt-3 py-2"
+                className="w-[70%] xs:w-[60%] sm:w-[80%] md:w-[70%] lg:w-[55%] h-auto bg-white rounded-lg mt-3 pt-2 pb-4"
               >
                 <BentoGridItem
                   title={program.name}
-                  description={program.schedule
-                    .map((val: Schedule) => val.day)
-                    .join(", ")}
+                  description={
+                    <div>
+                      {/* Split the schedule days into two parts */}
+                      {Array.from(
+                        new Set(
+                          program.schedule.map((val: Schedule) => val.day)
+                        )
+                      )
+                        .slice(0, 4) // First 4 days
+                        .join(", ")}
+                      {/* If there are more than 4 days, break the remaining into a new line */}
+                      {program.schedule.length > 4 && (
+                        <>
+                          <br />
+                          {Array.from(
+                            new Set(
+                              program.schedule.map((val: Schedule) => val.day)
+                            )
+                          )
+                            .slice(4) // Remaining days
+                            .join(", ")}
+                        </>
+                      )}
+                    </div>
+                  }
                 />
               </BentoGrid>
             ))}
@@ -210,13 +233,35 @@ function Programs() {
             .map((program: Program) => (
               <BentoGrid
                 key={program._id}
-                className="w-[70%] xs:w-[60%] sm:w-[80%] md:w-[70%] lg:w-[55%] h-[70px] bg-white rounded-lg mt-3 py-2"
+                className="w-[70%] xs:w-[60%] sm:w-[80%] md:w-[70%] lg:w-[55%] h-auto bg-white rounded-lg mt-3 pt-2 pb-4"
               >
                 <BentoGridItem
                   title={program.name}
-                  description={program.schedule
-                    .map((val: Schedule) => val.day)
-                    .join(", ")}
+                  description={
+                    <div>
+                      {/* Split the schedule days into two parts */}
+                      {Array.from(
+                        new Set(
+                          program.schedule.map((val: Schedule) => val.day)
+                        )
+                      )
+                        .slice(0, 4) // First 4 days
+                        .join(", ")}
+                      {/* If there are more than 4 days, break the remaining into a new line */}
+                      {program.schedule.length > 4 && (
+                        <>
+                          <br />
+                          {Array.from(
+                            new Set(
+                              program.schedule.map((val: Schedule) => val.day)
+                            )
+                          )
+                            .slice(4) // Remaining days
+                            .join(", ")}
+                        </>
+                      )}
+                    </div>
+                  }
                 />
               </BentoGrid>
             ))}

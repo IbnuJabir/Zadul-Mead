@@ -90,7 +90,7 @@ function Announcements() {
                   data-aos-duration="1000"
                   data-aos-delay="300"
                   data-aos-once="true"
-                  className="flex flex-col gap-8 items-start justify-start"
+                  className="flex flex-col gap-8 items-start justify-start w-full"
                 >
                   <div className="w-full font-montserrat px-4 flex items-top justify-left gap-4">
                     <p className="w-8 h-6 text-black p-4 bg-slate-200 rounded-full flex items-center justify-center">

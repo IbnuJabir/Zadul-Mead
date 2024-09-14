@@ -9,35 +9,89 @@ import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import Link from "next/link";
 import Footer from "@/components/Footer";
-import {
-  useForm,
-  isNotEmpty,
-  isEmail,
-  isInRange,
-  hasLength,
-  matches,
-} from "@mantine/form";
-import { Button, Group, TextInput, NumberInput } from "@mantine/core";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { toast } from "react-toastify";
 import Sidebar from "@/components/sidebar/MenuBarMobile";
 import Layout from "@/components/sidebar";
+
+// Validation Schema
+const FormSchema = z.object({
+  fullName: z.string().min(1, "Please enter your full name"),
+  phone: z.coerce.number().min(1, "Please enter a valid phone number"),
+  email: z
+    .string()
+    .email("Invalid email address")
+    .min(1, "Please enter your email"),
+  message: z.string().min(1, "Please enter a message"),
+});
+
+type FormValues = z.infer<typeof FormSchema>;
 function Contact() {
   const [showSidebar, setShowSidebar] = useState<boolean>(false);
 
-  const form = useForm({
-    mode: "uncontrolled",
-    validateInputOnBlur: true,
-    initialValues: {
-      name: "",
-      email: "",
-      phone: "",
-    },
+  const [isLoading, setLoading] = useState(false);
 
-    validate: {
-      name: hasLength({ min: 2, max: 10 }, "Name must be 2-10 characters long"),
-      email: isEmail("Invalid email"),
-      phone: isNotEmpty("Invalid Phone Number"),
+  // Initialize react-hook-form with validation
+  const form = useForm<FormValues>({
+    resolver: zodResolver(FormSchema),
+    defaultValues: {
+      fullName: "",
+      phone: "",
+      email: "",
+      message: "",
     },
+    reValidateMode: "onBlur",
+    mode: "onBlur",
   });
+
+  // Function to get the first error
+  const getFirstErrorMessage = () => {
+    const errors = form.formState.errors;
+    if (errors.fullName) return errors.fullName.message;
+    if (errors.email) return errors.email.message;
+    if (errors.phone) return errors.phone.message;
+    if (errors.message) return errors.message.message;
+    return null;
+  };
+
+  // Handle form submission
+  const onSubmit = async (data: FormValues) => {
+    setLoading(true);
+    const payload = {
+      fullName: data.fullName,
+      phone: data.phone,
+      email: data.email,
+      message: data.message,
+    };
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_APP_BACKEND_API}/message/send`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        }
+      );
+
+      const result = await response.json();
+      if (!response.ok) {
+        toast.error("Failed to send your message");
+        throw new Error(result.error);
+      }
+      toast.success("Your message was successfully sent, thank you!");
+
+      // Reset form fields after successful submission
+      form.reset();
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
   return (
     <div className="w-full text-white overflow-x-hidden">
       <div className="w-full py-10 md:py-0 md:h-[55vh] relative bg-black  bg-no-repeat bg-center bg-cover font-cinzel z-10 text-white">
@@ -111,44 +165,58 @@ function Contact() {
               data-aos-duration="1000"
               data-aos-delay="300"
               data-aos-once="true"
-              className="w-full text-black sm:w-[90%]  h-[30rem] md:h-[28rem] mx-auto bg-slate-300 bg-opacity-30 flex flex-col gap-4 p-4  rounded-lg"
+              className="w-full text-black md:w-[90%] h-[32rem] md:h-[28rem] mx-auto bg-slate-300 bg-opacity-30 flex flex-col gap-4 p-4 rounded-lg"
             >
               <p className="text-xl text-center text-white">
-                {" "}
                 Drop us a message
               </p>
-              <input
-                type="text"
-                placeholder="Full Name"
-                className="rounded-[5px] p-2 pl-4"
-              />
-              <div className="flex flex-col md:flex-row justify-between w-full gap-4">
+              <form
+                onSubmit={form.handleSubmit(onSubmit)}
+                className="flex flex-col gap-4"
+              >
                 <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  placeholder="Email"
-                  className="w-full md:w-[45%] rounded-[5px] p-2 pl-4"
+                  {...form.register("fullName")}
+                  type="text"
+                  placeholder="Full Name"
+                  className="rounded-[5px] p-2 pl-4"
                 />
-                <input
-                  type="number"
-                  name="phone"
-                  id="phone"
-                  placeholder="Phone"
-                  className="w-full md:w-[45%] rounded-[5px] border-none p-2 pl-4"
-                />
-              </div>
-              <textarea
-                name="message"
-                id="message"
-                cols={30}
-                rows={6}
-                placeholder=" Your message"
-                className="rounded-[5px] p-4"
-              ></textarea>
-              <button className="w-full px-4 py-2 rounded-[5px] border-none flex text-center items-center justify-center bg-white text-black md:mt-4">
-                Send Message
-              </button>
+                <div className="flex flex-col md:flex-row justify-between w-full gap-4">
+                  <input
+                    {...form.register("email")}
+                    type="email"
+                    placeholder="Email"
+                    className="w-full md:w-[45%] rounded-[5px] p-2 pl-4"
+                  />
+                  <input
+                    {...form.register("phone")}
+                    type="number"
+                    placeholder="Phone"
+                    className="w-full md:w-[45%] rounded-[5px] border-none p-2 pl-4"
+                  />
+                </div>
+                <textarea
+                  {...form.register("message")}
+                  cols={30}
+                  rows={6}
+                  placeholder="Your message"
+                  className="rounded-[5px] p-4"
+                ></textarea>
+
+                {/* Displaying the first error message */}
+                {getFirstErrorMessage() && (
+                  <small className="text-red-500">
+                    {getFirstErrorMessage()}
+                  </small>
+                )}
+
+                <button
+                  disabled={isLoading}
+                  type="submit"
+                  className="w-full px-4 py-2 rounded-[5px] border-none flex text-center items-center justify-center bg-white text-black"
+                >
+                  {isLoading ? "Sending..." : "Send Message"}
+                </button>
+              </form>
             </div>
             <div
               data-aos="fade-left"

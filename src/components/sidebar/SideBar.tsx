@@ -46,12 +46,12 @@ export default function Sidebar({ show, setter }: SidebarProps) {
     return (
         <>
             <div className={`${className}${appendClass}`}>
-                <div className="p-2 flex">
+                <div className="p-2 pt-4 flex">
                     <Link href="/">
                         <img src={logo.src} alt="Zad Logo" width={200} height={200} className='h-32' />
                     </Link>
                 </div>
-                <div className="flex flex-col">
+                <div className="flex flex-col mt-10">
                     <MenuItem
                         name="Home"
                         route="/"
