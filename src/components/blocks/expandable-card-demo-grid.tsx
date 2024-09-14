@@ -143,6 +143,8 @@ export default function ExpandableCardDemo() {
                   ? { opacity: 0, x: "40%" }
                   : index === 2
                   ? { opacity: 0, x: "-40%" }
+                  : index === 3
+                  ? { opacity: 0, x: "40%" }
                   : { opacity: 0 },
               onScreen: { opacity: 1, x: 0 },
             }}
@@ -176,7 +178,7 @@ export default function ExpandableCardDemo() {
                       : index === 2
                       ? "md:top-[8%] md:left-[47%] left-[4%] md:w-[15rem] md:h-[18rem]"
                       : index === 3
-                      ? "md:top-[40%] lg:top-[35%] xl:top[20%]  md:left-[22%] left-[4%] md:w-[15rem] md:h-[18rem]"
+                      ? "md:top-[40%] lg:top-[35%] xl:top[20%]   right-1 md:left-[22%] md:w-[15rem] md:h-[18rem]"
                       : ""
                   } absolute`}
                 />

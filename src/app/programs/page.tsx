@@ -77,7 +77,19 @@ function Programs() {
             data-aos-duration="800"
             data-aos-once="true"
             data-aos-delay="100"
-            className="bg-white mx-auto text-black w-[300px] h-[550px] rounded-xl shadow-slate-500 shadow-lg hover:bg-[#80807F] group hover:bg-opacity-100 hover:text-white transition duration-300 ease-in-out overflow-hidden"
+            className="bg-white mx-auto text-black w-[300px] h-[550px] rounded-xl shadow-slate-500 shadow-lg transition duration-300 ease-in-out hover:bg-[#80807F] group hover:bg-opacity-100 hover:text-white overflow-hidden"
+            style={{
+              boxShadow:
+                "rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.boxShadow =
+                "rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.boxShadow =
+                "rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px";
+            }}
           >
             <p className="bg-[#474747] text-white font-semibold py-1 px-2 w-fit rounded-br-lg rounded-tl-lg group-hover:bg-white group-hover:text-black transition duration-300 ease-in-out">
               {program.name}

@@ -18,7 +18,7 @@ function Navbar() {
   return (
     <div className="w-full">
       {/* Desktop Navbar */}
-      <div className="hidden  md:flex md:justify-between md:items-center md:px-8 md:py-4">
+      <div className="hidden  md:flex md:justify-between md:items-center md:px-8 md:py-4 md:pr-12">
         <Link
           href="/"
           className="text-white text-xl font-montserrat cursor-pointer"
@@ -77,16 +77,16 @@ function Navbar() {
             Contact
           </Link>
         </ul>
-        <div>
-          {/* <a className="text-3xl flex text-white" href="/register">
+        {/* <div>
+          <a className="text-3xl flex text-white" href="/register">
             <FaUser />
-          </a> */}
-          {/* <Image
+          </a>
+          <Image
             src={languageIcon}
             alt="menubar"
             className="w-8 h-8 cursor-pointer"
-          /> */}
-        </div>
+          />
+        </div> */}
       </div>
 
       {/* Mobile Navbar */}

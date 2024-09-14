@@ -127,7 +127,7 @@ function Programs() {
     return name;
   };
   if (isLoading) return <Loader />;
-  if (hasError) return <Unavailable message="Unable to load announcements" />;
+  if (hasError) return <Unavailable message="Unable to load Programs" />;
 
   return (
     <div className="w-full relative min-h-[40rem] overflow-x-hidden bg-programs-bkg bg-no-repeat bg-cover bg-center p-3 flex flex-col justify-center gap-16 pt-20">
