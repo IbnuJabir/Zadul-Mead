@@ -38,6 +38,7 @@ import {
 import {
   DialogComponent,
   ErrorDialogComponent,
+  LimitDialogComponent,
 } from "../Commons/DialogComponent";
 import { useDispatch, useSelector } from "react-redux";
 import { setRegRef, setRegError } from "@/state/registerSlice";
@@ -51,7 +52,9 @@ import {
 import Unavailable from "../Commons/Unavailable";
 import ProgramsUnavailable from "../Commons/programsNotAvailable";
 import Loader from "@/app/loading";
-
+import { format, isAfter, isBefore, max } from "date-fns";
+import CBELOGO from "../../../public/assets/CBE logo.png";
+import Image from "next/image";
 const FormSchema = createStepSchema({
   personalInfo: z.object({
     fullName: z.string().min(1, ""),
@@ -92,7 +95,7 @@ export function MultiStepFormDemo() {
   const form = useForm<FormValues>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
-      personalInfo: { fullName: "", age: 0, address: "", sex: "" },
+      personalInfo: { fullName: "", age: undefined, address: "", sex: "" },
       schoolInfo: {
         educationStatus: "",
         previousSchool: "",
@@ -124,6 +127,7 @@ export function MultiStepFormDemo() {
           `${process.env.NEXT_PUBLIC_APP_BACKEND_API}/user/setting`
         );
         const data: RegistrationSettings = await response.json();
+        console.log("registration data", data);
         setRegisterSettings(data);
       } catch (error) {
         console.error("Error fetching registration settings:", error);
@@ -208,50 +212,132 @@ export function MultiStepFormDemo() {
       </div>
     );
   }
+  const now = new Date(); // Current date and time
+  const startDate = new Date(registerSettings?.registrationStartDate ?? now);
+  const endDate = new Date(registerSettings?.registrationEndDate ?? now);
+
+  // Check if startDate and endDate are valid dates
+  const isValidStartDate = !isNaN(startDate.getTime());
+  const isValidEndDate = !isNaN(endDate.getTime());
 
   return (
-    <MultiStepForm
-      className="space-y-10 p-8 rounded-xl border"
-      schema={FormSchema}
-      form={form}
-      onSubmit={onSubmit}
-    >
-      <MultiStepFormHeader className="flex w-full flex-col justify-center space-y-6">
-        <h2 className="text-xl font-bold">Registration Form</h2>
+    <>
+      {isValidStartDate && isBefore(now, startDate) ? (
+        <div className="w-full bg-black">
+          <ProgramsUnavailable
+            message={`Registration will be opened on: ${format(
+              startDate,
+              "MMM d"
+            )}`}
+          />
+        </div>
+      ) : // <p className="text-black font-bold">
 
-        <MultiStepFormContextProvider>
-          {({ currentStepIndex }) => (
-            <Stepper
-              variant="numbers"
-              steps={["Personal Info", "School Info", "Family Info", "Payment"]}
-              currentStep={currentStepIndex}
+      // </p>
+      isValidEndDate && isAfter(now, endDate) ? (
+        <div className="w-full bg-black">
+          <ProgramsUnavailable message="Registration is closed. Try  next round." />
+        </div>
+      ) : (
+        <MultiStepForm
+          className="space-y-10 p-8 rounded-xl border"
+          schema={FormSchema}
+          form={form}
+          onSubmit={onSubmit}
+        >
+          <MultiStepFormHeader className="flex w-full flex-col justify-center space-y-6">
+            <h2 className="text-xl font-bold">Registration Form</h2>
+            <div className="w-full flex flex-col md:flex-row gap-6 justify-between items-center">
+              <div className="w-full flex flex-row md:gap-6 justify-between items-center">
+                <div>
+                  <p className="font-bold">Duration </p>
+                  {/* Display registration start and end dates */}
+                  <p className="text-black">
+                    Starts on:{" "}
+                    {isValidStartDate ? format(startDate, "MMM d") : "N/A"}
+                  </p>
+                  <p className="text-black">
+                    Ends on: {isValidEndDate ? format(endDate, "MMM d") : "N/A"}
+                  </p>
+                </div>
+
+                {/* Display remaining spots */}
+                <div className="flex flex-col gap-2">
+                  <p className="font-bold">Remaining spots </p>
+                  <p className="text-nowrap">
+                    Male:{" "}
+                    <span className="text-blue-500">
+                      {registerSettings?.maxRegistrationsMale ?? "N/A"}
+                    </span>
+                  </p>
+                  <p className="text-nowrap">
+                    Female:{" "}
+                    <span className="text-blue-500">
+                      {registerSettings?.maxRegistrationsFemale ?? "N/A"}
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <MultiStepFormContextProvider>
+              {({ currentStepIndex }) => (
+                <Stepper
+                  variant="numbers"
+                  steps={[
+                    "Personal Info",
+                    "School Info",
+                    "Family Info",
+                    "Payment",
+                  ]}
+                  currentStep={currentStepIndex}
+                />
+              )}
+            </MultiStepFormContextProvider>
+          </MultiStepFormHeader>
+
+          <MultiStepFormStep name="personalInfo">
+            <PersonalInfoStep registerSettings={registerSettings} />
+          </MultiStepFormStep>
+
+          <MultiStepFormStep name="schoolInfo">
+            <SchoolInfoStep />
+          </MultiStepFormStep>
+
+          <MultiStepFormStep name="familyInfo">
+            <FamilyInfoStep />
+          </MultiStepFormStep>
+
+          <MultiStepFormStep name="paymentInfo">
+            <PaymentInfoStep
+              loading={loading}
+              success={success}
+              registerSettings={registerSettings}
             />
-          )}
-        </MultiStepFormContextProvider>
-      </MultiStepFormHeader>
-
-      <MultiStepFormStep name="personalInfo">
-        <PersonalInfoStep />
-      </MultiStepFormStep>
-
-      <MultiStepFormStep name="schoolInfo">
-        <SchoolInfoStep />
-      </MultiStepFormStep>
-
-      <MultiStepFormStep name="familyInfo">
-        <FamilyInfoStep />
-      </MultiStepFormStep>
-
-      <MultiStepFormStep name="paymentInfo">
-        <PaymentInfoStep loading={loading} success={success} />
-      </MultiStepFormStep>
-    </MultiStepForm>
+          </MultiStepFormStep>
+        </MultiStepForm>
+      )}
+    </>
   );
 }
 
-function PersonalInfoStep() {
+function PersonalInfoStep({
+  registerSettings,
+}: {
+  registerSettings: RegistrationSettings | null;
+}) {
   const { form, nextStep, isStepValid } = useMultiStepFormContext();
+  const [selectedSex, setSelectedSex] = useState("");
+  const errorDialog = useSelector(
+    (state: RootState) => state.dialog.errorDialog
+  );
 
+  const dispatch = useDispatch();
+
+  const closeModal = () => {
+    dispatch(closeSuccessDialog());
+    dispatch(closeErrorDialog());
+  };
   return (
     <Form {...form}>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -297,7 +383,29 @@ function PersonalInfoStep() {
             <FormItem>
               <FormLabel>Sex</FormLabel>
               <FormControl>
-                <Select onValueChange={field.onChange}>
+                <Select
+                  value={selectedSex}
+                  onValueChange={(value) => {
+                    if (
+                      value === "m" &&
+                      registerSettings?.maxRegistrationsMale === 0
+                    ) {
+                      dispatch(setRegError("Sorry, No more space left for males"));
+                      dispatch(openErrorDialog());
+                      setSelectedSex(""); // Reset select value to empty
+                    } else if (
+                      value === "f" &&
+                      registerSettings?.maxRegistrationsFemale === 0
+                    ) {
+                      dispatch(setRegError("Sorry, No more space left for females"));
+                      dispatch(openErrorDialog());
+                      setSelectedSex(""); // Reset select value to empty
+                    } else {
+                      setSelectedSex(value); // Update the selected value
+                      field.onChange(value); // Proceed with valid selection
+                    }
+                  }}
+                >
                   <SelectTrigger className="w-full">
                     <SelectValue placeholder="Select" />
                   </SelectTrigger>
@@ -317,6 +425,7 @@ function PersonalInfoStep() {
           Next
         </Button>
       </div>
+      {errorDialog && <ErrorDialogComponent onClose={closeModal} />}
     </Form>
   );
 }
@@ -512,7 +621,11 @@ function FamilyInfoStep() {
   );
 }
 
-function PaymentInfoStep({ loading, success }: PaymentInfoStepProps) {
+function PaymentInfoStep({
+  loading,
+  success,
+  registerSettings,
+}: PaymentInfoStepProps) {
   const { form, prevStep } = useMultiStepFormContext();
   const successDialog = useSelector(
     (state: RootState) => state.dialog.successDialog
@@ -543,12 +656,39 @@ function PaymentInfoStep({ loading, success }: PaymentInfoStepProps) {
             </FormItem>
           )}
         />
+
         <p className="w-full md:w-1/2 text-sm text-gray-700">
           To complete your registration, please enter the transaction reference
-          for your <span className="font-bold">payment of 1550 Birr </span>made
-          through the Commercial Bank of Ethiopia. Only CBE transaction
+          for your{" "}
+          <span className="font-bold">
+            payment of {registerSettings?.registrationPaymentAmount} Birr{" "}
+          </span>
+          made through the Commercial Bank of Ethiopia. Only CBE transaction
           references are valid.{" "}
         </p>
+        <div className="flex justify-start items-center gap-2">
+          <Image
+            src={CBELOGO}
+            alt="CBE LOGO"
+            width={40}
+            height={40}
+            className="w-10 md:w-16"
+          />
+          <div>
+            <p>
+              Name:{" "}
+              <span className="font-bold">
+                {registerSettings?.registrationPaymentReceiver}
+              </span>
+            </p>
+            <p>
+              Acc.Number:{" "}
+              <span className="font-bold">
+                {registerSettings?.registrationAccountNumber}
+              </span>
+            </p>
+          </div>
+        </div>
       </div>
       <div className="w-full flex justify-between items-center space-x-2 mt-8">
         <Button type="button" variant="outline" onClick={prevStep}>
