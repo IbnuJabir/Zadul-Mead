@@ -38,7 +38,6 @@ import {
 import {
   DialogComponent,
   ErrorDialogComponent,
-  LimitDialogComponent,
 } from "../Commons/DialogComponent";
 import { useDispatch, useSelector } from "react-redux";
 import { setRegRef, setRegError } from "@/state/registerSlice";
