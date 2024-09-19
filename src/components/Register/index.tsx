@@ -66,7 +66,7 @@ const FormSchema = createStepSchema({
     previousSchool: z.string().min(1, ""),
     averageResultInPreviousSchool: z.string().min(1, ""),
     behaviorInPreviousSchool: z.string().min(1, ""),
-    anyDisease: z.string().optional(),
+    anyDisease: z.string().min(2, ""),
   }),
   familyInfo: z.object({
     fatherName: z.string().min(1, ""),
@@ -642,21 +642,21 @@ function PaymentInfoStep({
 
   return (
     <Form {...form}>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 justify-center items-start w-full md:w-[60%] mx-auto">
         <FormField
           name="paymentInfo.tx_ref"
           render={({ field }) => (
-            <FormItem>
+            <FormItem className="min-w-64">
               <FormLabel>Transaction Reference</FormLabel>
               <FormControl>
-                <Input {...field} className="w-full md:w-1/2" />
+                <Input {...field} className="w-full" />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
 
-        <p className="w-full md:w-1/2 text-sm text-gray-700">
+        <p className="w-full text-sm text-gray-700">
           To complete your registration, please enter the transaction reference
           for your{" "}
           <span className="font-bold">
