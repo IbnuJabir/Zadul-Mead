@@ -136,7 +136,7 @@ function Contact() {
         <div className="w-[80%] mx-auto">
           <h1
             data-aos="fade-up"
-            data-aos-duration="1000"
+            data-aos-duration="700"
             data-aos-once="true"
             className="font-bold text-2xl mb-4"
           >
@@ -145,7 +145,7 @@ function Contact() {
           <p
             data-aos="zoom-in"
             data-aos-duration="1000"
-            data-aos-delay="300"
+            // data-aos-delay="300"
             data-aos-once="true"
             className="font-montserrat text-justify"
           >
@@ -160,13 +160,7 @@ function Contact() {
         </div>
         <div className="w-full flex flex-col gap-4 md:justify-around md:items-top  font-montserrat mt-10 md:py md:gap-10">
           <div className="w-[90%] md:w-[80%] flex flex-col items-center justify- mx-auto md:flex-row">
-            <div
-              data-aos="fade-right"
-              data-aos-duration="1000"
-              data-aos-delay="300"
-              data-aos-once="true"
-              className="w-full text-black md:w-[90%] h-[32rem] md:h-[28rem] mx-auto bg-slate-300 bg-opacity-30 flex flex-col gap-4 p-4 rounded-lg"
-            >
+            <div className="w-full text-black md:w-[90%] h-[32rem] md:h-[28rem] mx-auto bg-slate-300 bg-opacity-30 flex flex-col gap-4 p-4 rounded-lg">
               <p className="text-xl text-center text-white">
                 Drop us a message
               </p>
@@ -218,13 +212,7 @@ function Contact() {
                 </button>
               </form>
             </div>
-            <div
-              data-aos="fade-left"
-              data-aos-duration="1000"
-              data-aos-delay="300"
-              data-aos-once="true"
-              className="hidden md:flex md:w-[90%] md:flex-col md:gap-4 md:justify-center md:items-start md:pl-10 text-white py-10"
-            >
+            <div className="hidden md:flex md:w-[90%] md:flex-col md:gap-4 md:justify-center md:items-start md:pl-10 text-white py-10">
               <Link
                 href="https://t.me/ahmedadem"
                 className="flex gap-4 items-center"
@@ -261,11 +249,11 @@ function Contact() {
                 <p>@zad_al_mead</p>
               </Link>
               <Link
-                href="https://x.com/zadal_mead"
+                href="https://x.com/zad_al_mead"
                 className="flex gap-4 items-center"
               >
                 <FaXTwitter className="size-[35px] lg:size-[40px]" />
-                <p>@zadal_mead</p>
+                <p>@zad_al_mead</p>
               </Link>
             </div>
           </div>

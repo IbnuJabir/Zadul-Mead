@@ -53,18 +53,11 @@ function About() {
         <div className="relative z-10  flex flex-col gap-10">
           <div className="w-[90%] md:w-[70%] mx-auto mt-10">
             <h1
-              data-aos="fade-up"
-              data-aos-duration="1000"
-              data-aos-once="true"
               className="font-bold text-2xl mb-4"
             >
               Who We Are{" "}
             </h1>
-            <p
-              data-aos="zoom-in"
-              data-aos-duration="1000"
-              data-aos-delay="100"
-              data-aos-once="true"
+            <p      
               className="  md:block font-montserrat text-justify"
             >
               Zad Al-Ma&apos;ad Knowledge and Training Center was founded in the
@@ -77,11 +70,7 @@ function About() {
               platform where individuals could easily access knowledge that
               would enhance their understanding of Islam and its teachings.
             </p>
-            <p
-              data-aos="zoom-in"
-              data-aos-duration="1000"
-              data-aos-delay="100"
-              data-aos-once="true"
+            <p             
               className=" font-montserrat text-justify"
             >
               <span className="font-bold">Early Initiatives</span> In its
@@ -97,17 +86,9 @@ function About() {
               priority
               placeholder="blur"
               quality={100}
-              className=" w-1/2 md:w-1/3 h-[270px] md:h-1/3 float-right ml-4 mb-2 "
-              data-aos="zoom-in"
-              data-aos-duration="1000"
-              data-aos-delay="200"
-              data-aos-once="true"
+              className=" w-1/2 md:w-1/3 h-[270px] md:h-1/3 float-right ml-4 mb-2 "          
             />
-            <p
-              data-aos="zoom-in"
-              data-aos-duration="1000"
-              data-aos-delay="100"
-              data-aos-once="true"
+            <p             
               className=" font-montserrat text-justify"
             >
               <span className="font-semibold">Audio Messages:</span> Short and
@@ -126,11 +107,7 @@ function About() {
               in discussions, ask questions, and share their learning
               experiences.
             </p>
-            <p
-              data-aos="zoom-in"
-              data-aos-duration="1000"
-              data-aos-delay="100"
-              data-aos-once="true"
+            <p             
               className="  md:block font-montserrat text-justify mt-5"
             >
               <span className="font-bold">Growth and Expansion </span> As the
@@ -141,11 +118,7 @@ function About() {
               sessions were designed to cater to both men and women, reflecting
               a commitment to inclusivity and community engagement.
             </p>
-            <p
-              data-aos="zoom-in"
-              data-aos-duration="1000"
-              data-aos-delay="100"
-              data-aos-once="true"
+            <p              
               className="  md:block font-montserrat text-justify mt-5"
             >
               <span className="font-bold"> In-Person Gatherings:</span> The new
@@ -164,11 +137,7 @@ function About() {
               opportunity to deepen their understanding of Islam in a supportive
               environment.
             </p>
-            <p
-              data-aos="zoom-in"
-              data-aos-duration="1000"
-              data-aos-delay="100"
-              data-aos-once="true"
+            <p             
               className="  md:block font-montserrat text-justify mt-5"
             >
               Today, Zad Al-Ma&apos;ad Qur&apos;an Training Center operates from
@@ -178,11 +147,7 @@ function About() {
               media platforms, ensuring that its educational resources are
               always within reach.
             </p>
-            <p
-              data-aos="zoom-in"
-              data-aos-duration="1000"
-              data-aos-delay="100"
-              data-aos-once="true"
+            <p              
               className="  md:block font-montserrat text-justify mt-5"
             >
               The center&apos;s commitment to its foundational motto,
@@ -192,11 +157,7 @@ function About() {
               spiritual growth, and build a knowledgeable community that is
               well-equipped to face the challenges of contemporary life.
             </p>
-            <p
-              data-aos="zoom-in"
-              data-aos-duration="1000"
-              data-aos-delay="100"
-              data-aos-once="true"
+            <p             
               className="  md:block font-montserrat text-justify mt-5"
             >
               Zad Al-Ma&apos;ad Knowledge and Training Center stands as a
@@ -206,19 +167,12 @@ function About() {
             </p>
           </div>
           <div className=" w-[90%] md:w-[70%] mx-auto ">
-            <h1
-              data-aos="fade-up"
-              data-aos-duration="1000"
-              data-aos-once="true"
+            <h1             
               className="font-bold text-2xl mb-4"
             >
               Vision{" "}
             </h1>
-            <p
-              data-aos="zoom-in"
-              data-aos-duration="1000"
-              data-aos-delay="100"
-              data-aos-once="true"
+            <p              
               className="  md:block  font-montserrat text-justify"
             >
               Zad Al-Ma&apos;ad Knowledge and Training Center envisions a vibrant
@@ -228,11 +182,7 @@ function About() {
               about Islamic teachings but also empowered to apply this knowledge
               in their daily lives. Key elements of this vision include:
             </p>
-            <p
-              data-aos="zoom-in"
-              data-aos-duration="1000"
-              data-aos-delay="300"
-              data-aos-once="true"
+            <p              
               className=" font-montserrat text-justify"
             >
               <span className="font-bold">Holistic Development:</span> The
@@ -246,17 +196,9 @@ function About() {
               priority
               placeholder="blur"
               quality={100}
-              className="w-1/2 md:w-1/3 h-[270px] md:h-1/3 float-left mr-4 mt-2 "
-              data-aos="zoom-in"
-              data-aos-duration="1000"
-              data-aos-delay="200"
-              data-aos-once="true"
+              className="w-1/2 md:w-1/3 h-[270px] md:h-1/3 float-left mr-4 mt-2 "             
             />
-            <p
-              data-aos="zoom-in"
-              data-aos-duration="1000"
-              data-aos-delay="100"
-              data-aos-once="true"
+            <p             
               className="font-montserrat text-justify mt-2"
             >
               <span className="font-bold">Empowerment through Knowledge:</span>{" "}
@@ -268,11 +210,7 @@ function About() {
               ensuring that the education provided is relevant and applicable to
               the lives of participants in today&apos;s world.
             </p>
-            <p
-              data-aos="zoom-in"
-              data-aos-duration="1000"
-              data-aos-delay="100"
-              data-aos-once="true"
+            <p             
               className="  md:block  font-montserrat text-justify mt-5"
             >
               <span className="font-bold">Intergenerational Learning:</span> The
@@ -282,19 +220,12 @@ function About() {
             </p>
           </div>
           <div className=" w-[90%] md:w-[70%] mx-auto">
-            <h1
-              data-aos="fade-up"
-              data-aos-duration="1000"
-              data-aos-once="true"
+            <h1              
               className="font-bold text-2xl mb-4"
             >
               Mission{" "}
             </h1>
-            <p
-              data-aos="zoom-in"
-              data-aos-duration="1000"
-              data-aos-delay="100"
-              data-aos-once="true"
+            <p             
               className="  md:block  font-montserrat text-justify"
             >
               The mission of Zad Al-Ma&apos;ad Knowledge and Training Center is a
@@ -302,11 +233,7 @@ function About() {
               education and fostering a supportive community. The mission can be
               broken down into several core components:
             </p>
-            <p
-              data-aos="zoom-in"
-              data-aos-duration="1000"
-              data-aos-delay="300"
-              data-aos-once="true"
+            <p             
               className=" font-montserrat text-justify"
             >
               <span className="font-bold"> Educational Excellence: </span>
@@ -322,17 +249,9 @@ function About() {
               priority
               placeholder="blur"
               quality={100}
-              className="w-1/2 md:w-1/3 h-[270px] md:h-1/3 float-left mr-4 mt-2 "
-              data-aos="zoom-in"
-              data-aos-duration="1000"
-              data-aos-delay="200"
-              data-aos-once="true"
+              className="w-1/2 md:w-1/3 h-[270px] md:h-1/3 float-left mr-4 mt-2 "             
             />
-            <p
-              data-aos="zoom-in"
-              data-aos-duration="1000"
-              data-aos-delay="100"
-              data-aos-once="true"
+            <p            
               className="font-montserrat text-justify mt-2"
             >
               <span className="font-bold">Community Engagement:</span>{" "}
@@ -342,11 +261,7 @@ function About() {
               involvement through volunteer opportunities, allowing members to
               contribute to the center&apos;s initiatives and outreach efforts.
             </p>
-            <p
-              data-aos="zoom-in"
-              data-aos-duration="1000"
-              data-aos-delay="100"
-              data-aos-once="true"
+            <p              
               className="  md:block  font-montserrat text-justify mt-5"
             >
               <span className="font-bold">Lifelong Learning:</span> Offering
@@ -356,11 +271,7 @@ function About() {
               study circles that focus on current issues, encouraging critical
               thinking and active participation in the community.
             </p>
-            <p
-              data-aos="zoom-in"
-              data-aos-duration="1000"
-              data-aos-delay="100"
-              data-aos-once="true"
+            <p             
               className="  md:block  font-montserrat text-justify mt-5"
             >
               <span className="font-bold"> Digital Outreach:</span> Leveraging
@@ -370,11 +281,7 @@ function About() {
               and informative content that resonates with diverse audiences,
               fostering a broader interest in Islamic knowledge.
             </p>
-            <p
-              data-aos="zoom-in"
-              data-aos-duration="1000"
-              data-aos-delay="100"
-              data-aos-once="true"
+            <p              
               className="  md:block  font-montserrat text-justify mt-5"
             >
               <span className="font-bold"> Supportive Environment:</span>
@@ -384,11 +291,7 @@ function About() {
               support for personal and spiritual development, helping
               individuals to navigate their unique journeys in faith.
             </p>
-            <p
-              data-aos="zoom-in"
-              data-aos-duration="1000"
-              data-aos-delay="100"
-              data-aos-once="true"
+            <p             
               className="  md:block  font-montserrat text-justify mt-5"
             >
               Through these initiatives, Zad Al-Ma&apos;ad Knowledge and Training
