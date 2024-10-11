@@ -33,7 +33,7 @@ function Footer() {
           <Link href="https://instagram.com/zad_al_mead" target="_blank">
             <FaInstagram className="size-[20px]" />
           </Link>
-          <Link href="https://x.com/zadal_mead" target="_blank">
+          <Link href="https://x.com/zad_al_mead" target="_blank">
             <FaXTwitter className="size-[20px]" />
           </Link>
         </div>

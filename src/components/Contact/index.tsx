@@ -171,7 +171,7 @@ function Contact() {
             <Link href="https://instagram.com/zad_al_mead" target="_blank">
               <FaInstagram className="size-[35px] lg:size-[40px]" />
             </Link>
-            <Link href="https://x.com/zadal_mead" target="_blank">
+            <Link href="https://x.com/zad_al_mead" target="_blank">
               <FaXTwitter className="size-[35px] lg:size-[40px]" />
             </Link>
           </div>
